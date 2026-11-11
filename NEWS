@@ -1,3 +1,15 @@
+v6.12.0 11th November 2026
+
+- Updated for PyQt v6.12.1 and Qt v6.12.0.
+- `sip2rst.py` now warns about missing image files rather than treating it as
+  an error.
+
+
+v6.11.0 30th March 2026
+
+- Updated for PyQt v6.11.0 and Qt v6.11.0.
+
+
 v6.10.1 11th November 2025
 
 - The `QRangeModel`, `QPyAbstractRange`, `QPySequenceRange` and

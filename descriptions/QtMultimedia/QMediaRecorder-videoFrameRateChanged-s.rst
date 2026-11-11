@@ -2,6 +2,6 @@
     :status: todo
     :pysig: d41d8cd98f00b204e9800998ecf8427e
     :realsig: ()
-    :digest: 182b8e6b93682f85bed218021bace2e9
+    :digest: 3264bf3a9b41e1bba4f7628ca8d9396b
 
-Signals when the recording video frame rate changes.
+Signals when the video encoding frame rate changes.

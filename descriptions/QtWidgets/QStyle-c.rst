@@ -1,17 +1,23 @@
 .. sip:class-description::
     :status: todo
     :brief: Abstract base class that encapsulates the look and feel of a GUI
-    :digest: 7cbfdc7981feebd8bf797ee25c47de0b
+    :digest: 3c8744ff68e1bade94d458dc40846c3b
 
 The :sip:ref:`~PyQt6.QtWidgets.QStyle` class is an abstract base class that encapsulates the look and feel of a GUI.
 
-Qt contains a set of :sip:ref:`~PyQt6.QtWidgets.QStyle` subclasses that emulate the styles of the different platforms supported by Qt (QWindowsStyle, QMacStyle etc.). By default, these styles are built into the Qt GUI module. Styles can also be made available as plugins.
+Qt contains a set of :sip:ref:`~PyQt6.QtWidgets.QStyle` implementations that match the look of the platforms it supports. The ``windows`` and ``fusion`` styles are built into the Qt Widgets module. The platform styles are style plugins: ``windows11``, which follows the Windows 11 Fluent design, and ``windowsvista`` on Windows, ``macos`` on macOS, and ``android`` on Android. :sip:ref:`~PyQt6.QtWidgets.QStyleFactory` lists the styles that are available at runtime and creates them by name.
 
-Qt's built-in widgets use :sip:ref:`~PyQt6.QtWidgets.QStyle` to perform nearly all of their drawing, ensuring that they look exactly like the equivalent native widgets. The diagram below shows a :sip:ref:`~PyQt6.QtWidgets.QComboBox` in nine different styles.
+Qt's built-in widgets use :sip:ref:`~PyQt6.QtWidgets.QStyle` to perform nearly all of their drawing, ensuring that they look exactly like the equivalent native widgets. The following images show the same form in the ``windows11``, ``windowsvista``, and ``windows`` styles on Windows, and in the ``fusion`` and ``macos`` styles.
 
-.. image:: ../../../images/qstyle-comboboxes.png
-
-Topics:
++------------------------------------------------------+------------------------------------------------------+-------------------------------------------------+
+| .. image:: ../../../images/gallery-windows11.webp    | .. image:: ../../../images/gallery-windowsvista.webp | .. image:: ../../../images/gallery-windows.webp |
+|                                                      |                                                      |                                                 |
+| Windows 11                                           | Windows Vista                                        | Windows                                         |
++------------------------------------------------------+------------------------------------------------------+-------------------------------------------------+
+| .. image:: ../../../images/gallery-fusion-light.webp | .. image:: ../../../images/gallery-fusion-dark.webp  | .. image:: ../../../images/gallery-macos.webp   |
+|                                                      |                                                      |                                                 |
+| Fusion                                               | Fusion with a dark palette                           | macOS                                           |
++------------------------------------------------------+------------------------------------------------------+-------------------------------------------------+
 
 .. _qstyle-setting-a-style:
 
@@ -26,6 +32,21 @@ The style of the entire application can be set using the :sip:ref:`~PyQt6.QtWidg
 If no style is specified, Qt will choose the most appropriate style for the user's platform or desktop environment.
 
 A style can also be set on an individual widget using the :sip:ref:`~PyQt6.QtWidgets.QWidget.setStyle` function.
+
+.. _qstyle-choosing-a-styling-approach:
+
+Choosing a Styling Approach
+---------------------------
+
+Choose the mechanism that matches how much you want to change:
+
+* To adjust the platform style, subclass :sip:ref:`~PyQt6.QtWidgets.QProxyStyle`.
+
+* To implement a complete custom look, subclass :sip:ref:`~PyQt6.QtWidgets.QCommonStyle`.
+
+* To describe the design declaratively and share it with Qt Quick Controls, use StyleKit and its QStyleKitStyle.
+
+`Styling Approaches for Qt Widgets <https://doc.qt.io/qt-6/qtwidgets-styling-approaches.html>`_ compares these options with `Qt Style Sheets <https://doc.qt.io/qt-6/stylesheet.html>`_ and explains when each is appropriate.
 
 .. _qstyle-developing-style-aware-custom-widgets:
 
@@ -76,11 +97,9 @@ instead of
 Creating a Custom Style
 -----------------------
 
-You can create a custom look and feel for your application by creating a custom style. There are two approaches to creating a custom style. In the static approach, you either choose an existing :sip:ref:`~PyQt6.QtWidgets.QStyle` class, subclass it, and reimplement virtual functions to provide the custom behavior, or you create an entire :sip:ref:`~PyQt6.QtWidgets.QStyle` class from scratch. In the dynamic approach, you modify the behavior of your system style at runtime. The static approach is described below. The dynamic approach is described in :sip:ref:`~PyQt6.QtWidgets.QProxyStyle`.
+You can create a custom look and feel for your application by creating a custom style. There are two approaches. To change selected aspects of an existing style, subclass :sip:ref:`~PyQt6.QtWidgets.QProxyStyle` and reimplement the virtual functions that draw or measure the elements you want to change; the proxy forwards everything else to the style it wraps, by default the platform style. To implement a complete look, subclass :sip:ref:`~PyQt6.QtWidgets.QCommonStyle`, which implements the behavior that all of Qt's styles share and leaves the drawing to you. Qt's built-in styles are not part of the public API and cannot serve as base classes; wrap them with :sip:ref:`~PyQt6.QtWidgets.QProxyStyle` instead.
 
-The first step in the static approach is to pick one of the styles provided by Qt from which you will build your custom style. Your choice of :sip:ref:`~PyQt6.QtWidgets.QStyle` class will depend on which style resembles your desired style the most. The most general class that you can use as a base is :sip:ref:`~PyQt6.QtWidgets.QCommonStyle` (not :sip:ref:`~PyQt6.QtWidgets.QStyle`). This is because Qt requires its styles to be :sip:ref:`~PyQt6.QtWidgets.QCommonStyle`\ s.
-
-Depending on which parts of the base style you want to change, you must reimplement the functions that are used to draw those parts of the interface. To illustrate this, we will modify the look of the spin box arrows drawn by QWindowsStyle. The arrows are *primitive elements* that are drawn by the :sip:ref:`~PyQt6.QtWidgets.QStyle.drawPrimitive` function, so we need to reimplement that function. We need the following class declaration:
+Depending on which parts of the base style you want to change, you must reimplement the functions that are used to draw those parts of the interface. To illustrate this, we will modify the look of the spin box arrows drawn by the platform style. The arrows are *primitive elements* that are drawn by the :sip:ref:`~PyQt6.QtWidgets.QStyle.drawPrimitive` function, so we need to reimplement that function. We need the following class declaration:
 
 .. literalinclude:: ../../../snippets/qtbase-src-widgets-doc-snippets-customstyle-customstyle.py
     :lines: 59-69
@@ -89,7 +108,7 @@ To draw its up and down arrows, :sip:ref:`~PyQt6.QtWidgets.QSpinBox` uses the :s
 
 .. literalinclude:: ../../../snippets/qtbase-src-widgets-doc-snippets-customstyle-customstyle.py
 
-Notice that we don't use the ``widget`` argument, except to pass it on to the QWindowStyle::drawPrimitive() function. As mentioned earlier, the information about what is to be drawn and how it should be drawn is specified by a :sip:ref:`~PyQt6.QtWidgets.QStyleOption` object, so there is no need to ask the widget.
+Notice that we don't use the ``widget`` argument, except to pass it on to the :sip:ref:`~PyQt6.QtWidgets.QProxyStyle.drawPrimitive` function. As mentioned earlier, the information about what is to be drawn and how it should be drawn is specified by a :sip:ref:`~PyQt6.QtWidgets.QStyleOption` object, so there is no need to ask the widget.
 
 If you need to use the ``widget`` argument to obtain additional information, be careful to ensure that it isn't 0 and that it is of the correct type before using it. For example:
 
@@ -97,8 +116,6 @@ If you need to use the ``widget`` argument to obtain additional information, be 
     :lines: 59-69
 
 When implementing a custom style, you cannot assume that the widget is a :sip:ref:`~PyQt6.QtWidgets.QSpinBox` just because the enum value is called :sip:ref:`~PyQt6.QtWidgets.QStyle.PrimitiveElement.PE_IndicatorSpinUp` or :sip:ref:`~PyQt6.QtWidgets.QStyle.PrimitiveElement.PE_IndicatorSpinDown`.
-
-**Warning:** Qt style sheets are currently not supported for custom :sip:ref:`~PyQt6.QtWidgets.QStyle` subclasses. We plan to address this in some future release.
 
 .. _qstyle-using-a-custom-style:
 
@@ -161,4 +178,4 @@ To add support for drawing of new datatypes and item data roles, it is necessary
 
 The drawing of item view headers is also done by the style, giving control over size of header items and row and column sizes.
 
-.. seealso:: :sip:ref:`~PyQt6.QtWidgets.QStyleOption`, :sip:ref:`~PyQt6.QtWidgets.QStylePainter`, `Styles and Style Aware Widgets <https://doc.qt.io/qt-6/style-reference.html>`_, :sip:ref:`~PyQt6.QtWidgets.QStyledItemDelegate`, `Styling <https://doc.qt.io/qt-6/qwidget-styling.html>`_.
+.. seealso:: :sip:ref:`~PyQt6.QtWidgets.QStyleOption`, :sip:ref:`~PyQt6.QtWidgets.QStylePainter`, `Styles and Style Aware Widgets <https://doc.qt.io/qt-6/style-reference.html>`_, `Styling Approaches for Qt Widgets <https://doc.qt.io/qt-6/qtwidgets-styling-approaches.html>`_, :sip:ref:`~PyQt6.QtWidgets.QStyledItemDelegate`, `Styling <https://doc.qt.io/qt-6/qwidget-styling.html>`_.

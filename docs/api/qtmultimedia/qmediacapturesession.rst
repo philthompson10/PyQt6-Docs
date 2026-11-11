@@ -34,6 +34,11 @@
             :sip:ref:`~PyQt6.QtMultimedia.QImageCapture`
         :description: QtMultimedia/QMediaCaptureSession-imageCapture-f.rst
 
+    .. sip:method:: PyQt6.QtMultimedia.QMediaCaptureSession.nativeVideoSource
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.QObject`
+        :description: QtMultimedia/QMediaCaptureSession-nativeVideoSource-f.rst
+
     .. sip:method:: PyQt6.QtMultimedia.QMediaCaptureSession.recorder
         :returns:
             :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder`
@@ -68,6 +73,11 @@
         :args:
             :sip:ref:`~PyQt6.QtMultimedia.QImageCapture`
         :description: QtMultimedia/QMediaCaptureSession-setImageCapture-f.rst
+
+    .. sip:method:: PyQt6.QtMultimedia.QMediaCaptureSession.setNativeVideoSource
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QObject`
+        :description: QtMultimedia/QMediaCaptureSession-setNativeVideoSource-f.rst
 
     .. sip:method:: PyQt6.QtMultimedia.QMediaCaptureSession.setRecorder
         :args:
@@ -133,6 +143,9 @@
 
     .. sip:signal:: PyQt6.QtMultimedia.QMediaCaptureSession.imageCaptureChanged
         :description: QtMultimedia/QMediaCaptureSession-imageCaptureChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtMultimedia.QMediaCaptureSession.nativeVideoSourceChanged
+        :description: QtMultimedia/QMediaCaptureSession-nativeVideoSourceChanged-s.rst
 
     .. sip:signal:: PyQt6.QtMultimedia.QMediaCaptureSession.recorderChanged
         :description: QtMultimedia/QMediaCaptureSession-recorderChanged-s.rst

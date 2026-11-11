@@ -47,6 +47,11 @@
             bool
         :description: QtMultimedia/QScreenCapture-isActive-f.rst
 
+    .. sip:method:: PyQt6.QtMultimedia.QScreenCapture.maximumFrameRate
+        :returns:
+            float|None
+        :description: QtMultimedia/QScreenCapture-maximumFrameRate-f.rst
+
     .. sip:method:: PyQt6.QtMultimedia.QScreenCapture.screen
         :returns:
             :sip:ref:`~PyQt6.QtGui.QScreen`
@@ -56,6 +61,11 @@
         :args:
             bool
         :description: QtMultimedia/QScreenCapture-setActive-f.rst
+
+    .. sip:method:: PyQt6.QtMultimedia.QScreenCapture.setMaximumFrameRate
+        :args:
+            float|None
+        :description: QtMultimedia/QScreenCapture-setMaximumFrameRate-f.rst
 
     .. sip:method:: PyQt6.QtMultimedia.QScreenCapture.setScreen
         :args:
@@ -81,6 +91,9 @@
             :sip:ref:`~PyQt6.QtMultimedia.QScreenCapture.Error`
             str|None
         :description: QtMultimedia/QScreenCapture-errorOccurred-s.rst
+
+    .. sip:signal:: PyQt6.QtMultimedia.QScreenCapture.maximumFrameRateChanged
+        :description: QtMultimedia/QScreenCapture-maximumFrameRateChanged-s.rst
 
     .. sip:signal:: PyQt6.QtMultimedia.QScreenCapture.screenChanged
         :args:

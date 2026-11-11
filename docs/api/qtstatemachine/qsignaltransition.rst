@@ -11,9 +11,9 @@
 
     .. sip:method:: PyQt6.QtStateMachine.QSignalTransition.__init__
         :args:
-            pyqtBoundSignal
+            QtCore.pyqtBoundSignal
             sourceState: :sip:ref:`~PyQt6.QtStateMachine.QState` = None
-        :description: QtStateMachine/QSignalTransition-__init__-f-1.rst
+        :description: QtStateMachine/QSignalTransition-__init__-f-2.rst
 
     .. sip:method:: PyQt6.QtStateMachine.QSignalTransition.event
         :args:

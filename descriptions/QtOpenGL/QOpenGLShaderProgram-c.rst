@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Allows OpenGL shader programs to be linked and used
-    :digest: b28489d18d79f14fb2959d4e43f1e472
+    :digest: 1e83b73542f5a72987f897d459525d9d
 
 The :sip:ref:`~PyQt6.QtOpenGL.QOpenGLShaderProgram` class allows OpenGL shader programs to be linked and used.
 
@@ -63,7 +63,7 @@ Binary programs may be specified using ``glProgramBinaryOES()`` on the return va
 Caching Program Binaries
 ........................
 
-As of Qt 5.9, support for caching program binaries on disk is built in. To enable this, switch to using :sip:ref:`~PyQt6.QtOpenGL.QOpenGLShaderProgram.addCacheableShaderFromSourceCode` and :sip:ref:`~PyQt6.QtOpenGL.QOpenGLShaderProgram.addCacheableShaderFromSourceFile`. With an OpenGL ES 3.x context or support for ``GL_ARB_get_program_binary``, this will transparently cache program binaries under :sip:ref:`~PyQt6.QtCore.QStandardPaths.StandardLocation.GenericCacheLocation` or :sip:ref:`~PyQt6.QtCore.QStandardPaths.StandardLocation.CacheLocation`. When support is not available, calling the cacheable function variants is equivalent to the normal ones.
+As of Qt 5.9, support for caching program binaries on disk is built in. To enable this, switch to using :sip:ref:`~PyQt6.QtOpenGL.QOpenGLShaderProgram.addCacheableShaderFromSourceCode` and :sip:ref:`~PyQt6.QtOpenGL.QOpenGLShaderProgram.addCacheableShaderFromSourceFile`. With an OpenGL ES 3.x context or support for ``GL_ARB_get_program_binary``, this will transparently cache program binaries under :sip:ref:`~PyQt6.QtCore.QStandardPaths.StandardLocation.CacheLocation`. When support is not available, calling the cacheable function variants is equivalent to the normal ones.
 
 **Note:** Some drivers do not have any binary formats available, even though they advertise the extension or offer OpenGL ES 3.0. In this case program binary support will be disabled.
 

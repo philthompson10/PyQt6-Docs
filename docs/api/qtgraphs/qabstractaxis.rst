@@ -13,6 +13,9 @@
         .. sip:enum-member:: PyQt6.QtGraphs.QAbstractAxis.AxisType.DateTime
             :description: QtGraphs/QAbstractAxis-AxisType-DateTime-v.rst
 
+        .. sip:enum-member:: PyQt6.QtGraphs.QAbstractAxis.AxisType.LogValue
+            :description: QtGraphs/QAbstractAxis-AxisType-LogValue-v.rst
+
         .. sip:enum-member:: PyQt6.QtGraphs.QAbstractAxis.AxisType.Value
             :description: QtGraphs/QAbstractAxis-AxisType-Value-v.rst
 

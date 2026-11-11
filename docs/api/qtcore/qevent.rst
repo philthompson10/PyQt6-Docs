@@ -105,9 +105,6 @@
         .. sip:enum-member:: PyQt6.QtCore.QEvent.Type.Enter
             :description: QtCore/QEvent-Type-Enter-v.rst
 
-        .. sip:enum-member:: PyQt6.QtCore.QEvent.Type.EnterEditFocus
-            :description: QtCore/QEvent-Type-EnterEditFocus-v.rst
-
         .. sip:enum-member:: PyQt6.QtCore.QEvent.Type.EnterWhatsThisMode
             :description: QtCore/QEvent-Type-EnterWhatsThisMode-v.rst
 
@@ -239,9 +236,6 @@
 
         .. sip:enum-member:: PyQt6.QtCore.QEvent.Type.Leave
             :description: QtCore/QEvent-Type-Leave-v.rst
-
-        .. sip:enum-member:: PyQt6.QtCore.QEvent.Type.LeaveEditFocus
-            :description: QtCore/QEvent-Type-LeaveEditFocus-v.rst
 
         .. sip:enum-member:: PyQt6.QtCore.QEvent.Type.LeaveWhatsThisMode
             :description: QtCore/QEvent-Type-LeaveWhatsThisMode-v.rst

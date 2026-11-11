@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Encapsulates an OpenGL texture object
-    :digest: e41548199b8c0c5c955843ff5323aae7
+    :digest: 5ec0c0571871db2104cb84cb1f06b74c
 
 The :sip:ref:`~PyQt6.QtOpenGL.QOpenGLTexture` class encapsulates an OpenGL texture object.
 
@@ -35,3 +35,5 @@ In the common case of simply using a :sip:ref:`~PyQt6.QtGui.QImage` as the sourc
     glDrawArrays(...);
 
 Note that the :sip:ref:`~PyQt6.QtGui.QImage` is flipped vertically to account for the fact that OpenGL and :sip:ref:`~PyQt6.QtGui.QImage` use opposite directions for the y axis. Another option would be to transform your texture coordinates.
+
+**Warning:** All data consumed by :sip:ref:`~PyQt6.QtOpenGL.QOpenGLTexture` is expected to be trusted content. Pixel and image data is passed on to the underlying OpenGL implementation. Application developers are advised to carefully consider the potential implications before passing in user-provided content to functions such as :sip:ref:`~PyQt6.QtOpenGL.QOpenGLTexture.setData`.

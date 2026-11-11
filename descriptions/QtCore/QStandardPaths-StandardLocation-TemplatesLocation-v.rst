@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 20
-    :digest: a43ffbb15c8eba789d4d4c27c255567b
+    :digest: 6c6ef80637e4c24ccd49e50dec3558ee
 
-Returns a directory location where user-specific template files can be stored. This is a generic value. Note that the returned path may be empty if the system has no concept of a templates location. This enum value was added in Qt 6.4.
+Directory where template files can be stored. Note that the returned path may be empty if the system has no concept of a templates location. Generic. This enum value was added in Qt 6.4.

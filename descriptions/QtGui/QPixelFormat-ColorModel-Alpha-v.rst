@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 8
-    :digest: 03a3b7cf997e98d8807171a89d30f3fb
+    :digest: 34d6608ebe3dfb34e9976f99115eb6dd
 
-[since 5.5] There is no color model, only alpha is used.
+There is no color model, only alpha is used.

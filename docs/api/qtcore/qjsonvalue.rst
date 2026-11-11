@@ -34,15 +34,15 @@
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.__init__
         :args:
-            :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|int|float|None|str|None
-        :description: QtCore/QJsonValue-__init__-f-2.rst
+            :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|float|str|None
+        :description: QtCore/QJsonValue-__init__-f-3.rst
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.__eq__
         :args:
-            :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|int|float|None|str|None
+            :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|float|str|None
         :returns:
             bool
-        :description: QtCore/QJsonValue-__eq__-f-1.rst
+        :description: QtCore/QJsonValue-__eq__-f-2.rst
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.fromJson
         :args:
@@ -117,10 +117,10 @@
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.__ne__
         :args:
-            :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|int|float|None|str|None
+            :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|float|str|None
         :returns:
             bool
-        :description: QtCore/QJsonValue-__ne__-f-1.rst
+        :description: QtCore/QJsonValue-__ne__-f-2.rst
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.swap
         :args:
@@ -134,10 +134,10 @@
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.toArray
         :args:
-            Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|int|float|None|str|None]
+            Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|float|str|None]
         :returns:
             list[:sip:ref:`~PyQt6.QtCore.QJsonValue`]
-        :description: QtCore/QJsonValue-toArray-f.rst
+        :description: QtCore/QJsonValue-toArray-f-2.rst
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.toBool
         :args:
@@ -181,10 +181,10 @@
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.toObject
         :args:
-            dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|int|float|None|str|None]
+            dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`|:sip:ref:`~PyQt6.QtCore.QJsonValue.Type`|Iterable[:sip:ref:`~PyQt6.QtCore.QJsonValue`]|dict[str|None, :sip:ref:`~PyQt6.QtCore.QJsonValue`]|bool|float|str|None]
         :returns:
             dict[str, :sip:ref:`~PyQt6.QtCore.QJsonValue`]
-        :description: QtCore/QJsonValue-toObject-f-2.rst
+        :description: QtCore/QJsonValue-toObject-f-3.rst
 
     .. sip:method:: PyQt6.QtCore.QJsonValue.toString
         :returns:

@@ -14,14 +14,24 @@
             :sip:ref:`~PyQt6.QtCore.Qt.ContrastPreference`
         :description: QtGui/QAccessibilityHints-contrastPreference-f.rst
 
-    .. sip:method:: PyQt6.QtGui.QAccessibilityHints.contrastPreferenceChanged
-        :args:
-            :sip:ref:`~PyQt6.QtCore.Qt.ContrastPreference`
-        :description: QtGui/QAccessibilityHints-contrastPreferenceChanged-f.rst
-
     .. sip:method:: PyQt6.QtGui.QAccessibilityHints.event
         :args:
             :sip:ref:`~PyQt6.QtCore.QEvent`
         :returns:
             bool
         :description: QtGui/QAccessibilityHints-event-f.rst
+
+    .. sip:method:: PyQt6.QtGui.QAccessibilityHints.motionPreference
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.Qt.MotionPreference`
+        :description: QtGui/QAccessibilityHints-motionPreference-f.rst
+
+    .. sip:signal:: PyQt6.QtGui.QAccessibilityHints.contrastPreferenceChanged
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.ContrastPreference`
+        :description: QtGui/QAccessibilityHints-contrastPreferenceChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGui.QAccessibilityHints.motionPreferenceChanged
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.MotionPreference`
+        :description: QtGui/QAccessibilityHints-motionPreferenceChanged-s.rst

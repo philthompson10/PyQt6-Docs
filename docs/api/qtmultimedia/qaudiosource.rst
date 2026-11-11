@@ -52,6 +52,11 @@
             int
         :description: QtMultimedia/QAudioSource-framesAvailable-f.rst
 
+    .. sip:method:: PyQt6.QtMultimedia.QAudioSource.nativePeriodFrameCount
+        :returns:
+            int
+        :description: QtMultimedia/QAudioSource-nativePeriodFrameCount-f.rst
+
     .. sip:method:: PyQt6.QtMultimedia.QAudioSource.processedUSecs
         :returns:
             int
@@ -72,6 +77,11 @@
         :args:
             int
         :description: QtMultimedia/QAudioSource-setBufferSize-f.rst
+
+    .. sip:method:: PyQt6.QtMultimedia.QAudioSource.setNativePeriodFrameCount
+        :args:
+            int
+        :description: QtMultimedia/QAudioSource-setNativePeriodFrameCount-f.rst
 
     .. sip:method:: PyQt6.QtMultimedia.QAudioSource.setVolume
         :args:

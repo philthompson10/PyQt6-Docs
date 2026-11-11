@@ -36,6 +36,10 @@
             list[:sip:ref:`~PyQt6.QtNetwork.QHostAddress`]
         :description: QtNetwork/QHostInfo-addresses-f-1.rst
 
+    .. sip:method:: PyQt6.QtNetwork.QHostInfo.clearCache
+        :static:
+        :description: QtNetwork/QHostInfo-clearCache-f.rst
+
     .. sip:method:: PyQt6.QtNetwork.QHostInfo.error
         :returns:
             :sip:ref:`~PyQt6.QtNetwork.QHostInfo.HostInfoError`

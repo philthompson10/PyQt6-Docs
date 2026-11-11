@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Convenient interface for working with URLs
-    :digest: ca78e9fd8d9b0ba93f4964a38dee02a5
+    :digest: 203bf5a53f257d39d95c8560c7078fe3
 
 The :sip:ref:`~PyQt6.QtCore.QUrl` class provides a convenient interface for working with URLs.
 
@@ -69,3 +69,16 @@ Character Conversions
 Follow these rules to avoid erroneous character conversion when dealing with URLs and strings:
 
 * When creating a QString to contain a URL from a :sip:ref:`~PyQt6.QtCore.QByteArray` or a char\*, always use QString::fromUtf8().
+
+.. _qurl-security-considerations:
+
+Security Considerations
+-----------------------
+
+Treat URLs from an untrusted source (the network, a file or document, another application, or the user) as hostile input.
+
+* Validate the parsed URL, never the raw string. Run any allow/deny list, origin, or redirect check on the components :sip:ref:`~PyQt6.QtCore.QUrl` extracted - for a host check use ``url.host(QUrl::FullyEncoded)`` - not on the original text. :sip:ref:`~PyQt6.QtCore.QUrl` normalizes forms a string check misses: ``http://0x7f.0.0.1`` and ``http://2130706433`` both yield host ``127.0.0.1``, and ``http://good.com\\@evil.com/`` yields host ``evil.com``. Use ``FullyEncoded`` rather than the default decoded form so internationalized (IDN) hosts are compared in their ASCII form and cannot be spoofed with look-alike Unicode characters.
+
+* Use the same parsed URL for the check and for the request. Passing the original string to a different parser afterwards reintroduces the mismatch the check closed.
+
+* Take extra care when using :sip:ref:`~PyQt6.QtCore.QUrl.ComponentFormattingOption.FullyDecoded` for obtaining components. The result may be lossy, or even have a different meaning, depending on the obtained component. It can also contain control characters, including ``NUL``. See :sip:ref:`~PyQt6.QtCore.QUrl.ComponentFormattingOption.ComponentFormattingOption#Full decoding` for more details.

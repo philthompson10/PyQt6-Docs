@@ -2,9 +2,9 @@
     :status: todo
     :pysig: 7d56101db767f1cae6abcbcf151303ae
     :realsig: (const QString&)
-    :digest: 2cbf98b4b716dc787441d92ab459dce0
+    :digest: e2aea81d1433114976e61eaf91c8b477
 
-Sets the path used to store persistent data for the browser and web content to *path*. Persistent data includes persistent cookies, HTML5 local storage, and visited links.
+Sets the path used to store persistent data for the application to *path*. Persistent data includes persistent cookies, HTML5 local storage, and visited links.
 
 By default, this is below QStandardPaths::DataLocation in a QtWebengine/StorageName specific subdirectory.
 

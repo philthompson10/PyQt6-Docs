@@ -31,7 +31,7 @@ import shutil
 import sys
 
 # These are undocumented internals until SIP implements a proper documentation
-# system.
+# system.  SIP v6.15 is required.
 from sipbuild.generator import parse, resolve
 from sipbuild.generator.outputs.xml import output_xml
 

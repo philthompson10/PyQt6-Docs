@@ -39,6 +39,24 @@
         :static:
         :description: QtCore/QFile-copy-f-1.rst
 
+    .. sip:method:: PyQt6.QtCore.QFile.copy
+        :args:
+            str|None
+            :sip:ref:`~PyQt6.QtCore.QFileDevice.Permission`
+        :returns:
+            bool
+        :description: QtCore/QFile-copy-f-4.rst
+
+    .. sip:method:: PyQt6.QtCore.QFile.copy
+        :args:
+            str|None
+            str|None
+            :sip:ref:`~PyQt6.QtCore.QFileDevice.Permission`
+        :returns:
+            bool
+        :static:
+        :description: QtCore/QFile-copy-f-5.rst
+
     .. sip:method:: PyQt6.QtCore.QFile.decodeName
         :args:
             :sip:ref:`~PyQt6.QtCore.QByteArray`|bytes|bytearray|memoryview

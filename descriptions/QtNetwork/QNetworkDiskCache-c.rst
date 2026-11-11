@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Very basic disk cache
-    :digest: 3c6494d74f481c9853c27ed3c133e163
+    :digest: 38f00fba2427241eae87a012dad9bd03
 
 The :sip:ref:`~PyQt6.QtNetwork.QNetworkDiskCache` class provides a very basic disk cache.
 
@@ -27,3 +27,20 @@ To check whether the response came from the cache or from the network, the follo
 
 .. literalinclude:: ../../../snippets/qtbase-src-network-doc-snippets-code-src_network_access_qnetworkdiskcache.py
     :lines: 72-75
+
+.. _qnetworkdiskcache-security-considerations:
+
+Security Considerations
+-----------------------
+
+:sip:ref:`~PyQt6.QtNetwork.QNetworkDiskCache` stores HTTP response bodies and metadata, including response headers, to disk without encryption. The compression applied to text content is for storage efficiency only and does not provide confidentiality protection.
+
+Which responses are cached is primarily determined by the HTTP cache control headers sent by the server. Well-configured servers typically prevent caching of responses containing sensitive data from authenticated sessions. However, the application cannot rely on every server doing so correctly, and what the server considers non-sensitive may not match the application's own requirements.
+
+For cases where the server's caching policy is not sufficient:
+
+* Set :sip:ref:`~PyQt6.QtNetwork.QNetworkRequest.Attribute.CacheSaveControlAttribute` to ``false`` on requests whose responses should not be stored.
+
+* Subclass :sip:ref:`~PyQt6.QtNetwork.QAbstractNetworkCache` to implement application-specific filtering of which responses are cached.
+
+Cache entries carry basic structural validation but may become invalid due to disk corruption, unclean application shutdown, or other causes. Applications should not treat cached data as trustworthy without independent validation.

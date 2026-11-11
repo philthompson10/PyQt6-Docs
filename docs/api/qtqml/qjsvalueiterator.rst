@@ -5,8 +5,8 @@
 
     .. sip:method:: PyQt6.QtQml.QJSValueIterator.__init__
         :args:
-            :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|int|float|str|None
-        :description: QtQml/QJSValueIterator-__init__-f.rst
+            :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|float|str|None
+        :description: QtQml/QJSValueIterator-__init__-f-2.rst
 
     .. sip:method:: PyQt6.QtQml.QJSValueIterator.hasNext
         :returns:

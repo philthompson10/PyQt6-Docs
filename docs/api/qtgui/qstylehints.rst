@@ -99,6 +99,11 @@
             bool
         :description: QtGui/QStyleHints-setShowShortcutsInContextMenus-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QStyleHints.setToolTipWakeUpDelay
+        :args:
+            int
+        :description: QtGui/QStyleHints-setToolTipWakeUpDelay-f.rst
+
     .. sip:method:: PyQt6.QtGui.QStyleHints.setUseHoverEffects
         :args:
             bool
@@ -143,6 +148,11 @@
         :returns:
             :sip:ref:`~PyQt6.QtCore.Qt.TabFocusBehavior`
         :description: QtGui/QStyleHints-tabFocusBehavior-f.rst
+
+    .. sip:method:: PyQt6.QtGui.QStyleHints.toolTipWakeUpDelay
+        :returns:
+            int
+        :description: QtGui/QStyleHints-toolTipWakeUpDelay-f.rst
 
     .. sip:method:: PyQt6.QtGui.QStyleHints.touchDoubleTapDistance
         :returns:
@@ -221,6 +231,11 @@
         :args:
             :sip:ref:`~PyQt6.QtCore.Qt.TabFocusBehavior`
         :description: QtGui/QStyleHints-tabFocusBehaviorChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGui.QStyleHints.toolTipWakeUpDelayChanged
+        :args:
+            int
+        :description: QtGui/QStyleHints-toolTipWakeUpDelayChanged-s.rst
 
     .. sip:signal:: PyQt6.QtGui.QStyleHints.useHoverEffectsChanged
         :args:

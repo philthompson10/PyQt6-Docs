@@ -12,6 +12,9 @@
         .. sip:enum-member:: PyQt6.QtCore.QCalendarPermission.AccessMode.ReadWrite
             :description: QtCore/QCalendarPermission-AccessMode-ReadWrite-v.rst
 
+        .. sip:enum-member:: PyQt6.QtCore.QCalendarPermission.AccessMode.WriteOnly
+            :description: QtCore/QCalendarPermission-AccessMode-WriteOnly-v.rst
+
     .. sip:method:: PyQt6.QtCore.QCalendarPermission.__init__
         :description: QtCore/QCalendarPermission-__init__-f.rst
 

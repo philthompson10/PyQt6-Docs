@@ -1,13 +1,13 @@
 .. sip:class-description::
     :status: todo
     :brief: The base class for textures used in the scene graph
-    :digest: da458ee05440fba4ffb45fa4d060fbfa
+    :digest: 1e868e2ff188d6a6dcbe570bad5f079a
 
 The :sip:ref:`~PyQt6.QtQuick.QSGTexture` class is the base class for textures used in the scene graph.
 
 Users can freely implement their own texture classes to support arbitrary input textures, such as YUV video frames or 8 bit alpha masks. The scene graph provides a default implementation for RGBA textures.The default implementation is not instantiated directly, rather they are constructed via factory functions, such as :sip:ref:`~PyQt6.QtQuick.QQuickWindow.createTextureFromImage`.
 
-With the default implementation, each :sip:ref:`~PyQt6.QtQuick.QSGTexture` is backed by a QRhiTexture, which in turn contains a native texture object, such as an OpenGL texture or a Vulkan image.
+With the default implementation, each :sip:ref:`~PyQt6.QtQuick.QSGTexture` is backed by a :sip:ref:`~PyQt6.QtGui.QRhiTexture`, which in turn contains a native texture object, such as an OpenGL texture or a Vulkan image.
 
 The size in pixels is given by :sip:ref:`~PyQt6.QtQuick.QSGTexture.textureSize`. :sip:ref:`~PyQt6.QtQuick.QSGTexture.hasAlphaChannel` reports if the texture contains opacity values and :sip:ref:`~PyQt6.QtQuick.QSGTexture.hasMipmaps` reports if the texture contains mipmap levels.
 

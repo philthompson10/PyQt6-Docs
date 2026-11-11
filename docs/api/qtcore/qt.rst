@@ -891,6 +891,9 @@
         .. sip:enum-member:: PyQt6.QtCore.Qt.InputMethodHint.ImhDate
             :description: QtCore/Qt-InputMethodHint-ImhDate-v.rst
 
+        .. sip:enum-member:: PyQt6.QtCore.Qt.InputMethodHint.ImhDecimalNumbersOnly
+            :description: QtCore/Qt-InputMethodHint-ImhDecimalNumbersOnly-v.rst
+
         .. sip:enum-member:: PyQt6.QtCore.Qt.InputMethodHint.ImhDialableCharactersOnly
             :description: QtCore/Qt-InputMethodHint-ImhDialableCharactersOnly-v.rst
 
@@ -923,6 +926,9 @@
 
         .. sip:enum-member:: PyQt6.QtCore.Qt.InputMethodHint.ImhNoEditMenu
             :description: QtCore/Qt-InputMethodHint-ImhNoEditMenu-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.Qt.InputMethodHint.ImhNoFullscreen
+            :description: QtCore/Qt-InputMethodHint-ImhNoFullscreen-v.rst
 
         .. sip:enum-member:: PyQt6.QtCore.Qt.InputMethodHint.ImhNone
             :description: QtCore/Qt-InputMethodHint-ImhNone-v.rst
@@ -2645,6 +2651,15 @@
 
         .. sip:enum-member:: PyQt6.QtCore.Qt.Modifier.SHIFT
             :description: QtCore/Qt-Modifier-SHIFT-v.rst
+
+    .. sip:enum:: PyQt6.QtCore.Qt.MotionPreference
+        :description: QtCore/Qt-MotionPreference-e.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.Qt.MotionPreference.NoPreference
+            :description: QtCore/Qt-MotionPreference-NoPreference-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.Qt.MotionPreference.ReducedMotion
+            :description: QtCore/Qt-MotionPreference-ReducedMotion-v.rst
 
     .. sip:enum:: PyQt6.QtCore.Qt.MouseButton
         :description: QtCore/Qt-MouseButton-e.rst

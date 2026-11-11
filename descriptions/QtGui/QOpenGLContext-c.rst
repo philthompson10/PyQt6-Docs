@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Represents a native OpenGL context, enabling OpenGL rendering on a QSurface
-    :digest: 0fd968e4008976cbc88bba9ad2b9200b
+    :digest: 1c9718419527d63e4e884b50f68fdcfe
 
 The :sip:ref:`~PyQt6.QtGui.QOpenGLContext` class represents a native OpenGL context, enabling OpenGL rendering on a :sip:ref:`~PyQt6.QtGui.QSurface`.
 
@@ -43,5 +43,20 @@ On certain platforms, a framebuffer other than 0 might be the default frame buff
 We recommend that only one :sip:ref:`~PyQt6.QtGui.QOpenGLContext` is made current with a :sip:ref:`~PyQt6.QtGui.QSurface`, for the entire lifetime of the :sip:ref:`~PyQt6.QtGui.QSurface`. Should more than once context be used, it is important to understand that multiple :sip:ref:`~PyQt6.QtGui.QOpenGLContext` instances may be backed by the same native context underneath with the WebAssembly platform. Therefore, calling :sip:ref:`~PyQt6.QtGui.QOpenGLContext.makeCurrent` with the same :sip:ref:`~PyQt6.QtGui.QSurface` on two :sip:ref:`~PyQt6.QtGui.QOpenGLContext` objects may not switch to a different native context in the second call. As a result, any OpenGL state changes done after the second :sip:ref:`~PyQt6.QtGui.QOpenGLContext.makeCurrent` may alter the state of the first :sip:ref:`~PyQt6.QtGui.QOpenGLContext` as well, as they are all backed by the same native context.
 
 **Note:** This means that when targeting WebAssembly with existing OpenGL-based Qt code, some porting may be required to cater to these limitations.
+
+.. _qopenglcontext-security-considerations:
+
+Security Considerations
+-----------------------
+
+All data consumed by :sip:ref:`~PyQt6.QtGui.QOpenGLContext` and the classes building on it, such as QOpenGLFunctions, the :sip:ref:`~PyQt6.QtOpenGL` module classes, and :sip:ref:`~PyQt6.QtGui.QRhi` with its OpenGL backend, is expected to be trusted content. This includes shader source code, vertex and index data, textures and other pixel data, and all parameters passed to OpenGL functions. Qt does not validate or sanitize any of it.
+
+Note also that :sip:ref:`~PyQt6.QtGui.QOpenGLContext.getProcAddress` returns a raw function pointer resolved by name from the OpenGL implementation. Qt cannot check that the signature the caller casts it to matches the one the implementation provides; getting this wrong results in undefined behavior.
+
+The OpenGL implementation, meaning the driver and, on platforms that have one, the library that dispatches to it, is a trusted, in-process platform dependency. Qt loads it and calls into it directly, without any sandboxing or verification, in the same way as it treats the Vulkan implementation.
+
+Which library is loaded is decided by the platform's ordinary shared library search order and, on some platforms, by environment variables. That selection is part of the deployment's trusted configuration: a deployment that does not control it does not control which native code runs inside the process.
+
+**Warning:** Application developers are advised to carefully consider the potential implications before allowing the feeding of user-provided content that is not part of the application and is not under the developers' control.
 
 .. seealso:: QOpenGLFunctions, :sip:ref:`~PyQt6.QtOpenGL.QOpenGLBuffer`, :sip:ref:`~PyQt6.QtOpenGL.QOpenGLShaderProgram`, :sip:ref:`~PyQt6.QtOpenGL.QOpenGLFramebufferObject`.

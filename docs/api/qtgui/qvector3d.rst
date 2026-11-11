@@ -115,6 +115,11 @@
             float
         :description: QtGui/QVector3D-__getitem__-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QVector3D.__hash__
+        :returns:
+            int
+        :description: QtGui/QVector3D-__hash__-f.rst
+
     .. sip:method:: PyQt6.QtGui.QVector3D.__iadd__
         :args:
             :sip:ref:`~PyQt6.QtGui.QVector3D`

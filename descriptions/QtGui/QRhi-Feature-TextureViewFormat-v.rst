@@ -1,0 +1,6 @@
+.. sip:enum-member-description::
+    :status: todo
+    :value: 42
+    :digest: bd327c4fdcdc5229197fc099f74b8a9b
+
+Indicates that setting a view format on a :sip:ref:`~PyQt6.QtGui.QRhiTexture` is effective. When reported as supported, setting the read (sampling) or write (render target / image load-store) view mode changes the texture's viewing format. When unsupported, setting a view format has no effect. Note that Qt has no knowledge or control over format compatibility or resource view rules in the underlying 3D API and its implementation. Passing in unsuitable, incompatible formats may lead to errors and unspecified behavior. This is provided mainly to allow "casting" rendering into a texture created with an sRGB format to non-sRGB to avoid the unwanted linear->sRGB conversion on shader writes. Other types of casting may or may not be functional, depending on the underlying API. Currently implemented for Vulkan and Direct 3D 12. With D3D12 the feature is available only if ``CastingFullyTypedFormatSupported`` is supported, see `https://microsoft.github.io/DirectX-Specs/d3d/RelaxedCasting.html <https://microsoft.github.io/DirectX-Specs/d3d/RelaxedCasting.html>`_ (and note that :sip:ref:`~PyQt6.QtGui.QRhi` always uses fully typed formats for textures.) This enum value has been introduced in Qt 6.8.

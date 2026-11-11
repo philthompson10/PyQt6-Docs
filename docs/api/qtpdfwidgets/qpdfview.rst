@@ -136,6 +136,11 @@
             :sip:ref:`~PyQt6.QtPdfWidgets.QPdfView.ZoomMode`
         :description: QtPdfWidgets/QPdfView-setZoomMode-f.rst
 
+    .. sip:method:: PyQt6.QtPdfWidgets.QPdfView.wheelEvent
+        :args:
+            :sip:ref:`~PyQt6.QtGui.QWheelEvent`
+        :description: QtPdfWidgets/QPdfView-wheelEvent-f.rst
+
     .. sip:method:: PyQt6.QtPdfWidgets.QPdfView.zoomFactor
         :returns:
             float

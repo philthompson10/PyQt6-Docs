@@ -22,6 +22,9 @@
         .. sip:enum-member:: PyQt6.QtGui.QPointingDevice.PointerType.Generic
             :description: QtGui/QPointingDevice-PointerType-Generic-v.rst
 
+        .. sip:enum-member:: PyQt6.QtGui.QPointingDevice.PointerType.Palm
+            :description: QtGui/QPointingDevice-PointerType-Palm-v.rst
+
         .. sip:enum-member:: PyQt6.QtGui.QPointingDevice.PointerType.Pen
             :description: QtGui/QPointingDevice-PointerType-Pen-v.rst
 

@@ -2,9 +2,9 @@
     :status: todo
     :pysig: 0bf91c4c39bee100351ba767a48c9477
     :realsig: (QObject*,const char*,Qt::ConnectionType,QGenericReturnArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument)
-    :digest: 59f2a82cff6f4807aa0e21051b3f26b8
+    :digest: f1af6f0e25aaa384962915f56ef0c65a
 
-Please use the variadic overload of this function
+Please use the variadic overload of this function.
 
 Invokes the *member* (a signal or a slot name) on the object *obj*. Returns ``true`` if the member could be invoked. Returns ``false`` if there is no such member or the parameters did not match.
 

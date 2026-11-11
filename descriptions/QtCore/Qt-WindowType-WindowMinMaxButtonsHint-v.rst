@@ -1,6 +1,8 @@
 .. sip:enum-member-description::
     :status: todo
     :value: WindowMinimizeButtonHint | WindowMaximizeButtonHint
-    :digest: fd1981918a3bedc0d7d30f95467b4e91
+    :digest: 881890a5c908c2d3435779206e16279a
 
 Adds a minimize and a maximize button. On some platforms this implies Qt::WindowSystemMenuHint for it to work.
+
+**Note:** On many Wayland-based systems, button hints are not supported for server-side decorations.

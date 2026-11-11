@@ -1,7 +1,0 @@
-.. sip:method-description::
-    :status: todo
-    :pysig: 96e648b0c213feb955e3dc2c56751cf2
-    :realsig: (const QString&)
-    :digest: eabe2c6c51cbec49a63d8908c773d151
-
-Loads the contents of the specified SVG *file* and updates the widget.

@@ -15,10 +15,10 @@
 
     .. sip:method:: PyQt6.QtCore.QReadLocker.__exit__
         :args:
-            Any
-            Any
-            Any
-        :description: QtCore/QReadLocker-__exit__-f-1.rst
+            object
+            object
+            object
+        :description: QtCore/QReadLocker-__exit__-f.rst
 
     .. sip:method:: PyQt6.QtCore.QReadLocker.readWriteLock
         :returns:

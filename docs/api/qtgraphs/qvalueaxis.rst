@@ -19,6 +19,11 @@
             str
         :description: QtGraphs/QValueAxis-labelFormat-f.rst
 
+    .. sip:method:: PyQt6.QtGraphs.QValueAxis.labelPostFormat
+        :returns:
+            str
+        :description: QtGraphs/QValueAxis-labelPostFormat-f.rst
+
     .. sip:method:: PyQt6.QtGraphs.QValueAxis.max
         :returns:
             float
@@ -43,6 +48,11 @@
         :args:
             str|None
         :description: QtGraphs/QValueAxis-setLabelFormat-f-1.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QValueAxis.setLabelPostFormat
+        :args:
+            str|None
+        :description: QtGraphs/QValueAxis-setLabelPostFormat-f.rst
 
     .. sip:method:: PyQt6.QtGraphs.QValueAxis.setMax
         :args:
@@ -129,6 +139,11 @@
         :args:
             str|None
         :description: QtGraphs/QValueAxis-labelFormatChanged-s-1.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QValueAxis.labelPostFormatChanged
+        :args:
+            str|None
+        :description: QtGraphs/QValueAxis-labelPostFormatChanged-s.rst
 
     .. sip:signal:: PyQt6.QtGraphs.QValueAxis.maxChanged
         :args:

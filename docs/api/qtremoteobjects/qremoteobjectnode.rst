@@ -161,6 +161,16 @@
             int
         :description: QtRemoteObjects/QRemoteObjectNode-heartbeatIntervalChanged-s.rst
 
+    .. sip:signal:: PyQt6.QtRemoteObjects.QRemoteObjectNode.persistedStoreChanged
+        :args:
+            :sip:ref:`~PyQt6.QtRemoteObjects.QRemoteObjectAbstractPersistedStore`
+        :description: QtRemoteObjects/QRemoteObjectNode-persistedStoreChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtRemoteObjects.QRemoteObjectNode.registryUrlChanged
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QUrl`
+        :description: QtRemoteObjects/QRemoteObjectNode-registryUrlChanged-s.rst
+
     .. sip:signal:: PyQt6.QtRemoteObjects.QRemoteObjectNode.remoteObjectAdded
         :args:
             tuple[str|None, :sip:ref:`~PyQt6.QtRemoteObjects.QRemoteObjectSourceLocationInfo`]

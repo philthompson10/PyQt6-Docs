@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Allows capturing of audio and video content
-    :digest: e161aced917106f7b974bb852420a266
+    :digest: 2e83c0a8af5a282cc8b75d4d4b8b9fbd
 
 The :sip:ref:`~PyQt6.QtMultimedia.QMediaCaptureSession` class allows capturing of audio and video content.
 
@@ -13,4 +13,4 @@ You can connect a microphone to :sip:ref:`~PyQt6.QtMultimedia.QMediaCaptureSessi
 
 You can capture still images from a camera by setting a :sip:ref:`~PyQt6.QtMultimedia.QImageCapture` object on the capture session, and record audio/video using a :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder`.
 
-.. seealso:: :sip:ref:`~PyQt6.QtMultimedia.QCamera`, :sip:ref:`~PyQt6.QtMultimedia.QAudioDevice`, :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder`, :sip:ref:`~PyQt6.QtMultimedia.QImageCapture`, :sip:ref:`~PyQt6.QtMultimedia.QScreenCapture`, :sip:ref:`~PyQt6.QtMultimedia.QWindowCapture`, :sip:ref:`~PyQt6.QtMultimedia.QVideoFrameInput`, :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder`, :sip:ref:`~PyQt6.QtMultimediaWidgets.QGraphicsVideoItem`.
+.. seealso:: :sip:ref:`~PyQt6.QtMultimedia.QCamera`, :sip:ref:`~PyQt6.QtMultimedia.QAudioDevice`, :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder`, :sip:ref:`~PyQt6.QtMultimedia.QImageCapture`, :sip:ref:`~PyQt6.QtMultimedia.QScreenCapture`, :sip:ref:`~PyQt6.QtMultimedia.QWindowCapture`, :sip:ref:`~PyQt6.QtMultimedia.QVideoFrameInput`, QGStreamerVideoSource, :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder`, :sip:ref:`~PyQt6.QtMultimediaWidgets.QGraphicsVideoItem`.

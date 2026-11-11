@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 18
-    :digest: 91b020638186e490af7065804aa33a55
+    :digest: abc9ef2b5efbf3619dcb3c14ca753dab
 
-Returns a directory location where user-specific configuration files should be written. This is an application-specific directory, and the returned path is never empty. This enum value was added in Qt 5.5.
+Directory where configuration files should be written. The returned path is never empty. Application-specific. This enum value was added in Qt 5.5.

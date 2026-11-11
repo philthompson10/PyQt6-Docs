@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Header row or header column for item views
-    :digest: cfa8ce62628cd44567d946e37a0a0e94
+    :digest: 28679f201e5ccfb299e7939d8312432d
 
 The :sip:ref:`~PyQt6.QtWidgets.QHeaderView` class provides a header row or header column for item views.
 
@@ -52,4 +52,13 @@ Special consideration for huge models
 
 The headerview uses 8 to 16 bytes of memory per section. However, since Qt 6.9 this section memory is only used if one or more sections are resized or reordered. This means that it's possible for a model to have millions of sections without :sip:ref:`~PyQt6.QtWidgets.QHeaderView` consuming a proportional, and therefore huge, amount of memory, as long as there are *no* calls to :sip:ref:`~PyQt6.QtWidgets.QHeaderView.swapSections`, :sip:ref:`~PyQt6.QtWidgets.QHeaderView.resizeSection`, :sip:ref:`~PyQt6.QtWidgets.QHeaderView.hideSection`, :sip:ref:`~PyQt6.QtWidgets.QHeaderView.moveSection`, and :sip:ref:`~PyQt6.QtWidgets.QHeaderView.stretchLastSection` (enabling it). In order to avoid such calls by user actions the :sip:ref:`~PyQt6.QtWidgets.QHeaderView.sectionResizeMode` should be :sip:ref:`~PyQt6.QtWidgets.QHeaderView.ResizeMode` (without specifying it for any indexes, as that will do the opposite). The user should also be prevented from moving sections by keeping :sip:ref:`~PyQt6.QtWidgets.QHeaderView.sectionsMovable` disabled.
 
-.. seealso:: `Model/View Programming <https://doc.qt.io/qt-6/model-view-programming.html>`_, :sip:ref:`~PyQt6.QtWidgets.QListView`, :sip:ref:`~PyQt6.QtWidgets.QTableView`, :sip:ref:`~PyQt6.QtWidgets.QTreeView`.
+.. _qheaderview-security-considerations:
+
+Security Considerations
+-----------------------
+
+The :sip:ref:`~PyQt6.QtWidgets.QHeaderView.restoreState` function deserializes a versioned binary blob that describes column order, section sizes, the sort indicator, and related view state. The format's magic number, version, and reported total length are validated, but the deserialized visual and logical indices and the sort indicator's section are not checked against the header's actual section count before being used to index internal data structures.
+
+Only pass :sip:ref:`~PyQt6.QtWidgets.QHeaderView.restoreState` a :sip:ref:`~PyQt6.QtCore.QByteArray` that was previously produced by :sip:ref:`~PyQt6.QtWidgets.QHeaderView.saveState` and persisted by the same, or a compatible, version of your application, typically round-tripped through :sip:ref:`~PyQt6.QtCore.QSettings`. Do not call :sip:ref:`~PyQt6.QtWidgets.QHeaderView.restoreState` with data of unknown or untrusted origin, such as a file downloaded from the network, a synced or shared configuration file, or data supplied by another, potentially compromised, application.
+
+.. seealso:: `Model/View Programming <https://doc.qt.io/qt-6/model-view-programming.html>`_, :sip:ref:`~PyQt6.QtWidgets.QListView`, :sip:ref:`~PyQt6.QtWidgets.QTableView`, :sip:ref:`~PyQt6.QtWidgets.QTreeView`, :sip:ref:`~PyQt6.QtWidgets.QHeaderView.saveState`, :sip:ref:`~PyQt6.QtWidgets.QHeaderView.restoreState`.

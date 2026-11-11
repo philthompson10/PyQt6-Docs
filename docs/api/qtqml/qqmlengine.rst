@@ -155,6 +155,15 @@
         :static:
         :description: QtQml/QQmlEngine-setContextForObject-f.rst
 
+    .. sip:method:: PyQt6.QtQml.QQmlEngine.setExternalSingletonInstance
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QByteArray`|bytes|bytearray|memoryview|str|None
+            :sip:ref:`~PyQt6.QtCore.QByteArray`|bytes|bytearray|memoryview|str|None
+            :sip:ref:`~PyQt6.QtCore.QObject`
+        :returns:
+            bool
+        :description: QtQml/QQmlEngine-setExternalSingletonInstance-f.rst
+
     .. sip:method:: PyQt6.QtQml.QQmlEngine.setImportPathList
         :args:
             Iterable[str|None]

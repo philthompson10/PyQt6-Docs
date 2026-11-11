@@ -15,10 +15,10 @@
 
     .. sip:method:: PyQt6.QtOpenGL.QOpenGLVertexArrayObject.Binder.__exit__
         :args:
-            Any
-            Any
-            Any
-        :description: QtOpenGL/QOpenGLVertexArrayObject-Binder-__exit__-f-1.rst
+            object
+            object
+            object
+        :description: QtOpenGL/QOpenGLVertexArrayObject-Binder-__exit__-f.rst
 
     .. sip:method:: PyQt6.QtOpenGL.QOpenGLVertexArrayObject.Binder.rebind
         :description: QtOpenGL/QOpenGLVertexArrayObject-Binder-rebind-f.rst

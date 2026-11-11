@@ -74,8 +74,8 @@
     .. sip:method:: PyQt6.QtQml.QJSEngine.installExtensions
         :args:
             :sip:ref:`~PyQt6.QtQml.QJSEngine.Extension`
-            object: :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|int|float|str|None = QJSValue()
-        :description: QtQml/QJSEngine-installExtensions-f.rst
+            object: :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|float|str|None = QJSValue()
+        :description: QtQml/QJSEngine-installExtensions-f-1.rst
 
     .. sip:method:: PyQt6.QtQml.QJSEngine.isInterrupted
         :returns:
@@ -134,10 +134,10 @@
     .. sip:method:: PyQt6.QtQml.QJSEngine.registerModule
         :args:
             str|None
-            :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|int|float|str|None
+            :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|float|str|None
         :returns:
             bool
-        :description: QtQml/QJSEngine-registerModule-f.rst
+        :description: QtQml/QJSEngine-registerModule-f-2.rst
 
     .. sip:method:: PyQt6.QtQml.QJSEngine.setInterrupted
         :args:
@@ -163,8 +163,8 @@
 
     .. sip:method:: PyQt6.QtQml.QJSEngine.throwError
         :args:
-            :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|int|float|str|None
-        :description: QtQml/QJSEngine-throwError-f-1.rst
+            :sip:ref:`~PyQt6.QtQml.QJSValue`|:sip:ref:`~PyQt6.QtQml.QJSValue.SpecialValue`|bool|float|str|None
+        :description: QtQml/QJSEngine-throwError-f-6.rst
 
     .. sip:method:: PyQt6.QtQml.QJSEngine.throwError
         :args:

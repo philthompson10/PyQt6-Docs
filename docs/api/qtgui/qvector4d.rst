@@ -82,6 +82,11 @@
             float
         :description: QtGui/QVector4D-__getitem__-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QVector4D.__hash__
+        :returns:
+            int
+        :description: QtGui/QVector4D-__hash__-f.rst
+
     .. sip:method:: PyQt6.QtGui.QVector4D.__iadd__
         :args:
             :sip:ref:`~PyQt6.QtGui.QVector4D`

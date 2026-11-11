@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Persistent platform-independent application settings
-    :digest: 63a0edd23d524fa6bf12c64cebf099d7
+    :digest: c060ab067df39eebf1968588b8ee9b73
 
 The :sip:ref:`~PyQt6.QtCore.QSettings` class provides persistent platform-independent application settings.
 
@@ -356,5 +356,12 @@ While :sip:ref:`~PyQt6.QtCore.QSettings` attempts to smooth over the differences
       :lines: 97-101
 
 * On macOS, permissions to access settings not belonging to the current user (i.e. :sip:ref:`~PyQt6.QtCore.QSettings.Scope.SystemScope`) have changed with 10.7 (Lion). Prior to that version, users having admin rights could access these. For 10.7 and 10.8 (Mountain Lion), only root can. However, 10.9 (Mavericks) changes that rule again but only for the native format (plist files).
+
+.. _qsettings-security-considerations:
+
+Security Considerations
+-----------------------
+
+The class uses :sip:ref:`~PyQt6.QtCore.QDataStream` to deserialize data into :sip:ref:`~PyQt6.QtCore.QVariant`. Therefore, it has the same security consideration as QDataStream, and should be used for trusted input only.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCore.QVariant`, :sip:ref:`~PyQt6.QtGui.QSessionManager`.

@@ -30,11 +30,17 @@
         .. sip:enum-member:: PyQt6.QtPositioning.QGeoSatelliteInfo.SatelliteSystem.GPS
             :description: QtPositioning/QGeoSatelliteInfo-SatelliteSystem-GPS-v.rst
 
+        .. sip:enum-member:: PyQt6.QtPositioning.QGeoSatelliteInfo.SatelliteSystem.IRNSS
+            :description: QtPositioning/QGeoSatelliteInfo-SatelliteSystem-IRNSS-v.rst
+
         .. sip:enum-member:: PyQt6.QtPositioning.QGeoSatelliteInfo.SatelliteSystem.Multiple
             :description: QtPositioning/QGeoSatelliteInfo-SatelliteSystem-Multiple-v.rst
 
         .. sip:enum-member:: PyQt6.QtPositioning.QGeoSatelliteInfo.SatelliteSystem.QZSS
             :description: QtPositioning/QGeoSatelliteInfo-SatelliteSystem-QZSS-v.rst
+
+        .. sip:enum-member:: PyQt6.QtPositioning.QGeoSatelliteInfo.SatelliteSystem.SBAS
+            :description: QtPositioning/QGeoSatelliteInfo-SatelliteSystem-SBAS-v.rst
 
         .. sip:enum-member:: PyQt6.QtPositioning.QGeoSatelliteInfo.SatelliteSystem.Undefined
             :description: QtPositioning/QGeoSatelliteInfo-SatelliteSystem-Undefined-v.rst

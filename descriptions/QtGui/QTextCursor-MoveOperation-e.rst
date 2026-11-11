@@ -1,5 +1,5 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 6cfcff5f6f93d4ba85b61da425d39a80
+    :digest: 97b3102ac10801adc42a624104082ee0
 
 .. seealso:: :sip:ref:`~PyQt6.QtGui.QTextCursor.movePosition`.

@@ -236,6 +236,13 @@
             bool
         :description: QtWidgets/QTreeView-isSortingEnabled-f.rst
 
+    .. sip:method:: PyQt6.QtWidgets.QTreeView.itemDecorationRect
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QModelIndex`
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.QRect`
+        :description: QtWidgets/QTreeView-itemDecorationRect-f.rst
+
     .. sip:method:: PyQt6.QtWidgets.QTreeView.itemsExpandable
         :returns:
             bool

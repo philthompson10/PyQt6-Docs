@@ -2,10 +2,12 @@
     :status: todo
     :pysig: eea82972cfc19f9f41f0da4f56505671
     :realsig: (const QMetaObject::Connection&)
-    :digest: 75f60b405f436edfa395a078703a17bf
+    :digest: 7ef793355b10fbcf98d3a78174ccc9af
 
-Disconnect a connection.
+Disconnects *connection* and resets it to invalid.
 
-If the *connection* is invalid or has already been disconnected, do nothing and return false.
+If *connection* is invalid or has already been disconnected, do nothing and return false.
 
-.. seealso:: connect().
+**Note:** Future versions of Qt may only accept non-const objects here.
+
+.. seealso:: QT_NO_DISCONNECT_CONST_CONNECTION, connect().

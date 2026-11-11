@@ -2,7 +2,7 @@
     :status: todo
     :pysig: 3c9a938a1e983dbe538fd869f2db5e67
     :realsig: () const
-    :digest: 41261cd87482cf45ed649940711a5244
+    :digest: 1bd278dc239903952497e9ab95282cb7
 
 Converts this :sip:ref:`~PyQt6.QtCore.QProcessEnvironment` object into a list of strings, one for each environment variable that is set. The environment variable's name and its value are separated by an equal character ('=').
 

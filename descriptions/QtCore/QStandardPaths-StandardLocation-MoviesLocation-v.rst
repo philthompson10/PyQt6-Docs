@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 5
-    :digest: 9cf8a026e0214a7404f25d86f64796d4
+    :digest: 71c0bdec74a41a2ce69f9d6b8395e227
 
-Returns the directory containing the user's movies and videos. This is a generic value. If no directory specific for movie files exists, a sensible fallback for storing user documents is returned.
+Directory containing movies and videos. If no such directory exists, a sensible fallback for storing documents is returned. Generic.

@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Interface for reading from and writing to files
-    :digest: 45cadb8ef2d73ca2b018766550dec140
+    :digest: a234d1d8a390381159394e04e28a2876
 
 The :sip:ref:`~PyQt6.QtCore.QFile` class provides an interface for reading from and writing to files.
 
@@ -65,10 +65,6 @@ On Unix, there are some special system files (e.g. in ``/proc``) for which :sip:
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-file-file.py
     :lines: 118-127
 
-File permissions are handled differently on Unix-like systems and Windows. In a non :sip:ref:`~PyQt6.QtCore.QIODevice.isWritable` directory on Unix-like systems, files cannot be created. This is not always the case on Windows, where, for instance, the 'My Documents' directory usually is not writable, but it is still possible to create files in it.
-
-Qt's understanding of file permissions is limited, which affects especially the :sip:ref:`~PyQt6.QtCore.QFile.setPermissions` function. On Windows, Qt will set only the legacy read-only flag, and that only when none of the Write\* flags are passed. Qt does not manipulate access control lists (ACLs), which makes this function mostly useless for NTFS volumes. It may still be of use for USB sticks that use VFAT file systems. POSIX ACLs are not manipulated, either.
-
 On Android, some limitations apply when dealing with `content URIs <https://doc.qt.io/qt-6/https://developer.android.com/guide/topics/providers/content-provider-basics#ContentURIs>`_:
 
 * Access permissions might be needed by prompting the user through the :sip:ref:`~PyQt6.QtWidgets.QFileDialog` which implements `Android's native file picker <https://doc.qt.io/qt-6/https://developer.android.com/training/data-storage/shared/documents-files>`_.
@@ -76,5 +72,43 @@ On Android, some limitations apply when dealing with `content URIs <https://doc.
 * Aim to follow the `Scoped storage <https://doc.qt.io/qt-6/https://developer.android.com/training/data-storage#scoped-storage>`_ guidelines, such as using app specific directories instead of other public external directories. For more information, also see `storage best practices <https://doc.qt.io/qt-6/https://developer.android.com/training/data-storage/use-cases>`_.
 
 * Due to the design of Qt APIs (e.g. :sip:ref:`~PyQt6.QtCore.QFile`), it's not possible to fully integrate the latter APIs with Android's `MediaStore <https://doc.qt.io/qt-6/https://developer.android.com/reference/android/provider/MediaStore>`_ APIs.
+
+.. _qfile-security-considerations:
+
+Security Considerations
+-----------------------
+
+.. _qfile-windows-path-normalization:
+
+Windows path normalization
+..........................
+
+Qt APIs that handle file and directory paths perform the normalization and canonicalization differently from the native Windows APIs:
+
+* The trailing dots and/or whitespaces are not stripped.
+
+* The `8.3 short names <https://learn.microsoft.com/en-us/windows/win32/fileio/naming-a-file#short-vs-long-names>`_ are not expanded.
+
+* The ``\\?\`` and ``\\?\UNC\`` prefixes are always discarded.
+
+These differences open a possibility for bypassing security checks based on string comparison or pattern matching. For example, the code below will yield ``false`` for both comparisons, but passing this path into :sip:ref:`~PyQt6.QtCore.QFile` will successfully open ``myapp.exe`` in ``Program Files``.
+
+::
+
+    const QString path = u"C:\\PROGRA~1\\MyApp\\myapp.exe."_s; // note the trailing dot
+    QFileInfo fi(path);
+    qDebug() << fi.canonicalFilePath().contains("Program Files"_L1); // false
+    qDebug() << (fi.suffix() == "exe"_L1); // false
+    QFile f(path);
+    f.open(QIODevice::WriteOnly); // true
+
+.. _qfile-file-permissions:
+
+File permissions
+................
+
+File permissions are handled differently on Unix-like systems and Windows. In a non :sip:ref:`~PyQt6.QtCore.QIODevice.isWritable` directory on Unix-like systems, files cannot be created. This is not always the case on Windows, where, for instance, the 'My Documents' directory usually is not writable, but it is still possible to create files in it.
+
+Qt's understanding of file permissions is limited, which affects especially the :sip:ref:`~PyQt6.QtCore.QFile.setPermissions` function. On Windows, Qt will set only the legacy read-only flag, and that only when none of the Write\* flags are passed. Qt does not manipulate access control lists (ACLs), which makes this function mostly useless for NTFS volumes. It may still be of use for USB sticks that use VFAT file systems. POSIX ACLs are not manipulated, either.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCore.QTextStream`, :sip:ref:`~PyQt6.QtCore.QDataStream`, :sip:ref:`~PyQt6.QtCore.QFileInfo`, :sip:ref:`~PyQt6.QtCore.QDir`, `The Qt Resource System <https://doc.qt.io/qt-6/resources.html>`_.

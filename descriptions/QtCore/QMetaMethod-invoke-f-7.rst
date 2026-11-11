@@ -2,9 +2,9 @@
     :status: todo
     :pysig: 622dd1ac8dbcb07da45521c2b0868a39
     :realsig: (QObject*,Qt::ConnectionType,QGenericReturnArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument,QGenericArgument) const
-    :digest: 0958b5171244d2e2e53e6244c669d6ec
+    :digest: 1562a129593b5aa0c71f7ef881a4cf72
 
-Please use the variadic overload of this function
+Please use the variadic overload of this function.
 
 Invokes this method on the object *object*. Returns ``true`` if the member could be invoked. Returns ``false`` if there is no such member or the parameters did not match.
 

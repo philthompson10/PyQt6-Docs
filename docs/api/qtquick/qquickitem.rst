@@ -70,6 +70,21 @@
         .. sip:enum-member:: PyQt6.QtQuick.QQuickItem.ItemChange.ItemVisibleHasChanged
             :description: QtQuick/QQuickItem-ItemChange-ItemVisibleHasChanged-v.rst
 
+    .. sip:enum:: PyQt6.QtQuick.QQuickItem.MutabilityGroup
+        :description: QtQuick/QQuickItem-MutabilityGroup-e.rst
+
+        .. sip:enum-member:: PyQt6.QtQuick.QQuickItem.MutabilityGroup.AutoMutabilityGroup
+            :description: QtQuick/QQuickItem-MutabilityGroup-AutoMutabilityGroup-v.rst
+
+        .. sip:enum-member:: PyQt6.QtQuick.QQuickItem.MutabilityGroup.DynamicMutabilityGroup
+            :description: QtQuick/QQuickItem-MutabilityGroup-DynamicMutabilityGroup-v.rst
+
+        .. sip:enum-member:: PyQt6.QtQuick.QQuickItem.MutabilityGroup.ModerateMutabilityGroup
+            :description: QtQuick/QQuickItem-MutabilityGroup-ModerateMutabilityGroup-v.rst
+
+        .. sip:enum-member:: PyQt6.QtQuick.QQuickItem.MutabilityGroup.StaticMutabilityGroup
+            :description: QtQuick/QQuickItem-MutabilityGroup-StaticMutabilityGroup-v.rst
+
     .. sip:enum:: PyQt6.QtQuick.QQuickItem.TransformOrigin
         :description: QtQuick/QQuickItem-TransformOrigin-e.rst
 
@@ -488,6 +503,11 @@
     .. sip:method:: PyQt6.QtQuick.QQuickItem.mouseUngrabEvent
         :description: QtQuick/QQuickItem-mouseUngrabEvent-f.rst
 
+    .. sip:method:: PyQt6.QtQuick.QQuickItem.mutabilityGroup
+        :returns:
+            int
+        :description: QtQuick/QQuickItem-mutabilityGroup-f.rst
+
     .. sip:method:: PyQt6.QtQuick.QQuickItem.nextItemInFocusChain
         :args:
             forward: bool = True
@@ -641,6 +661,11 @@
         :args:
             bool
         :description: QtQuick/QQuickItem-setKeepTouchGrab-f.rst
+
+    .. sip:method:: PyQt6.QtQuick.QQuickItem.setMutabilityGroup
+        :args:
+            int
+        :description: QtQuick/QQuickItem-setMutabilityGroup-f.rst
 
     .. sip:method:: PyQt6.QtQuick.QQuickItem.setOpacity
         :args:
@@ -872,6 +897,11 @@
 
     .. sip:signal:: PyQt6.QtQuick.QQuickItem.implicitWidthChanged
         :description: QtQuick/QQuickItem-implicitWidthChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtQuick.QQuickItem.mutabilityGroupChanged
+        :args:
+            int
+        :description: QtQuick/QQuickItem-mutabilityGroupChanged-s.rst
 
     .. sip:signal:: PyQt6.QtQuick.QQuickItem.opacityChanged
         :description: QtQuick/QQuickItem-opacityChanged-s.rst

@@ -41,6 +41,11 @@
             bool
         :description: QtWebEngineCore/QWebEngineNavigationRequest-isMainFrame-f.rst
 
+    .. sip:method:: PyQt6.QtWebEngineCore.QWebEngineNavigationRequest.isUserInitiated
+        :returns:
+            bool
+        :description: QtWebEngineCore/QWebEngineNavigationRequest-isUserInitiated-f.rst
+
     .. sip:method:: PyQt6.QtWebEngineCore.QWebEngineNavigationRequest.navigationType
         :returns:
             :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineNavigationRequest.NavigationType`

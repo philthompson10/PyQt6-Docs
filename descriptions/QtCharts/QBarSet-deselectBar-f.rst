@@ -2,10 +2,10 @@
     :status: todo
     :pysig: fa7153f7ed1cb6c0fcf2ffb2fac21748
     :realsig: (int)
-    :digest: 948e257e874b49765fe44dad6c2bb75b
+    :digest: 8d6a809a0a29b61485420d84b542307d
 
 Deselects the bar at *index*.
 
-**Note:** Emits QBarSet::selectedBarsChanged.
+**Note:** Emits :sip:ref:`~PyQt6.QtCharts.QBarSet.selectedBarsChanged`.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCharts.QBarSet.setBarSelected`.

@@ -1,5 +1,5 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 27aba0115fc6eea89a25ee28c03afa4f
+    :digest: 25000657cbe2ab5b2e3510726b041c20
 
 This enum provides symbolic names for the various operating system families supported by :sip:ref:`~PyQt6.QtCore.QOperatingSystemVersion`.

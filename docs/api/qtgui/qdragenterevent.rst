@@ -6,6 +6,15 @@
 
     .. sip:method:: PyQt6.QtGui.QDragEnterEvent.__init__
         :args:
+            :sip:ref:`~PyQt6.QtCore.QPointF`
+            :sip:ref:`~PyQt6.QtCore.Qt.DropAction`
+            :sip:ref:`~PyQt6.QtCore.QMimeData`
+            :sip:ref:`~PyQt6.QtCore.Qt.MouseButton`
+            :sip:ref:`~PyQt6.QtCore.Qt.KeyboardModifier`
+        :description: QtGui/QDragEnterEvent-__init__-f.rst
+
+    .. sip:method:: PyQt6.QtGui.QDragEnterEvent.__init__
+        :args:
             :sip:ref:`~PyQt6.QtCore.QPoint`
             :sip:ref:`~PyQt6.QtCore.Qt.DropAction`
             :sip:ref:`~PyQt6.QtCore.QMimeData`

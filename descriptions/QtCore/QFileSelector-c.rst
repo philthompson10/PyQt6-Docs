@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Convenient way of selecting file variants
-    :digest: 34cae4b288ec3e5dac4e6e5fdc169641
+    :digest: 3094838929adc1ea14a660afdfff364b
 
 :sip:ref:`~PyQt6.QtCore.QFileSelector` provides a convenient way of selecting file variants.
 
@@ -52,7 +52,7 @@ Adding Selectors
 
 Selectors normally available are
 
-* platform, any of the following strings which match the platform the application is running on (list not exhaustive): android, ios, osx, darwin, mac, macos, linux, qnx, unix, windows. On Linux, if it can be determined, the name of the distribution too, like debian, fedora or opensuse.
+* platform, any of the following strings which match the platform the application is running on (list not exhaustive): android, harmonyos, ios, osx, darwin, mac, macos, linux, qnx, unix, windows. On Linux, if it can be determined, the name of the distribution too, like debian, fedora or opensuse.
 
 * locale, same as QLocale().name().
 

@@ -1,14 +1,36 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 173fb205d855dc409569321ca891493d
+    :digest: 533852581011cfeb64eacc0c7b268eb2
 
 This enum describes the different locations that can be queried using methods such as :sip:ref:`~PyQt6.QtCore.QStandardPaths.writableLocation`, :sip:ref:`~PyQt6.QtCore.QStandardPaths.standardLocations`, and :sip:ref:`~PyQt6.QtCore.QStandardPaths.displayName`.
 
-Some of the values in this enum represent a user configuration. Such enum values will return the same paths in different applications, so they could be used to share data with other applications. Other values are specific to this application. Each enum value in the table below describes whether it's application-specific or generic.
-
-Application-specific directories should be assumed to be unreachable by other applications. Therefore, files placed there might not be readable by other applications, even if run by the same user. On the other hand, generic directories should be assumed to be accessible by all applications run by this user, but should still be assumed to be unreachable by applications by other users.
+:sip:ref:`~PyQt6.QtCore.QStandardPaths` describes each location along two independent axes: app scope (private to the calling application or shared between applications) and user scope (rooted in the calling user's directories or system-wide). Each enum value below indicates its app scope; the platform tables further down show its user scope.
 
 Data interchange with other users is out of the scope of :sip:ref:`~PyQt6.QtCore.QStandardPaths`.
+
+App scope
+.........
+
+A location is either *application-specific* (private to the calling application) or *generic* (shared between applications run by the same user). Application-specific locations should be assumed to be unreachable by other applications, even when run by the same user.
+
+Sandboxed applications
+^^^^^^^^^^^^^^^^^^^^^^
+
+For sandboxed applications, on platforms such as iOS, Android, or macOS, even generic locations can be rooted in the application's sandbox container (``<APPROOT>`` in the tables below). In practice this collapses the app-scope distinction, with every location becoming effectively application-specific, and the user's system-wide shared directories reachable only through system-provided pickers, for example, :sip:ref:`~PyQt6.QtWidgets.QFileDialog`.
+
+User scope
+..........
+
+A location is either *user-local* (rooted in the calling user's home or per-user directories) or *system-wide* (populated by the OS or by package managers, shared across users, and usually read-only to applications).
+
+Querying :sip:ref:`~PyQt6.QtCore.QStandardPaths.writableLocation` returns the directory where files should be written, which is typically user-scoped. For application-specific locations it is also scoped to the calling application.
+
+Querying :sip:ref:`~PyQt6.QtCore.QStandardPaths.standardLocations` returns the writable path first (if it can be determined), followed by zero or more additional locations, including both user-local and system-wide fallbacks. The additional locations are used by :sip:ref:`~PyQt6.QtCore.QStandardPaths.locate` and :sip:ref:`~PyQt6.QtCore.QStandardPaths.locateAll` to find existing files.
+
+Sandboxed applications
+^^^^^^^^^^^^^^^^^^^^^^
+
+For sandboxed applications, system-wide locations typically fall outside the application's sandbox container, and may not exist from the application's point of view, let alone be readable or writable. They are still listed in the platform tables below for symmetry with the non-sandboxed case, and to cover applications that have been granted access through entitlements or user-driven pickers. Callers should not assume that every entry returned by :sip:ref:`~PyQt6.QtCore.QStandardPaths.standardLocations` exists or is accessible.
 
 The following table gives examples of paths on different operating systems. The first path is the writable path (unless noted). Other, additional paths, if any, represent non-writable locations.
 
@@ -19,9 +41,9 @@ The following table gives examples of paths on different operating systems. The 
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | DocumentsLocation     | "~/Documents"                                                                                                | "C:/Users/<USER>/Documents"                                                                                                     |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| FontsLocation         | "/System/Library/Fonts" (not writable)                                                                       | "C:/Windows/Fonts" (not writable)                                                                                               |
+| FontsLocation         | "~/Library/Fonts", "/Library/Fonts", "/System/Library/Fonts"                                                 | "C:/Windows/Fonts" (not writable)                                                                                               |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ApplicationsLocation  | "/Applications" (not writable)                                                                               | "C:/Users/<USER>/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"                                                         |
+| ApplicationsLocation  | "~/Applications", "/Applications"                                                                            | "C:/Users/<USER>/AppData/Roaming/Microsoft/Windows/Start Menu/Programs"                                                         |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | MusicLocation         | "~/Music"                                                                                                    | "C:/Users/<USER>/Music"                                                                                                         |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
@@ -43,24 +65,26 @@ The following table gives examples of paths on different operating systems. The 
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | RuntimeLocation       | "~/Library/Application Support"                                                                              | "C:/Users/<USER>"                                                                                                               |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| ConfigLocation        | "~/Library/Preferences"                                                                                      | "C:/Users/<USER>/AppData/Local/<APPNAME>", "C:/ProgramData/<APPNAME>"                                                           |
+| ConfigLocation        | "~/Library/Preferences", "/Library/Preferences"                                                              | "C:/Users/<USER>/AppData/Local/<APPNAME>", "C:/ProgramData/<APPNAME>"                                                           |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| GenericConfigLocation | "~/Library/Preferences"                                                                                      | "C:/Users/<USER>/AppData/Local", "C:/ProgramData"                                                                               |
+| GenericConfigLocation | "~/Library/Preferences", "/Library/Preferences"                                                              | "C:/Users/<USER>/AppData/Local", "C:/ProgramData"                                                                               |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | DownloadLocation      | "~/Downloads"                                                                                                | "C:/Users/<USER>/Downloads"                                                                                                     |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| GenericCacheLocation  | "~/Library/Caches", "/Library/Caches"                                                                        | "C:/Users/<USER>/AppData/Local/cache"                                                                                           |
+| GenericCacheLocation  | "~/Library/Caches", "/Library/Caches", "/System/Library/Caches"                                              | "C:/Users/<USER>/AppData/Local/cache"                                                                                           |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | GenericStateLocation  | "~/Library/Preferences/State"                                                                                | "C:/Users/<USER>/AppData/Local/State", "C:/ProgramData/State"                                                                   |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | AppDataLocation       | "~/Library/Application Support/<APPNAME>", "/Library/Application Support/<APPNAME>". "<APPDIR>/../Resources" | "C:/Users/<USER>/AppData/Roaming/<APPNAME>", "C:/ProgramData/<APPNAME>", "<APPDIR>", "<APPDIR>/data", "<APPDIR>/data/<APPNAME>" |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| AppConfigLocation     | "~/Library/Preferences/<APPNAME>"                                                                            | "C:/Users/<USER>/AppData/Local/<APPNAME>", "C:/ProgramData/<APPNAME>"                                                           |
+| AppConfigLocation     | "~/Library/Preferences/<APPNAME>", "/Library/Preferences/<APPNAME>"                                          | "C:/Users/<USER>/AppData/Local/<APPNAME>", "C:/ProgramData/<APPNAME>"                                                           |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | PublicShareLocation   | "~/Public"                                                                                                   | "C:/Users/Public"                                                                                                               |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
-| TemplatesLocation     | "~/Templates"                                                                                                | "C:/Users/<USER>/AppData/Roaming/Microsoft/Windows/Templates"                                                                   |
+| TemplatesLocation     | not supported                                                                                                | "C:/Users/<USER>/AppData/Roaming/Microsoft/Windows/Templates"                                                                   |
 +-----------------------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
+**Note:** On macOS, when the application is sandboxed, the operating system transparently redirects the user's home directory to a per-application container at ``~/Library/Containers/<BUNDLE-ID>/Data``. The macOS table above still applies, with ``~`` effectively resolving to ``<APPROOT>`` for user-rooted entries. System-wide fallbacks such as ``/Library/...``, ``/System/Library/...``, and ``<APPDIR>/../Resources`` are listed for symmetry but are typically not reachable without explicit entitlements.
 
 +-----------------------+-------------------------------------------------------------------------------------------+
 | Path type             | Linux and other UNIX operating systems                                                    |
@@ -137,13 +161,13 @@ The following table gives examples of paths on different operating systems. The 
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
 | CacheLocation                                | "<APPROOT>/cache", "<USER>/<APPNAME>/cache"              | "<APPROOT>/Library/Caches"                          |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
-| StateLocation                                | "<APPROOT>/files/state"                                  |                                                     |
+| StateLocation                                | "<APPROOT>/files/state"                                  | "<APPROOT>/Library/Preferences/<APPNAME>/State"     |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
-| GenericStateLocation (there is shared state) | "<APPROOT>/files/state"                                  |                                                     |
+| GenericStateLocation (there is shared state) | "<APPROOT>/files/state"                                  | "<APPROOT>/Library/Preferences/State"               |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
 | GenericDataLocation                          | "<USER>" [\*] or "<USER>/<APPNAME>/files"                | "<APPROOT>/Library/Application Support"             |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
-| RuntimeLocation                              | "<APPROOT>/cache"                                        | not supported                                       |
+| RuntimeLocation                              | "<APPROOT>/cache"                                        | "<APPROOT>/Library/Application Support"             |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
 | ConfigLocation                               | "<APPROOT>/files/settings"                               | "<APPROOT>/Library/Preferences"                     |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
@@ -157,7 +181,7 @@ The following table gives examples of paths on different operating systems. The 
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
 | AppConfigLocation                            | "<APPROOT>/files/settings"                               | "<APPROOT>/Library/Preferences/<APPNAME>"           |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
-| PublicShareLocation                          | not supported                                            | not supported                                       |
+| PublicShareLocation                          | not supported                                            | "<APPROOT>/Public"                                  |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+
 | TemplatesLocation                            | not supported                                            | not supported                                       |
 +----------------------------------------------+----------------------------------------------------------+-----------------------------------------------------+

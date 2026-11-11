@@ -2,11 +2,23 @@
     :status: todo
     :pysig: 76b1d76b58b3fa384e0af90fb23670ee
     :realsig: (QBluetooth::SecurityFlags)
-    :digest: 7c27011ff2f6165d5672b1d3e2ac709c
+    :digest: 0c39ee42fa4deb3835331f495728fb3e
 
 Sets the preferred security parameter for the connection attempt to *flags*. This value is incorporated when calling :sip:ref:`~PyQt6.QtBluetooth.QBluetoothSocket.connectToService`. Therefore it is required to reconnect to change this parameter for an existing connection.
 
-On Bluez this property is set to :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Authorization` by default.
+On the Linux BlueZ backend, the flags are mapped to kernel security levels:
+
+* :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Authorization` maps to ``BT_SECURITY_LOW``;
+
+* :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Encryption` maps to ``BT_SECURITY_MEDIUM``;
+
+* :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Secure` maps to ``BT_SECURITY_HIGH``;
+
+* :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Authentication` is not used by the kernel and **is ignored**.
+
+The default value is :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Authorization`.
+
+On Linux with the BlueZ D-Bus backend and on Windows, this flag is not supported and ignored.
 
 On macOS, this value is ignored as the platform does not permit access to the security parameter of the socket. By default the platform prefers secure/encrypted connections though and therefore this function always returns :sip:ref:`~PyQt6.QtBluetooth.QBluetooth.Security.Secure`.
 

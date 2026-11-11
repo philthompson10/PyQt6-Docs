@@ -1,0 +1,6 @@
+.. sip:enum-member-description::
+    :status: todo
+    :value: 1 << 0
+    :digest: af4edce098f25935def1c05ed050d2f1
+
+Indicates that the contents of the color attachments is to be loaded when starting a render pass, instead of clearing. This is potentially more expensive, especially on mobile (tiled) GPUs, but allows preserving the existing contents between passes. When doing multisample rendering with a resolve texture set, setting this flag also requests the multisample color data to be stored (written out) to the multisample texture or render buffer. (for non-multisample rendering the color data is always stored, but for MSAA storing the multisample data decreases efficiency for certain GPU architectures, hence defaulting to not writing it out) Note however that this is non-portable: in some cases there is no intermediate multisample texture on the graphics API level, e.g. when using OpenGL ES's ``GL_EXT_multisampled_render_to_texture`` as it is all implicit, handled by the OpenGL ES implementation. In that case, PreserveColorContents will likely have no effect. Therefore, avoid relying on this flag when using multisample rendering and the color attachment is using a multisample :sip:ref:`~PyQt6.QtGui.QRhiTexture` (not :sip:ref:`~PyQt6.QtGui.QRhiRenderBuffer`).

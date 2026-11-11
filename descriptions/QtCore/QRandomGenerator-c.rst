@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Allows one to obtain random values from a high-quality Random Number Generator
-    :digest: 546afbc5af61801ede83b1d094489641
+    :digest: c27109a49c3eb818260f2b5318a2dff5
 
 The :sip:ref:`~PyQt6.QtCore.QRandomGenerator` class allows one to obtain random values from a high-quality Random Number Generator.
 
@@ -55,7 +55,7 @@ If that happens, first the operating system then :sip:ref:`~PyQt6.QtCore.QRandom
 
 If an application needs true RNG data in bulk, it should use the operating system facilities (such as ``/dev/random`` on Linux) directly and wait for entropy to become available. If the application requires PRNG engines of cryptographic quality but not of true randomness, :sip:ref:`~PyQt6.QtCore.QRandomGenerator.system` may still be used (see section below).
 
-If neither a true RNG nor a cryptographically secure PRNG are required, applications should instead use PRNG engines like :sip:ref:`~PyQt6.QtCore.QRandomGenerator`'s deterministic mode and those from the C++ Standard Library. :sip:ref:`~PyQt6.QtCore.QRandomGenerator.system` can be used to seed those.
+If neither a true RNG nor a cryptographically secure PRNG (CSPRNG) are required, applications should instead use PRNG engines like :sip:ref:`~PyQt6.QtCore.QRandomGenerator`'s deterministic mode and those from the C++ Standard Library. :sip:ref:`~PyQt6.QtCore.QRandomGenerator.system` can be used to seed those.
 
 .. _qrandomgenerator-fallback-quality:
 
@@ -69,6 +69,8 @@ The following operating systems guarantee that the results from their random-gen
 On other operating systems, :sip:ref:`~PyQt6.QtCore.QRandomGenerator` will fall back to a PRNG of good numeric distribution, but it cannot guarantee proper seeding in all cases. Please consult the OS documentation for more information.
 
 Applications that require :sip:ref:`~PyQt6.QtCore.QRandomGenerator` not to fall back to non-cryptographic quality generators are advised to check their operating system documentation or restrict their deployment to one of the above.
+
+Starting from Qt 6.12, :sip:ref:`~PyQt6.QtCore.QRandomGenerator` prints a warning to ``stderr`` the first time it falls back to insecure PRNG. The opt-in feature ``randomgenerator_disable_fallback`` can be set during Qt build to disable the insecure fallback and instead terminate the application if it tried to use :sip:ref:`~PyQt6.QtCore.QRandomGenerator` and CSPRNG is not available.
 
 .. _qrandomgenerator-reentrancy-and-thread-safety:
 

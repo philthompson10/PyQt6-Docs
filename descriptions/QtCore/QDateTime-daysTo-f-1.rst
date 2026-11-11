@@ -2,11 +2,13 @@
     :status: todo
     :pysig: 701e3b3003ec0691dbea36dc1558e3e5
     :realsig: (const QDateTime&) const
-    :digest: 8e9eae75727ae690d09fee7d73f1d6c1
+    :digest: a6d3787446e5271958672041c301b93e
 
-Returns the number of days from this datetime to the *other* datetime. The number of days is counted as the number of times midnight is reached between this datetime to the *other* datetime. This means that a 10 minute difference from 23:55 to 0:05 the next day counts as one day.
+Returns the number of days from this datetime to the *other* datetime.
 
-If the *other* datetime is earlier than this datetime, the value returned is negative.
+The number of days is counted as the number of times midnight is reached between this datetime and the *other* datetime. This means that a 10 minute difference from 23:55 to 0:05 the next day counts as one day.
+
+If the *other* datetime is earlier than this datetime, the value returned is negative. If either datetime is invalid, the value is 0.
 
 Example:
 

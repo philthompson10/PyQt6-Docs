@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Encapsulates the data of a WebAuth UX request
-    :digest: aad59838e8ee7b27064ccb7764a0c851
+    :digest: 34c49ff12eae4d57ce9a0aa0650f9970
 
 The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineWebAuthUxRequest` class encapsulates the data of a WebAuth UX request.
 
@@ -13,4 +13,4 @@ WebAuth UX requests are normally triggered when the authenticator requires user 
 
 The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineWebAuthUxRequest` object periodically emits the :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineWebAuthUxRequest.stateChanged` signal to notify potential observers of the current WebAuth UX states. The observers update the WebAuth dialog accordingly.
 
-For more information about how to handle web engine authenticator requests, see the `Simple Browser <https://doc.qt.io/qt-6/qtwebengine-webenginewidgets-simplebrowser-example.html>`_.
+For more information about how to handle web engine authenticator requests, see the Simple Browser.

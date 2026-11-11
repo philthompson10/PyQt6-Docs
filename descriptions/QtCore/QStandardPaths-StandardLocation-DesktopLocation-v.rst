@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 0
-    :digest: 4a9a7f9a4d3e18854bcc97c07306d3a2
+    :digest: bedddf7ee86290705dd2e4e3335d210f
 
-Returns the user's desktop directory. This is a generic value. On systems with no concept of a desktop, this is the same as QStandardPaths::HomeLocation.
+The user's desktop directory. On systems with no concept of a desktop, this is the same as HomeLocation. Generic.

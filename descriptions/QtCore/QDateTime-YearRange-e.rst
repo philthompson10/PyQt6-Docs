@@ -1,8 +1,10 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 4ac071861ef4ec8d4dee35f1e16541a0
+    :digest: 60c3f6390dc5c971192d27248a9ca7b2
 
 This enumerated type describes the range of years (in the Gregorian calendar) representable by :sip:ref:`~PyQt6.QtCore.QDateTime`:
+
+The exact first and last representable datetimes fall within these years and depend on the :sip:ref:`~PyQt6.QtCore.QDateTime.timeRepresentation` used. They can be determined by passing suitable values to :sip:ref:`~PyQt6.QtCore.QDateTime.fromMSecsSinceEpoch`.
 
 All dates strictly between these two years are also representable. Note, however, that the Gregorian Calendar has no year zero.
 

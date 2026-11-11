@@ -925,6 +925,18 @@
         .. sip:enum-member:: PyQt6.QtWidgets.QStyle.StandardPixmap.SP_TabCloseButton
             :description: QtWidgets/QStyle-StandardPixmap-SP_TabCloseButton-v.rst
 
+        .. sip:enum-member:: PyQt6.QtWidgets.QStyle.StandardPixmap.SP_TabScrollDownButton
+            :description: QtWidgets/QStyle-StandardPixmap-SP_TabScrollDownButton-v.rst
+
+        .. sip:enum-member:: PyQt6.QtWidgets.QStyle.StandardPixmap.SP_TabScrollLeftButton
+            :description: QtWidgets/QStyle-StandardPixmap-SP_TabScrollLeftButton-v.rst
+
+        .. sip:enum-member:: PyQt6.QtWidgets.QStyle.StandardPixmap.SP_TabScrollRightButton
+            :description: QtWidgets/QStyle-StandardPixmap-SP_TabScrollRightButton-v.rst
+
+        .. sip:enum-member:: PyQt6.QtWidgets.QStyle.StandardPixmap.SP_TabScrollUpButton
+            :description: QtWidgets/QStyle-StandardPixmap-SP_TabScrollUpButton-v.rst
+
         .. sip:enum-member:: PyQt6.QtWidgets.QStyle.StandardPixmap.SP_TitleBarCloseButton
             :description: QtWidgets/QStyle-StandardPixmap-SP_TitleBarCloseButton-v.rst
 

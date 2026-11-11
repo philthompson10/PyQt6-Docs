@@ -1,9 +1,9 @@
 .. sip:class-description::
     :status: todo
-    :brief: Information about a browser extension
-    :digest: bced3fcbcfc15812cf96dc9380a1894d
+    :brief: Information about a web extension
+    :digest: f35003faa997dc8b4a3cfbc66f18b124
 
-The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo` provides information about a browser extension.
+The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo` provides information about a web extension.
 
 :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo` provides information of an extension loaded into Qt WebEngine. Extensions can be loaded via the :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager`. You can check if the extension was successfully loaded using its :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo.isLoaded` property. The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo.error` property contains error messages if the loading process failed. Extensions are always loaded in disabled state. To run an extension, it has to be enabled via :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.setExtensionEnabled`.
 

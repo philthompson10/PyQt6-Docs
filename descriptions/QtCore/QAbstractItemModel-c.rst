@@ -1,19 +1,19 @@
 .. sip:class-description::
     :status: todo
     :brief: The abstract interface for item model classes
-    :digest: 7084eed9ca01fee452fac9ecfbddc635
+    :digest: 327245b2f8768e37c8808aab1fc28f9f
 
 The :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` class provides the abstract interface for item model classes.
 
 The :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` class defines the standard interface that item models must use to be able to interoperate with other components in the model/view architecture. It is not supposed to be instantiated directly. Instead, you should subclass it to create new models.
 
-The :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` class is one of the `Model/View Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-view-classes>`_ and is part of Qt's `model/view framework <https://doc.qt.io/qt-6/model-view-programming.html>`_. It can be used as the underlying data model for the item view elements in QML or the item view classes in the Qt Widgets module.
+The :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` class is one of the `Model/View Classes <https://doc.qt.io/qt-6/model-view-programming.html#the-model-view-classes>`_ and is part of Qt's `model/view framework <https://doc.qt.io/qt-6/model-view-programming.html>`_. It can be used as the underlying data model for the item view elements in QML or the item view classes in the Qt Widgets module.
 
 If you need a model to use with an item view such as QML's List View element or the C++ widgets :sip:ref:`~PyQt6.QtWidgets.QListView` or :sip:ref:`~PyQt6.QtWidgets.QTableView`, you should consider subclassing :sip:ref:`~PyQt6.QtCore.QAbstractListModel` or :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` instead of this class.
 
 The underlying data model is exposed to views and delegates as a hierarchy of tables. If you do not make use of the hierarchy, then the model is a simple table of rows and columns. Each item has a unique index specified by a :sip:ref:`~PyQt6.QtCore.QModelIndex`.
 
-.. image:: ../../../images/modelindex-no-parent.png
+.. image:: ../../../images/modelindex-no-parent.svg
 
 Every item of data that can be accessed via a model has an associated model index. You can obtain this model index using the :sip:ref:`~PyQt6.QtCore.QAbstractItemModel.index` function. Each index may have a :sip:ref:`~PyQt6.QtCore.QAbstractItemModel.sibling` index; child items have a :sip:ref:`~PyQt6.QtCore.QAbstractItemModel.parent` index.
 
@@ -71,6 +71,6 @@ To create models that populate incrementally, you can reimplement :sip:ref:`~PyQ
 Thread safety
 -------------
 
-Being a subclass of QObject, :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` is not thread-safe. Any :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` model-related API should only be called from the thread the model object lives in. If the :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` is connected with a view, that means the GUI thread, as that is where the view lives, and it will call into the model from the GUI thread. Using a background thread to populate or modify the contents of a model is possible, but requires care, as the background thread cannot call any model-related API directly. Instead, you should queue the updates and apply them in the main thread. This can be done with queued connections.
+Being a subclass of QObject, :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` is not thread-safe. Any :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` model-related API should only be called from the thread the model object lives in. If :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` is connected to a view, it operates on the GUI thread, as the view resides there and interacts with the model from that thread. While a background thread can be used to populate or modify the model's contents, it must do so carefully, as it cannot call any model-related API directly. Instead, you should queue the updates and apply them in the main thread. This can be done with queued connections.
 
-.. seealso:: `Model Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-classes>`_, `Model Subclassing Reference <https://doc.qt.io/qt-6/model-view-programming.html#model-subclassing-reference>`_, :sip:ref:`~PyQt6.QtCore.QModelIndex`, :sip:ref:`~PyQt6.QtWidgets.QAbstractItemView`, `Using drag and drop with item views <https://doc.qt.io/qt-6/model-view-programming.html#using-drag-and-drop-with-item-views>`_, `Simple Tree Model Example <https://doc.qt.io/qt-6/qtwidgets-itemviews-simpletreemodel-example.html>`_, `Editable Tree Model Example <https://doc.qt.io/qt-6/qtwidgets-itemviews-editabletreemodel-example.html>`_, `Fetch More Example <https://doc.qt.io/qt-6/qtwidgets-itemviews-fetchmore-example.html>`_.
+.. seealso:: `Model Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-classes>`_, `Model Subclassing Reference <https://doc.qt.io/qt-6/model-view-programming.html#model-subclassing-reference>`_, :sip:ref:`~PyQt6.QtCore.QModelIndex`, :sip:ref:`~PyQt6.QtWidgets.QAbstractItemView`, :sip:ref:`~PyQt6.QtCore.QRangeModel`, `Using drag and drop with item views <https://doc.qt.io/qt-6/model-view-programming.html#using-drag-and-drop-with-item-views>`_, `Simple Tree Model Example <https://doc.qt.io/qt-6/qtwidgets-itemviews-simpletreemodel-example.html>`_, `Editable Tree Model Example <https://doc.qt.io/qt-6/qtwidgets-itemviews-editabletreemodel-example.html>`_, `Fetch More Example <https://doc.qt.io/qt-6/qtwidgets-itemviews-fetchmore-example.html>`_.

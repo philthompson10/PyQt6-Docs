@@ -91,6 +91,9 @@
         .. sip:enum-member:: PyQt6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState.Completed
             :description: QtWebEngineCore/QWebEngineWebAuthUxRequest-WebAuthUxState-Completed-v.rst
 
+        .. sip:enum-member:: PyQt6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState.Discovery
+            :description: QtWebEngineCore/QWebEngineWebAuthUxRequest-WebAuthUxState-Discovery-v.rst
+
         .. sip:enum-member:: PyQt6.QtWebEngineCore.QWebEngineWebAuthUxRequest.WebAuthUxState.FinishTokenCollection
             :description: QtWebEngineCore/QWebEngineWebAuthUxRequest-WebAuthUxState-FinishTokenCollection-v.rst
 

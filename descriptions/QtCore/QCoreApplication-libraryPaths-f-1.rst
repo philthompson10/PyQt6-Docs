@@ -2,7 +2,7 @@
     :status: todo
     :pysig: d409847c33b4369753f8b837c22758e9
     :realsig: ()
-    :digest: f6fe8f05b01222ba52a9b3f9c6c2bac4
+    :digest: 17d0850949bd88746d8613ee66327f9e
 
 Returns a list of paths that the application will search when dynamically loading libraries.
 
@@ -10,6 +10,8 @@ The return value of this function may change when a :sip:ref:`~PyQt6.QtCore.QCor
 
 Qt provides default library paths, but they can also be set using a qt.conf file. Paths specified in this file will override default values. Note that if the qt.conf file is in the directory of the application executable, it may not be found until a :sip:ref:`~PyQt6.QtCore.QCoreApplication` is created. If it is not found when calling this function, the default library paths will be used.
 
-The list will include the installation directory for plugins if it exists (the default installation directory for plugins is ``INSTALL/plugins``, where ``INSTALL`` is the directory where Qt was installed). The colon separated entries of the ``QT_PLUGIN_PATH`` environment variable are always added. The plugin installation directory (and its existence) may change when the directory of the application executable becomes known.
+The list will include the installation directories for plugins if they exist (the default installation directory for plugins is ``INSTALL/plugins``, where ``INSTALL`` is the directory where Qt was installed). The colon separated entries of the ``QT_PLUGIN_PATH`` environment variable are always added. The plugin installation directory (and its existence) may change when the directory of the application executable becomes known.
+
+**Warning:** This function does not currently include :sip:ref:`~PyQt6.QtCore.QLibraryInfo.LibraryPath.LibrariesPath` in its default paths, and :sip:ref:`~PyQt6.QtCore.QLibrary` does not currently use this function to look up non-absolute library paths.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCore.QCoreApplication.setLibraryPaths`, :sip:ref:`~PyQt6.QtCore.QCoreApplication.addLibraryPath`, :sip:ref:`~PyQt6.QtCore.QCoreApplication.removeLibraryPath`, :sip:ref:`~PyQt6.QtCore.QLibrary`.

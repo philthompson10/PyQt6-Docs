@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Convenient way to load an application from a single QML file
-    :digest: 6a8d16c36d567dcd3862b0a9b0fff9da
+    :digest: 4c89e43527e9b7211baf9e89ce510092
 
 :sip:ref:`~PyQt6.QtQml.QQmlApplicationEngine` provides a convenient way to load an application from a single QML file.
 
@@ -21,7 +21,7 @@ It can be used like so:
         return app.exec();
     }
 
-Unlike :sip:ref:`~PyQt6.QtQuick.QQuickView`, :sip:ref:`~PyQt6.QtQml.QQmlApplicationEngine` does not automatically create a root window. If you are using visual items from Qt Quick, you will need to place them inside of a `Window <https://doc.qt.io/qt-6/qml-qtquick-window.html>`_.
+**Note:** Unlike :sip:ref:`~PyQt6.QtQuick.QQuickView`, :sip:ref:`~PyQt6.QtQml.QQmlApplicationEngine` does not automatically create a root window. If you are using visual items from Qt Quick, you will need to place them inside a `Window <https://doc.qt.io/qt-6/qml-qtquick-window.html>`_.
 
 You can also use :sip:ref:`~PyQt6.QtCore.QCoreApplication` with :sip:ref:`~PyQt6.QtQml.QQmlApplicationEngine`, if you are not using any QML modules which require a :sip:ref:`~PyQt6.QtGui.QGuiApplication` (such as ``QtQuick``).
 
@@ -43,4 +43,4 @@ The engine behavior can be further tweaked by using the inherited methods from :
 
 **Note:** Placing translation files relative to the main QML file involves adding a *RESOURCE_PREFIX* to the relevant qt_add_translations call. This needs to include the resource prefix of the main file's QML module (\ */qt/qml* by default) and the module URI. For example, to provide translation files for a module called "Translated":
 
-.. literalinclude:: ../../../snippets/qtdeclarative-examples-qml-qml-i18n-CMakeLists.txt
+.. literalinclude:: ../../../snippets/qtdeclarative-src-qml-doc-snippets-cmake-qt_add_translations.cmake

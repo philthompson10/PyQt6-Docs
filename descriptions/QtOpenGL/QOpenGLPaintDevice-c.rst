@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Enables painting to an OpenGL context using QPainter
-    :digest: 1d8b3456343b5d95c56a813df12e10e9
+    :digest: 11655183df7c659a09984247dd6ddafc
 
 The :sip:ref:`~PyQt6.QtOpenGL.QOpenGLPaintDevice` class enables painting to an OpenGL context using :sip:ref:`~PyQt6.QtGui.QPainter`.
 
@@ -34,5 +34,12 @@ Mixing QPainter and OpenGL
 --------------------------
 
 When intermixing :sip:ref:`~PyQt6.QtGui.QPainter` and OpenGL, it is important to notify :sip:ref:`~PyQt6.QtGui.QPainter` that the OpenGL state may have been cluttered so it can restore its internal state. This is achieved by calling :sip:ref:`~PyQt6.QtGui.QPainter.beginNativePainting` before starting the OpenGL rendering and calling :sip:ref:`~PyQt6.QtGui.QPainter.endNativePainting` after finishing.
+
+.. _qopenglpaintdevice-security-considerations:
+
+Security Considerations
+-----------------------
+
+**Warning:** All content rendered through :sip:ref:`~PyQt6.QtOpenGL.QOpenGLPaintDevice` is expected to be trusted content. Vector geometry, images, and other drawing data are processed, possibly modified, and passed on to the underlying OpenGL implementation. Application developers are advised to carefully consider the potential implications before rendering (passing on) user-provided content.
 
 .. seealso:: `OpenGL Window Example <https://doc.qt.io/qt-6/qtopengl-openglwindow-example.html>`_.

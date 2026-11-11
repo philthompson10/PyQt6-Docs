@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 4
-    :digest: 2299331595271ab26dc537638a34f24f
+    :digest: d84183e381a3d00e05814394e9e2afd6
 
-Returns the directory containing the user's music or other audio files. This is a generic value. If no directory specific for music files exists, a sensible fallback for storing user documents is returned.
+Directory containing music or other audio files. If no such directory exists, a sensible fallback for storing documents is returned. Generic.

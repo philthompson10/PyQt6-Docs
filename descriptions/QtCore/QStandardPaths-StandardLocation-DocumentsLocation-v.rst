@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 1
-    :digest: 9736b475ae019aadf76eca171bd7ddb0
+    :digest: b9e2c3e7c5ee9dca4e33d9bc5cdf6b82
 
-Returns the directory containing user document files. This is a generic value. The returned path is never empty.
+Directory containing document files. The returned path is never empty. Generic.

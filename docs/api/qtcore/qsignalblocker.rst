@@ -18,10 +18,10 @@
 
     .. sip:method:: PyQt6.QtCore.QSignalBlocker.__exit__
         :args:
-            Any
-            Any
-            Any
-        :description: QtCore/QSignalBlocker-__exit__-f-1.rst
+            object
+            object
+            object
+        :description: QtCore/QSignalBlocker-__exit__-f.rst
 
     .. sip:method:: PyQt6.QtCore.QSignalBlocker.reblock
         :description: QtCore/QSignalBlocker-reblock-f.rst

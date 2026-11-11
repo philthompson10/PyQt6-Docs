@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 3
-    :digest: 567dad7b884a64b3b5dc43f1cae26c89
+    :digest: 607744c854a876242c1e3b148936273d
 
-A web browser tab without hiding the current visible `WebEngineView <https://doc.qt.io/qt-6/qml-qtwebengine-webengineview.html>`_. (Added in Qt 5.7)
+Same as ``WebBrowserTab``, but without hiding the current visible `WebEngineView <https://doc.qt.io/qt-6/qml-qtwebengine-webengineview.html>`_.

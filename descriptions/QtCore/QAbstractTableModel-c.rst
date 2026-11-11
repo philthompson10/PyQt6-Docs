@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Abstract model that can be subclassed to create table models
-    :digest: 6de94bfc37b63b4d1258752e2843a7dc
+    :digest: b5c14df924e2486d4d3312fe67db8538
 
 The :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` class provides an abstract model that can be subclassed to create table models.
 
@@ -37,6 +37,6 @@ Models that provide interfaces to resizable data structures can provide implemen
 Thread safety
 -------------
 
-Being a subclass of QObject, :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` is not thread-safe. Any :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` model-related API should only be called from the thread the model object lives in. If the :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` is connected with a view, that means the GUI thread, as that is where the view lives, and it will call into the model from the GUI thread. Using a background thread to populate or modify the contents of a model is possible, but requires care, as the background thread cannot call any model-related API directly. Instead, you should queue the updates and apply them in the main thread. This can be done with queued connections.
+Being a subclass of QObject, :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` is not thread-safe. Any :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` model-related API should only be called from the thread the model object lives in. If :sip:ref:`~PyQt6.QtCore.QAbstractTableModel` is connected to a view, it operates on the GUI thread, as the view resides there and interacts with the model from that thread. While a background thread can be used to populate or modify the model's contents, it must do so carefully, as it cannot call any model-related API directly. Instead, you should queue the updates and apply them in the main thread. This can be done with queued connections.
 
-.. seealso:: `Model Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-classes>`_, :sip:ref:`~PyQt6.QtCore.QAbstractItemModel`, :sip:ref:`~PyQt6.QtCore.QAbstractListModel`.
+.. seealso:: `Model Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-classes>`_, :sip:ref:`~PyQt6.QtCore.QAbstractItemModel`, :sip:ref:`~PyQt6.QtCore.QAbstractListModel`, :sip:ref:`~PyQt6.QtCore.QRangeModel`.

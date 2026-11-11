@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Identifies how a time representation relates to UTC
-    :digest: 13de6eb2feb4b0f6d8fdb9e360c1d623
+    :digest: 9da5509cd8bd2c19f6927b5535dd6855
 
 :sip:ref:`~PyQt6.QtCore.QTimeZone` identifies how a time representation relates to UTC.
 
@@ -47,7 +47,7 @@ The IANA IDs and database are also know as the Olson IDs and database, named aft
 UTC Offset Time Zones
 .....................
 
-A default UTC time zone backend is provided which is always available when feature ``timezone`` is enabled. This provides a set of generic Offset From UTC time zones in the range UTC-14:00 to UTC+14:00. These time zones can be created using either the standard ISO format names, such as "UTC+00:00", as listed by :sip:ref:`~PyQt6.QtCore.QTimeZone.availableTimeZoneIds`, or using a name of similar form in combination with the number of offset seconds.
+A default UTC time zone backend is provided which is always available when feature ``timezone`` is enabled. This provides a set of generic Offset From UTC time zones in the range UTC-16:00 to UTC+16:00. These time zones can be created using either the standard ISO format names, such as "UTC+00:00", as listed by :sip:ref:`~PyQt6.QtCore.QTimeZone.availableTimeZoneIds`, or using a name of similar form in combination with the number of offset seconds.
 
 .. _qtimezone-windows-time-zones:
 
@@ -61,6 +61,13 @@ Windows native time zone support is severely limited compared to the standard IA
 :sip:ref:`~PyQt6.QtCore.QTimeZone` provides a public API to use this conversion table. The Windows ID used is the Windows Registry Key for the time zone which is also the MS Exchange EWS ID as well, but is different to the Time Zone Name (TZID) and COD code used by MS Exchange in versions before 2007.
 
 **Note:** When Qt is built with the ICU library, it is used in preference to the Windows system APIs, bypassing all problems with those APIs using different names.
+
+.. _qtimezone-webassembly:
+
+WebAssembly
+...........
+
+On WebAssembly, :sip:ref:`~PyQt6.QtCore.QTimeZone` supports only UTC and fixed UTC-offset time zones when represented in backend-based form. The IANA timezone database is not available, so functions like :sip:ref:`~PyQt6.QtCore.QTimeZone.availableTimeZoneIds` return only UTC offset zones. The system time zone is obtained via JavaScript's ``Date.getTimezoneOffset()`` and represented as a fixed offset (e.g., "UTC+02:00") rather than a geographic IANA ID. However, :sip:ref:`~PyQt6.QtCore.QTimeZone`\ (\ :sip:ref:`~PyQt6.QtCore.QTimeZone.Initialization.LocalTime`) still provides a faithful representation of local time, as it relies on the platform's standard time functions.
 
 .. _qtimezone-system-time-zone:
 

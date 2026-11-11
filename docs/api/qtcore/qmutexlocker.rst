@@ -20,10 +20,10 @@
 
     .. sip:method:: PyQt6.QtCore.QMutexLocker.__exit__
         :args:
-            Any
-            Any
-            Any
-        :description: QtCore/QMutexLocker-__exit__-f-1.rst
+            object
+            object
+            object
+        :description: QtCore/QMutexLocker-__exit__-f.rst
 
     .. sip:method:: PyQt6.QtCore.QMutexLocker.mutex
         :returns:

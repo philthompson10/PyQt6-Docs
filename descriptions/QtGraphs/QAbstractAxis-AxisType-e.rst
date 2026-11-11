@@ -1,5 +1,5 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 8d44c0dc815a3a3937a36f45b87c6e75
+    :digest: 37ce80100a5a5737c0ee044d96960cde
 
 This enum type specifies the type of the axis object.

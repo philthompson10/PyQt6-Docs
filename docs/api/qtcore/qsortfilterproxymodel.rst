@@ -4,6 +4,21 @@
     :inherits: :sip:ref:`~PyQt6.QtCore.QAbstractProxyModel`
     :description: QtCore/QSortFilterProxyModel-c.rst
 
+    .. sip:enum:: PyQt6.QtCore.QSortFilterProxyModel.DataChangeRelevanceFlag
+        :description: QtCore/QSortFilterProxyModel-DataChangeRelevanceFlag-e.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QSortFilterProxyModel.DataChangeRelevanceFlag.NotRelevant
+            :description: QtCore/QSortFilterProxyModel-DataChangeRelevanceFlag-NotRelevant-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QSortFilterProxyModel.DataChangeRelevanceFlag.RelevantForFiltering
+            :description: QtCore/QSortFilterProxyModel-DataChangeRelevanceFlag-RelevantForFiltering-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QSortFilterProxyModel.DataChangeRelevanceFlag.RelevantForFilteringAndSorting
+            :description: QtCore/QSortFilterProxyModel-DataChangeRelevanceFlag-RelevantForFilteringAndSorting-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QSortFilterProxyModel.DataChangeRelevanceFlag.RelevantForSorting
+            :description: QtCore/QSortFilterProxyModel-DataChangeRelevanceFlag-RelevantForSorting-v.rst
+
     .. sip:enum:: PyQt6.QtCore.QSortFilterProxyModel.Direction
         :description: QtCore/QSortFilterProxyModel-Direction-e.rst
 
@@ -57,6 +72,15 @@
         :returns:
             Any
         :description: QtCore/QSortFilterProxyModel-data-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QSortFilterProxyModel.dataChangeRelevanceFlags
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QModelIndex`
+            :sip:ref:`~PyQt6.QtCore.QModelIndex`
+            Iterable[int]
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.DataChangeRelevanceFlag`
+        :description: QtCore/QSortFilterProxyModel-dataChangeRelevanceFlags-f.rst
 
     .. sip:method:: PyQt6.QtCore.QSortFilterProxyModel.dropMimeData
         :args:

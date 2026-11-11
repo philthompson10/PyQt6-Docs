@@ -424,6 +424,12 @@
             :sip:ref:`~PyQt6.QtCore.QPoint`
         :description: QtGui/QWindow-setFramePosition-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QWindow.setFramePosition
+        :args:
+            int
+            int
+        :description: QtGui/QWindow-setFramePosition-f-1.rst
+
     .. sip:method:: PyQt6.QtGui.QWindow.setGeometry
         :args:
             :sip:ref:`~PyQt6.QtCore.QRect`

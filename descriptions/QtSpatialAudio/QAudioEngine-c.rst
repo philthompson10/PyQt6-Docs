@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Manages a three dimensional sound field
-    :digest: 3397c796f9ef8e39c23be85aa773c538
+    :digest: 0621506ab0c9f65f58f2a400e9d13450
 
 :sip:ref:`~PyQt6.QtSpatialAudio.QAudioEngine` manages a three dimensional sound field.
 
@@ -11,9 +11,9 @@ You can use :sip:ref:`~PyQt6.QtSpatialAudio.QAudioListener` to define the positi
 
 :sip:ref:`~PyQt6.QtSpatialAudio.QAudioEngine` offers two output modes. The first mode renders the sound field to a set of speakers, either a stereo speaker pair or a surround configuration. The second mode provides an immersive 3D sound experience when using headphones.
 
-Perception of sound localization is driven mainly by two factors. The first factor is timing differences of the sound waves between left and right ear. The second factor comes from various ways how sounds coming from different direcations create different types of reflections from our ears and heads. See https://en.wikipedia.org/wiki/Sound_localization for more details.
+Perception of sound localization is driven mainly by two factors. The first factor is timing differences of the sound waves between left and right ear. The second factor comes from various ways how sounds coming from different direcations create different types of reflections from our ears and heads. See `https://en.wikipedia.org/wiki/Sound_localization <https://en.wikipedia.org/wiki/Sound_localization>`_ for more details.
 
-The spatial audio engine emulates those timing differences and reflections through Head related transfer functions (HRTF, see https://en.wikipedia.org/wiki/Head-related_transfer_function). The functions used emulates those effects for an average persons ears and head. It provides a good and immersive 3D sound localization experience for most persons when using headphones.
+The spatial audio engine emulates those timing differences and reflections through Head related transfer functions (HRTF, see `https://en.wikipedia.org/wiki/Head-related_transfer_function <https://en.wikipedia.org/wiki/Head-related_transfer_function>`_). The functions used emulates those effects for an average persons ears and head. It provides a good and immersive 3D sound localization experience for most persons when using headphones.
 
 The engine is rather versatile allowing you to define room properties and reverb settings to emulate different types of rooms.
 

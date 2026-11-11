@@ -1,0 +1,6 @@
+.. sip:enum-member-description::
+    :status: todo
+    :value: 32
+    :digest: abbdc4358151a50320d46ed245b79700
+
+Indicates that the tessellation control and evaluation stages are supported. When reported as supported, the topology of a :sip:ref:`~PyQt6.QtGui.QRhiGraphicsPipeline` can be set to :sip:ref:`~PyQt6.QtGui.QRhiGraphicsPipeline.Topology.Patches`, the number of control points can be set via setPatchControlPointCount(), and shaders for tessellation control and evaluation can be specified in the :sip:ref:`~PyQt6.QtGui.QRhiShaderStage` list. Tessellation shaders have portability issues between APIs (for example, translating GLSL/SPIR-V to HLSL is problematic due to the way hull shaders are structured, whereas Metal uses a somewhat different tessellation pipeline than others), and therefore unexpected issues may still arise, even though basic functionality is implemented across all the underlying APIs. For Direct 3D in particular, handwritten HLSL hull and domain shaders must be injected into each :sip:ref:`~PyQt6.QtGui.QShader` for the tessellation control and evaluation stages, respectively, since qsb cannot generate these from SPIR-V. Note that isoline tessellation should be avoided as it will not be supported by all backends. The maximum patch control point count portable between backends is 32.

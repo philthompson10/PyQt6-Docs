@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: The base interface class of all I/O devices in Qt
-    :digest: 5fd7a6c7c0805cca56cf5dfda8f58320
+    :digest: 4d016e5200c8df96264beff3de7fa96a
 
 The :sip:ref:`~PyQt6.QtCore.QIODevice` class is the base interface class of all I/O devices in Qt.
 
@@ -39,5 +39,14 @@ Some subclasses, such as :sip:ref:`~PyQt6.QtCore.QFile` and :sip:ref:`~PyQt6.QtN
 Usually, the incoming data stream from an asynchronous device is fragmented, and chunks of data can arrive at arbitrary points in time. To handle incomplete reads of data structures, use the transaction mechanism implemented by :sip:ref:`~PyQt6.QtCore.QIODevice`. See :sip:ref:`~PyQt6.QtCore.QIODevice.startTransaction` and related functions for more details.
 
 Some sequential devices support communicating via multiple channels. These channels represent separate streams of data that have the property of independently sequenced delivery. Once the device is opened, you can determine the number of channels by calling the :sip:ref:`~PyQt6.QtCore.QIODevice.readChannelCount` and :sip:ref:`~PyQt6.QtCore.QIODevice.writeChannelCount` functions. To switch between channels, call :sip:ref:`~PyQt6.QtCore.QIODevice.setCurrentReadChannel` and :sip:ref:`~PyQt6.QtCore.QIODevice.setCurrentWriteChannel`, respectively. :sip:ref:`~PyQt6.QtCore.QIODevice` also provides additional signals to handle asynchronous communication on a per-channel basis.
+
+.. _qiodevice-security-considerations:
+
+Security Considerations
+-----------------------
+
+:sip:ref:`~PyQt6.QtCore.QIODevice` has a set of methods that enable unbound reading. At the time of writing these methods include ``readAll()``, ``readLine(0)``, and ``readLineInto(buffer, 0)`` - the latter two have a special meaning for the value ``0``, treating it as *unlimited*.
+
+For sequential devices, or for devices that report their :sip:ref:`~PyQt6.QtCore.QIODevice.size` equal to zero (e.g. ``/dev/urandom``), these methods will read the data in chunks and append it to an internal or user-provided buffer as long as new data is available. This can potentially lead to out-of-memory conditions. Therefore, it is recommended to avoid these methods with untrusted input or input with unknown size, and always provide reasonable upper bounds for reading.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCore.QBuffer`, :sip:ref:`~PyQt6.QtCore.QFile`, :sip:ref:`~PyQt6.QtNetwork.QTcpSocket`.

@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Container for painting operations, enabling graphical shapes to be constructed and reused
-    :digest: e86a574c8e289ede79d09cc7fa422e29
+    :digest: 78cc98478b4e9aec91650bd465702726
 
 The :sip:ref:`~PyQt6.QtGui.QPainterPath` class provides a container for painting operations, enabling graphical shapes to be constructed and reused.
 
@@ -40,6 +40,17 @@ The painter path is initially empty when constructed. We first add a rectangle, 
 +--------------------------------------------------+--------------------------------------------------+
 
 See the :sip:ref:`~PyQt6.QtCore.Qt.FillRule` documentation for the definition of the rules. A painter path's currently set fill rule can be retrieved using the :sip:ref:`~PyQt6.QtGui.QPainterPath.fillRule` function, and altered using the :sip:ref:`~PyQt6.QtGui.QPainterPath.setFillRule` function.
+
+.. _qpainterpath-arcs-and-ellipses:
+
+Arcs and Ellipses
+-----------------
+
+The angle arguments of :sip:ref:`~PyQt6.QtGui.QPainterPath.arcTo`, :sip:ref:`~PyQt6.QtGui.QPainterPath.arcMoveTo`, :sip:ref:`~PyQt6.QtGui.QPainter.drawArc`, :sip:ref:`~PyQt6.QtGui.QPainter.drawPie`, and :sip:ref:`~PyQt6.QtGui.QPainter.drawChord` are *eccentric* angles. An eccentric angle parameterizes the ellipse that fits into the bounding rectangle; it does not measure the direction from the center of that rectangle to the resulting point. In general the two coincide only when the bounding rectangle is square. On a 400 by 100 rectangle, for example, an angle of 45 degrees yields a point that lies roughly 14 degrees above the horizontal as seen from the center.
+
+To place a point at a given direction from the center instead, compute that point yourself and pass it to :sip:ref:`~PyQt6.QtGui.QPainterPath.moveTo` or :sip:ref:`~PyQt6.QtGui.QPainterPath.lineTo`. Alternatively, keep using these functions and convert the direction: on a bounding rectangle of the given ``width`` and ``height``, the direction ``theta``, in radians, corresponds to the eccentric angle ``qRadiansToDegrees(qAtan2(width \* qSin(theta), height \* qCos(theta)))``.
+
+Because a painter path stores only lines and Bezier segments, Qt approximates arcs and ellipses with cubic Bezier curves instead of evaluating them trigonometrically. For a circle, the approximation places points less than 0.1% of the radius away from their true positions. Code that compares a point from :sip:ref:`~PyQt6.QtGui.QPainterPath.arcMoveTo` against one computed with qSin() and qCos() must therefore allow for a tolerance instead of testing for equality.
 
 .. _qpainterpath-qpainterpath-information:
 

@@ -16,6 +16,27 @@
         .. sip:enum-member:: PyQt6.QtCore.QRangeModel.AutoConnectPolicy.OnRead
             :description: QtCore/QRangeModel-AutoConnectPolicy-OnRead-v.rst
 
+    .. sip:enum:: PyQt6.QtCore.QRangeModel.DropOperation
+        :description: QtCore/QRangeModel-DropOperation-e.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QRangeModel.DropOperation.Automatic
+            :description: QtCore/QRangeModel-DropOperation-Automatic-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QRangeModel.DropOperation.DontDrop
+            :description: QtCore/QRangeModel-DropOperation-DontDrop-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QRangeModel.DropOperation.InsertAsChildren
+            :description: QtCore/QRangeModel-DropOperation-InsertAsChildren-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QRangeModel.DropOperation.InsertAsSiblings
+            :description: QtCore/QRangeModel-DropOperation-InsertAsSiblings-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QRangeModel.DropOperation.OverwriteAndExtend
+            :description: QtCore/QRangeModel-DropOperation-OverwriteAndExtend-v.rst
+
+        .. sip:enum-member:: PyQt6.QtCore.QRangeModel.DropOperation.OverwriteAndIgnore
+            :description: QtCore/QRangeModel-DropOperation-OverwriteAndIgnore-v.rst
+
     .. sip:method:: PyQt6.QtCore.QRangeModel.__init__
         :args:
             :sip:ref:`~PyQt6.QtCore.QPyAbstractRange`
@@ -244,6 +265,18 @@
     .. sip:method:: PyQt6.QtCore.QRangeModel.resetRoleNames
         :description: QtCore/QRangeModel-resetRoleNames-f.rst
 
+    .. sip:method:: PyQt6.QtCore.QRangeModel.resetSortCollator
+        :description: QtCore/QRangeModel-resetSortCollator-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.resetSortRole
+        :description: QtCore/QRangeModel-resetSortRole-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.resetSupportedDragActions
+        :description: QtCore/QRangeModel-resetSupportedDragActions-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.resetSupportedDropActions
+        :description: QtCore/QRangeModel-resetSupportedDropActions-f.rst
+
     .. sip:method:: PyQt6.QtCore.QRangeModel.roleNames
         :returns:
             dict[int, :sip:ref:`~PyQt6.QtCore.QByteArray`]
@@ -293,6 +326,26 @@
             dict[int, :sip:ref:`~PyQt6.QtCore.QByteArray`|bytes|bytearray|memoryview]
         :description: QtCore/QRangeModel-setRoleNames-f-1.rst
 
+    .. sip:method:: PyQt6.QtCore.QRangeModel.setSortCollator
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollator`
+        :description: QtCore/QRangeModel-setSortCollator-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.setSortRole
+        :args:
+            int
+        :description: QtCore/QRangeModel-setSortRole-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.setSupportedDragActions
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.DropAction`
+        :description: QtCore/QRangeModel-setSupportedDragActions-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.setSupportedDropActions
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.DropAction`
+        :description: QtCore/QRangeModel-setSupportedDropActions-f.rst
+
     .. sip:method:: PyQt6.QtCore.QRangeModel.sibling
         :args:
             int
@@ -307,6 +360,16 @@
             int
             order: :sip:ref:`~PyQt6.QtCore.Qt.SortOrder` = :sip:ref:`~PyQt6.QtCore.Qt.SortOrder.AscendingOrder`
         :description: QtCore/QRangeModel-sort-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.sortCollator
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.QCollator`
+        :description: QtCore/QRangeModel-sortCollator-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QRangeModel.sortRole
+        :returns:
+            int
+        :description: QtCore/QRangeModel-sortRole-f.rst
 
     .. sip:method:: PyQt6.QtCore.QRangeModel.span
         :args:
@@ -332,3 +395,23 @@
 
     .. sip:signal:: PyQt6.QtCore.QRangeModel.roleNamesChanged
         :description: QtCore/QRangeModel-roleNamesChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtCore.QRangeModel.sortCollatorChanged
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollator`
+        :description: QtCore/QRangeModel-sortCollatorChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtCore.QRangeModel.sortRoleChanged
+        :args:
+            int
+        :description: QtCore/QRangeModel-sortRoleChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtCore.QRangeModel.supportedDragActionsChanged
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.DropAction`
+        :description: QtCore/QRangeModel-supportedDragActionsChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtCore.QRangeModel.supportedDropActionsChanged
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.DropAction`
+        :description: QtCore/QRangeModel-supportedDropActionsChanged-s.rst

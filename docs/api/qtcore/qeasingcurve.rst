@@ -192,6 +192,15 @@
             bool
         :description: QtCore/QEasingCurve-__eq__-f-1.rst
 
+    .. sip:method:: PyQt6.QtCore.QEasingCurve.fromCubicBezier
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QPointF`
+            :sip:ref:`~PyQt6.QtCore.QPointF`
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.QEasingCurve`
+        :static:
+        :description: QtCore/QEasingCurve-fromCubicBezier-f.rst
+
     .. sip:method:: PyQt6.QtCore.QEasingCurve.__ne__
         :args:
             :sip:ref:`~PyQt6.QtCore.QEasingCurve`|:sip:ref:`~PyQt6.QtCore.QEasingCurve.Type`

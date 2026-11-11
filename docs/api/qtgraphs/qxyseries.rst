@@ -4,6 +4,15 @@
     :inherits: :sip:ref:`~PyQt6.QtGraphs.QAbstractSeries`
     :description: QtGraphs/QXYSeries-c.rst
 
+    .. sip:enum:: PyQt6.QtGraphs.QXYSeries.ValueMapping
+        :description: QtGraphs/QXYSeries-ValueMapping-e.rst
+
+        .. sip:enum-member:: PyQt6.QtGraphs.QXYSeries.ValueMapping.X
+            :description: QtGraphs/QXYSeries-ValueMapping-X-v.rst
+
+        .. sip:enum-member:: PyQt6.QtGraphs.QXYSeries.ValueMapping.Y
+            :description: QtGraphs/QXYSeries-ValueMapping-Y-v.rst
+
     .. sip:method:: PyQt6.QtGraphs.QXYSeries.append
         :args:
             :sip:ref:`~PyQt6.QtCore.QPointF`
@@ -196,6 +205,31 @@
             :sip:ref:`~PyQt6.QtGui.QColor`|:sip:ref:`~PyQt6.QtCore.Qt.GlobalColor`|int
         :description: QtGraphs/QXYSeries-setSelectedColor-f-1.rst
 
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.setStepSize
+        :args:
+            float
+        :description: QtGraphs/QXYSeries-setStepSize-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.setValueMapping
+        :args:
+            :sip:ref:`~PyQt6.QtGraphs.QXYSeries.ValueMapping`
+        :description: QtGraphs/QXYSeries-setValueMapping-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.setValueMin
+        :args:
+            float
+        :description: QtGraphs/QXYSeries-setValueMin-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.setValues
+        :args:
+            Iterable[Any]
+        :description: QtGraphs/QXYSeries-setValues-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.stepSize
+        :returns:
+            float
+        :description: QtGraphs/QXYSeries-stepSize-f.rst
+
     .. sip:method:: PyQt6.QtGraphs.QXYSeries.take
         :args:
             :sip:ref:`~PyQt6.QtCore.QPointF`
@@ -207,6 +241,21 @@
         :args:
             Iterable[int]
         :description: QtGraphs/QXYSeries-toggleSelection-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.valueMapping
+        :returns:
+            :sip:ref:`~PyQt6.QtGraphs.QXYSeries.ValueMapping`
+        :description: QtGraphs/QXYSeries-valueMapping-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.valueMin
+        :returns:
+            float
+        :description: QtGraphs/QXYSeries-valueMin-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QXYSeries.values
+        :returns:
+            list[Any]
+        :description: QtGraphs/QXYSeries-values-f.rst
 
     .. sip:signal:: PyQt6.QtGraphs.QXYSeries.clicked
         :args:
@@ -263,3 +312,23 @@
 
     .. sip:signal:: PyQt6.QtGraphs.QXYSeries.selectedPointsChanged
         :description: QtGraphs/QXYSeries-selectedPointsChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QXYSeries.stepSizeChanged
+        :args:
+            float
+        :description: QtGraphs/QXYSeries-stepSizeChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QXYSeries.valueMappingChanged
+        :args:
+            :sip:ref:`~PyQt6.QtGraphs.QXYSeries.ValueMapping`
+        :description: QtGraphs/QXYSeries-valueMappingChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QXYSeries.valueMinChanged
+        :args:
+            float
+        :description: QtGraphs/QXYSeries-valueMinChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QXYSeries.valuesChanged
+        :args:
+            Iterable[Any]
+        :description: QtGraphs/QXYSeries-valuesChanged-s.rst

@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 16
-    :digest: 380381bd2ba87200639946241df17e91
+    :digest: c3b0739caa90d3595b7099827d1b0971
 
-Returns a directory location where user-specific configuration files shared between multiple applications should be written. This is a generic value and the returned path is never empty.
+Directory where configuration files shared between multiple applications should be written. The returned path is never empty. Generic.

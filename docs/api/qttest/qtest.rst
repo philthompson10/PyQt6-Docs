@@ -349,6 +349,17 @@
         :static:
         :description: QtTest/QTest-sendKeyEvent-f.rst
 
+    .. sip:method:: PyQt6.QtTest.QTest.sendKeyEvent
+        :args:
+            :sip:ref:`~PyQt6.QtTest.QTest.KeyAction`
+            :sip:ref:`~PyQt6.QtGui.QWindow`
+            :sip:ref:`~PyQt6.QtCore.Qt.Key`
+            str|None
+            :sip:ref:`~PyQt6.QtCore.Qt.KeyboardModifier`
+            delay: int = -1
+        :static:
+        :description: QtTest/QTest-sendKeyEvent-f-3.rst
+
     .. sip:method:: PyQt6.QtTest.QTest.simulateEvent
         :args:
             :sip:ref:`~PyQt6.QtWidgets.QWidget`
@@ -360,3 +371,15 @@
             delay: int = -1
         :static:
         :description: QtTest/QTest-simulateEvent-f.rst
+
+    .. sip:method:: PyQt6.QtTest.QTest.simulateEvent
+        :args:
+            :sip:ref:`~PyQt6.QtGui.QWindow`
+            bool
+            int
+            :sip:ref:`~PyQt6.QtCore.Qt.KeyboardModifier`
+            str|None
+            bool
+            delay: int = -1
+        :static:
+        :description: QtTest/QTest-simulateEvent-f-1.rst

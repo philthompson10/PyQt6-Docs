@@ -179,10 +179,12 @@
         :args:
             int
             :sip:ref:`~PyQt6.QtCore.QSize`
-            options: :sip:ref:`~PyQt6.QtPdf.QPdfDocumentRenderOptions` = QPdfDocumentRenderOptions()
+            options: :sip:ref:`~PyQt6.QtPdf.QPdfDocumentRenderOptions` = {}
+            format: :sip:ref:`~PyQt6.QtGui.QImage.Format` = :sip:ref:`~PyQt6.QtGui.QImage.Format.Format_ARGB32`
+            fillColor: :sip:ref:`~PyQt6.QtGui.QColor`|:sip:ref:`~PyQt6.QtCore.Qt.GlobalColor`|int = :sip:ref:`~PyQt6.QtCore.Qt.GlobalColor.transparent`
         :returns:
             :sip:ref:`~PyQt6.QtGui.QImage`
-        :description: QtPdf/QPdfDocument-render-f.rst
+        :description: QtPdf/QPdfDocument-render-f-1.rst
 
     .. sip:method:: PyQt6.QtPdf.QPdfDocument.setPassword
         :args:

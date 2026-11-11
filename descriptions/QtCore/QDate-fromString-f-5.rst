@@ -2,7 +2,7 @@
     :status: todo
     :pysig: c2c7522a7a21349ed1ed27a936d47590
     :realsig: (const QString&, const QString&, int, QCalendar)
-    :digest: 92f81f3c085434bee0b95b3d22e36990
+    :digest: d80d9af69bde7f43f7440018fb712fa4
 
 Returns the :sip:ref:`~PyQt6.QtCore.QDate` represented by the *string*, using the *format* given, or an invalid date if the string cannot be parsed.
 
@@ -10,38 +10,40 @@ Uses *cal* as calendar if supplied, else the Gregorian calendar. Ranges of value
 
 These expressions may be used for the format:
 
-+------------+-----------------------------------------------------------------------------------------+
-| Expression | Output                                                                                  |
-+============+=========================================================================================+
-| d          | The day as a number without a leading zero (1 to 31)                                    |
-+------------+-----------------------------------------------------------------------------------------+
-| dd         | The day as a number with a leading zero (01 to 31)                                      |
-+------------+-----------------------------------------------------------------------------------------+
-| ddd        | The abbreviated day name ('Mon' to 'Sun').                                              |
-+------------+-----------------------------------------------------------------------------------------+
-| dddd       | The long day name ('Monday' to 'Sunday').                                               |
-+------------+-----------------------------------------------------------------------------------------+
-| M          | The month as a number without a leading zero (1 to 12)                                  |
-+------------+-----------------------------------------------------------------------------------------+
-| MM         | The month as a number with a leading zero (01 to 12)                                    |
-+------------+-----------------------------------------------------------------------------------------+
-| MMM        | The abbreviated month name ('Jan' to 'Dec').                                            |
-+------------+-----------------------------------------------------------------------------------------+
-| MMMM       | The long month name ('January' to 'December').                                          |
-+------------+-----------------------------------------------------------------------------------------+
-| yy         | The year as a two digit number (00 to 99)                                               |
-+------------+-----------------------------------------------------------------------------------------+
-| yyyy       | The year as a four digit number, possibly plus a leading minus sign for negative years. |
-+------------+-----------------------------------------------------------------------------------------+
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Expression | Output                                                                                                                                                                                               |
++============+======================================================================================================================================================================================================+
+| d          | The day as a number without a leading zero (1 to 31)                                                                                                                                                 |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dd         | The day as a number with a leading zero (01 to 31)                                                                                                                                                   |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ddd        | The abbreviated day name ('Mon' to 'Sun').                                                                                                                                                           |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| dddd       | The long day name ('Monday' to 'Sunday').                                                                                                                                                            |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| M          | The month as a number without a leading zero (1 to 12)                                                                                                                                               |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| MM         | The month as a number with a leading zero (01 to 12)                                                                                                                                                 |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| MMM        | The abbreviated month name ('Jan' to 'Dec').                                                                                                                                                         |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| MMMM       | The long month name ('January' to 'December').                                                                                                                                                       |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| yy         | The year as a two digit number (00 to 99)                                                                                                                                                            |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| yyyy       | The year as a number, zero-padded if necessary to at least four digits. A leading minus sign is accepted to represent a negative year. A plus sign is required when more than four digits are given. |
++------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 **Note:** Day and month names must be given in English (C locale). If localized month and day names are to be recognized, use :sip:ref:`~PyQt6.QtCore.QLocale.system`.toDate().
 
-All other input characters will be treated as text. Any non-empty sequence of characters enclosed in single quotes will also be treated (stripped of the quotes) as text and not be interpreted as expressions. For example:
+Any non-empty sequence of characters enclosed in single quotes will also be treated (stripped of the quotes) as text and not be interpreted as expressions. Two consecutive single quotes ("''") are read as a single quote to be matched by the input, rather than starting or ending a verbatim sequence. All other input characters will be treated as verbatim text to be matched in the input string. For example:
 
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-code-src_corelib_time_qdatetime.py
     :lines: 62-63
 
-If the format is not satisfied, an invalid :sip:ref:`~PyQt6.QtCore.QDate` is returned. The expressions that don't expect leading zeroes (d, M) will be greedy. This means that they will use two digits even if this will put them outside the accepted range of values and leaves too few digits for other sections. For example, the following format string could have meant January 30 but the M will grab two digits, resulting in an invalid date:
+If the format is not satisfied, an invalid :sip:ref:`~PyQt6.QtCore.QDate` is returned.
+
+Where numeric fields are juxtaposed, with no separators to break up the sequences of digits, there may be ambiguity as to whether some fields allowed to be single-digit use two digits (due to the value to represent being more than 9). Where giving such a field two digits would leave too few for other fields, and the single-digit reading is consistent with other fields, this ambiguity can be resolved. Otherwise (where more than one field is allowed to have only one digit and there would be spare digits if each only got one), a resolution that gives extra digits to earlier fields is preferred over one that gives them to later fields, provided the data remain consistent. For example:
 
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-code-src_corelib_time_qdatetime.py
     :lines: 68-68

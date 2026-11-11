@@ -47,11 +47,11 @@
 
     .. sip:method:: PyQt6.QtStateMachine.QState.addTransition
         :args:
-            pyqtBoundSignal
+            QtCore.pyqtBoundSignal
             :sip:ref:`~PyQt6.QtStateMachine.QAbstractState`
         :returns:
             :sip:ref:`~PyQt6.QtStateMachine.QSignalTransition`
-        :description: QtStateMachine/QState-addTransition-f-2.rst
+        :description: QtStateMachine/QState-addTransition-f-3.rst
 
     .. sip:method:: PyQt6.QtStateMachine.QState.assignProperty
         :args:

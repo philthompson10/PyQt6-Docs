@@ -1,11 +1,16 @@
 .. sip:class-description::
     :status: todo
     :brief: This class is used for capturing a window
-    :digest: ca76b145ba03a6a65815bf0b38210f6d
+    :digest: fffe783524a2466748c16ae146f49982
 
 This class is used for capturing a window.
 
 The class captures a window. It is managed by the :sip:ref:`~PyQt6.QtMultimedia.QMediaCaptureSession` class where the captured window can be displayed in a video preview object or recorded to a file.
+
+The following snippet shows how to select one of the capturable windows and display the result in a :sip:ref:`~PyQt6.QtMultimediaWidgets.QVideoWidget`:
+
+.. literalinclude:: ../../../snippets/qtmultimedia-src-multimedia-doc-snippets-multimedia-snippets-windowcapturesnippets.py
+    :lines: 14-27
 
 .. _qwindowcapture-window-capture-limitations:
 
@@ -15,6 +20,8 @@ Window Capture Limitations
 The following limitations apply to using :sip:ref:`~PyQt6.QtMultimedia.QWindowCapture`:
 
 * :sip:ref:`~PyQt6.QtMultimedia.QWindowCapture` is only supported with the FFmpeg backend.
+
+* On some platforms, no new video frames are emitted while the captured window content remains unchanged. Applications should therefore not rely on receiving a continuous stream of frames at the requested frame rate.
 
 The following limitations apply when using ``QWindowCapture`` on X11 systems:
 

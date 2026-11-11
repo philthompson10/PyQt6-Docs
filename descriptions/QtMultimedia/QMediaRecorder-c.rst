@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Used for encoding and recording a capture session
-    :digest: 2ca4200ba774a4ab161be5cbb233ea49
+    :digest: 635a342520bea295d37056ea37767657
 
 The :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder` class is used for encoding and recording a capture session.
 
@@ -9,7 +9,7 @@ Use the :sip:ref:`~PyQt6.QtMultimedia.QMediaRecorder` class to encode and record
 
 * Audio. Use :sip:ref:`~PyQt6.QtMultimedia.QAudioInput` or :sip:ref:`~PyQt6.QtMultimedia.QAudioBufferInput`.
 
-* Video. Use :sip:ref:`~PyQt6.QtMultimedia.QCamera`, :sip:ref:`~PyQt6.QtMultimedia.QScreenCapture`, :sip:ref:`~PyQt6.QtMultimedia.QWindowCapture`, or :sip:ref:`~PyQt6.QtMultimedia.QVideoFrameInput`.
+* Video. Use :sip:ref:`~PyQt6.QtMultimedia.QCamera`, :sip:ref:`~PyQt6.QtMultimedia.QScreenCapture`, :sip:ref:`~PyQt6.QtMultimedia.QWindowCapture`, :sip:ref:`~PyQt6.QtMultimedia.QVideoFrameInput`, or QGStreamerVideoSource (on embedded Linux with the ``gstreamer`` media backend).
 
 To record media, connect a generator to a corresponding media capture session.
 

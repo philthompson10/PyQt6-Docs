@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Provides a dialog that allows users to select files or directories
-    :digest: 95d58991bb1d786cfcf9adb8ccdc2c27
+    :digest: 2569a282a59652520b023d3ef3ed8965
 
 Provides a dialog that allows users to select files or directories.
 
@@ -104,5 +104,14 @@ Platform notes
 By default, :sip:ref:`~PyQt6.QtWidgets.QFileDialog` uses the platform's native file dialog if available. In this case, some widget-specific APIs (such as layout() and :sip:ref:`~PyQt6.QtWidgets.QFileDialog.itemDelegate`) may return ``null``. Also, not all platforms display file dialogs with a title bar, so the caption text may not be visible.
 
 To force the use of the Qt widget-based dialog, set the :sip:ref:`~PyQt6.QtWidgets.QFileDialog.Option.DontUseNativeDialog` option or the :sip:ref:`~PyQt6.QtCore.Qt.ApplicationAttribute.AA_DontUseNativeDialogs` application attribute.
+
+.. _qfiledialog-security-considerations:
+
+Security Considerations
+-----------------------
+
+The :sip:ref:`~PyQt6.QtWidgets.QFileDialog.restoreState` function deserializes a versioned binary blob describing the dialog's splitter layout, sidebar bookmarks, navigation history, current directory, and an embedded :sip:ref:`~PyQt6.QtWidgets.QHeaderView` state blob. The format's magic number and version are validated, but the individual fields are not otherwise sanity-checked once the outer structure is accepted.
+
+Only pass :sip:ref:`~PyQt6.QtWidgets.QFileDialog.restoreState` a :sip:ref:`~PyQt6.QtCore.QByteArray` that was previously produced by :sip:ref:`~PyQt6.QtWidgets.QFileDialog.saveState` and persisted by the same, or a compatible, version of your application, typically through :sip:ref:`~PyQt6.QtCore.QSettings`. Do not restore state from a file, configuration, or other source whose provenance cannot be trusted. The embedded header state is subject to the same considerations described in QHeaderView's Security Considerations.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCore.QDir`, :sip:ref:`~PyQt6.QtCore.QFileInfo`, :sip:ref:`~PyQt6.QtCore.QFile`, :sip:ref:`~PyQt6.QtWidgets.QColorDialog`, :sip:ref:`~PyQt6.QtWidgets.QFontDialog`, `Standard Dialogs Example <https://doc.qt.io/qt-6/qtwidgets-dialogs-standarddialogs-example.html>`_.

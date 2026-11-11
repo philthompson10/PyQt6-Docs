@@ -2,11 +2,11 @@
     :status: todo
     :pysig: 93cbc04e9adc69d5962b06fb3a393e19
     :realsig: (const QString&, QObject*) const
-    :digest: 21c2e5bdc578636ffadcf1a6fcf58855
+    :digest: fbdf95b800493ebc76cede9ed057b8d6
 
 Constructs a profile with the storage name *storageName* and parent *parent*.
 
-The storage name is used to give each disk-based profile, a separate subdirectory for persistent data and cache. The storage location must be unique during application life time. It is up to the user to prevent the creation of profiles with same storage's location, which can lead to corrupted browser cache.
+The storage name is used to give each disk-based profile, a separate subdirectory for persistent data and cache. The storage location must be unique during application life time. It is up to the user to prevent the creation of profiles with same storage's location, which can lead to corrupted cache.
 
 A disk-based :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineProfile` should be destroyed before the application exit, otherwise the cache and persistent data may not be fully flushed to disk.
 

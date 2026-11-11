@@ -226,6 +226,11 @@
             str|None
         :description: QtWebEngineCore/QWebEngineProfile-setCachePath-f.rst
 
+    .. sip:method:: PyQt6.QtWebEngineCore.QWebEngineProfile.setCryptoModulePasswordFunction
+        :args:
+            Callable[[bytes, bytes, bool], bytes]
+        :description: QtWebEngineCore/QWebEngineProfile-setCryptoModulePasswordFunction-f.rst
+
     .. sip:method:: PyQt6.QtWebEngineCore.QWebEngineProfile.setDownloadPath
         :args:
             str|None

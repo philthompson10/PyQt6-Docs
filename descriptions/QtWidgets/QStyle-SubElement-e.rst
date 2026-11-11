@@ -1,6 +1,6 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 72dbb66844b1ee8026d66ea1776208c6
+    :digest: 31b7bb0bbea1b3fc9aba2cfa7736395a
 
 This enum represents a sub-area of a widget. Style implementations use these areas to draw the different parts of a widget.
 

@@ -6,10 +6,10 @@
 
     .. sip:method:: PyQt6.QtHelp.QHelpContentModel.columnCount
         :args:
-            parent: :sip:ref:`~PyQt6.QtCore.QModelIndex` = QModelIndex()
+            parent: :sip:ref:`~PyQt6.QtCore.QModelIndex` = {}
         :returns:
             int
-        :description: QtHelp/QHelpContentModel-columnCount-f.rst
+        :description: QtHelp/QHelpContentModel-columnCount-f-1.rst
 
     .. sip:method:: PyQt6.QtHelp.QHelpContentModel.contentItemAt
         :args:
@@ -38,10 +38,10 @@
         :args:
             int
             int
-            parent: :sip:ref:`~PyQt6.QtCore.QModelIndex` = QModelIndex()
+            parent: :sip:ref:`~PyQt6.QtCore.QModelIndex` = {}
         :returns:
             :sip:ref:`~PyQt6.QtCore.QModelIndex`
-        :description: QtHelp/QHelpContentModel-index-f.rst
+        :description: QtHelp/QHelpContentModel-index-f-1.rst
 
     .. sip:method:: PyQt6.QtHelp.QHelpContentModel.isCreatingContents
         :returns:
@@ -57,10 +57,10 @@
 
     .. sip:method:: PyQt6.QtHelp.QHelpContentModel.rowCount
         :args:
-            parent: :sip:ref:`~PyQt6.QtCore.QModelIndex` = QModelIndex()
+            parent: :sip:ref:`~PyQt6.QtCore.QModelIndex` = {}
         :returns:
             int
-        :description: QtHelp/QHelpContentModel-rowCount-f.rst
+        :description: QtHelp/QHelpContentModel-rowCount-f-1.rst
 
     .. sip:signal:: PyQt6.QtHelp.QHelpContentModel.contentsCreated
         :description: QtHelp/QHelpContentModel-contentsCreated-s.rst

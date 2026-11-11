@@ -54,6 +54,11 @@
             int
         :description: QtGraphs/QDateTimeAxis-setSubTickCount-f.rst
 
+    .. sip:method:: PyQt6.QtGraphs.QDateTimeAxis.setTickCount
+        :args:
+            int
+        :description: QtGraphs/QDateTimeAxis-setTickCount-f.rst
+
     .. sip:method:: PyQt6.QtGraphs.QDateTimeAxis.setTickInterval
         :args:
             float
@@ -73,6 +78,11 @@
         :returns:
             int
         :description: QtGraphs/QDateTimeAxis-subTickCount-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QDateTimeAxis.tickCount
+        :returns:
+            int
+        :description: QtGraphs/QDateTimeAxis-tickCount-f.rst
 
     .. sip:method:: PyQt6.QtGraphs.QDateTimeAxis.tickInterval
         :returns:
@@ -138,6 +148,11 @@
 
     .. sip:signal:: PyQt6.QtGraphs.QDateTimeAxis.subTickCountChanged
         :description: QtGraphs/QDateTimeAxis-subTickCountChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QDateTimeAxis.tickCountChanged
+        :args:
+            int
+        :description: QtGraphs/QDateTimeAxis-tickCountChanged-s.rst
 
     .. sip:signal:: PyQt6.QtGraphs.QDateTimeAxis.tickIntervalChanged
         :description: QtGraphs/QDateTimeAxis-tickIntervalChanged-s.rst

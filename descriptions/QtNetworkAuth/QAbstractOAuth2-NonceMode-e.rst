@@ -1,6 +1,6 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 384f215dc34354a58772b2bf255d07a6
+    :digest: 746b2474429789e0af1dcc25e9817e6d
 
 List of available `nonce <https://openid.net/specs/openid-connect-core-1_0-final.html#IDToken>`_ modes.
 

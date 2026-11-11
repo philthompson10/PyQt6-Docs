@@ -1,6 +1,8 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 0
-    :digest: a91c43b73eaa7e6c6f5a36800df81b08
+    :digest: c9ed16dd97d726dc2f5cfd794fda0ee4
 
 An unsupported permission type.
+
+**Note:** Non-persistent permission types are ones that will never be remembered by the underlying storage, and will trigger a permission request every time a website tries to use them.

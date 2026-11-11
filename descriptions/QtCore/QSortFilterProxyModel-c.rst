@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Support for sorting and filtering data passed between another model and a view
-    :digest: a20339354d4f7726176580298fbbe894
+    :digest: 0323418f5be26b05de303cf310437fef
 
 The :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel` class provides support for sorting and filtering data passed between another model and a view.
 
@@ -72,7 +72,7 @@ In addition to sorting, :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel` can be us
 
 For hierarchical models, the filter is applied recursively to all children. If a parent item doesn't match the filter, none of its children will be shown.
 
-A common use case is to let the user specify the filter regular expression, wildcard pattern, or fixed string in a :sip:ref:`~PyQt6.QtWidgets.QLineEdit` and to connect the :sip:ref:`~PyQt6.QtWidgets.QLineEdit.textChanged` signal to :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.setFilterRegularExpression`, :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.setFilterWildcard`, or :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.setFilterFixedString` to reapply the filter.
+A common use case is to let the user specify the filter regular expression, wildcard pattern, or fixed string in a :sip:ref:`~PyQt6.QtWidgets.QLineEdit`. To do this, connect the :sip:ref:`~PyQt6.QtWidgets.QLineEdit.textChanged` or :sip:ref:`~PyQt6.QtWidgets.QLineEdit.textEdited` signal to either :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.setFilterRegularExpression`, :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.setFilterWildcard`, or :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.setFilterFixedString`.
 
 Custom filtering behavior can be achieved by reimplementing the :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.filterAcceptsRow` and :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.filterAcceptsColumn` functions. For example (from the `Custom Sort/Filter Model <https://doc.qt.io/qt-6/qtwidgets-itemviews-customsortfiltermodel-example.html>`_ example), the following implementation ignores the :sip:ref:`~PyQt6.QtCore.QSortFilterProxyModel.filterKeyColumn` property and performs filtering on columns 0, 1, and 2:
 

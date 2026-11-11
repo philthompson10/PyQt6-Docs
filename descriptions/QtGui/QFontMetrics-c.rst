@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Font metrics information
-    :digest: 87355803a4af748f2f7c6f2f7d91123a
+    :digest: 854ff33f61456f8ce9e2f52bb0c27481
 
 The :sip:ref:`~PyQt6.QtGui.QFontMetrics` class provides font metrics information.
 
@@ -26,6 +26,8 @@ There are also some functions that operate on the set of glyphs in the font: :si
 For each character, you can get its :sip:ref:`~PyQt6.QtGui.QFontMetrics.horizontalAdvance`, :sip:ref:`~PyQt6.QtGui.QFontMetrics.leftBearing`, and :sip:ref:`~PyQt6.QtGui.QFontMetrics.rightBearing`, and find out whether it is in the font using :sip:ref:`~PyQt6.QtGui.QFontMetrics.inFont`. You can also treat the character as a string, and use the string functions on it.
 
 The string functions include :sip:ref:`~PyQt6.QtGui.QFontMetrics.horizontalAdvance`, to return the advance width of a string in pixels (or points, for a printer), :sip:ref:`~PyQt6.QtGui.QFontMetrics.boundingRect`, to return a rectangle large enough to contain the rendered string, and :sip:ref:`~PyQt6.QtGui.QFontMetrics.size`, to return the size of that rectangle.
+
+:sip:ref:`~PyQt6.QtGui.QFontMetrics` has two different functions for calculating the bounds of a string, each with multiple overloads: :sip:ref:`~PyQt6.QtGui.QFontMetrics.boundingRect` and :sip:ref:`~PyQt6.QtGui.QFontMetrics.tightBoundingRect`. If a precise bounding rect is needed, then :sip:ref:`~PyQt6.QtGui.QFontMetrics.tightBoundingRect` should be preferred. This will measure each glyph individually to return a bounding rect that fits tightly around the rendered text. Depending on the platform, the :sip:ref:`~PyQt6.QtGui.QFontMetrics.boundingRect` function may return approximated bounds, but require less computation.
 
 **Note:** The advance width can be different from the width of the actual rendered text. It refers to the distance from the origin of the string to where you would append additional characters. As text may have overhang (in the case of an italic font for instance) or padding between characters, the advance width can be either smaller or larger than the actual rendering of the text. This is called the right bearing of the text.
 

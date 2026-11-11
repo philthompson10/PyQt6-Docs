@@ -1,6 +1,6 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 62a5fde87cbe4454379e916a58d43f72
+    :digest: 7026c7a1769a46435e1329789bf66bff
 
 The parsing mode controls the way :sip:ref:`~PyQt6.QtCore.QUrl` parses strings.
 
@@ -8,7 +8,7 @@ In TolerantMode, the parser has the following behaviour:
 
 * Spaces and "%20": unencoded space characters will be accepted and will be treated as equivalent to "%20".
 
-* Single "%" characters: Any occurrences of a percent character "%" not followed by exactly two hexadecimal characters (e.g., "13% coverage.html") will be replaced by "%25". Note that one lone "%" character will trigger the correction mode for all percent characters.
+* Single "%" characters: if any percent character "%" is not followed by two hexadecimal characters (e.g., "13% coverage.html"), the parser will assume the input was not encoded and will replace all "%" characters with "%25".
 
 * Reserved and unreserved characters: An encoded URL should only contain a few characters as literals; all other characters should be percent-encoded. In TolerantMode, these characters will be accepted if they are found in the URL: space / double-quote / "<" / ">" / "" / "^" / "`" / "{" / "|" / "}" Those same characters can be decoded again by passing :sip:ref:`~PyQt6.QtCore.QUrl.ComponentFormattingOption.DecodeReserved` to :sip:ref:`~PyQt6.QtCore.QUrl.toString` or :sip:ref:`~PyQt6.QtCore.QUrl.toEncoded`. In the getters of individual components, those characters are often returned in decoded form.
 

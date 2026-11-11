@@ -1,0 +1,21 @@
+.. sip:method-description::
+    :status: todo
+    :pysig: 8b19f06d5e4cdaea09e5db9350708228
+    :realsig: (QRhiCommandBuffer*)
+    :digest: df84cc1760dea81d1d85e28eba4fd404
+
+Called when the widget is initialized for the first time, when the associated texture's size, format, or sample count changes, or when the :sip:ref:`~PyQt6.QtGui.QRhi` and texture change for any reason. The function is expected to maintain (create if not yet created, adjust and rebuild if the size has changed) the graphics resources used by the rendering code in :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.render`.
+
+To query the :sip:ref:`~PyQt6.QtGui.QRhi`, :sip:ref:`~PyQt6.QtGui.QRhiTexture`, and other related objects, call :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.rhi`, :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.colorTexture`, :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.depthStencilBuffer`, and :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.renderTarget`.
+
+When the widget size changes, the :sip:ref:`~PyQt6.QtGui.QRhi` object, the color buffer texture, and the depth stencil buffer objects are all the same instances (so the getters return the same pointers) as before, but the color and depth/stencil buffers will likely have been rebuilt, meaning the size and the underlying native texture resource may be different than in the last invocation.
+
+Reimplementations should also be prepared that the :sip:ref:`~PyQt6.QtGui.QRhi` object and the color buffer texture may change between invocations of this function. One special case where the objects will be different is when performing a :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.grabFramebuffer` with a widget that is not yet shown, and then making the widget visible on-screen within a top-level widget. There the grab will happen with a dedicated :sip:ref:`~PyQt6.QtGui.QRhi` that is then replaced with the top-level window's associated :sip:ref:`~PyQt6.QtGui.QRhi` in subsequent initialize() and :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.render` invocations. Another, more common case is when the widget is reparented so that it belongs to a new top-level window. In this case the :sip:ref:`~PyQt6.QtGui.QRhi` and all related resources managed by the :sip:ref:`~PyQt6.QtWidgets.QRhiWidget` will be different instances than before in the subsequent call to this function. Is is then important that all existing :sip:ref:`~PyQt6.QtGui.QRhi` resources previously created by the subclass are destroyed because they belong to the previous :sip:ref:`~PyQt6.QtGui.QRhi` that should not be used by the widget anymore.
+
+When autoRenderTarget is ``true``, which is the default, a depth-stencil :sip:ref:`~PyQt6.QtGui.QRhiRenderBuffer` and a :sip:ref:`~PyQt6.QtGui.QRhiTextureRenderTarget` associated with :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.colorTexture` (or :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.msaaColorBuffer`) and the depth-stencil buffer are created and managed automatically. Reimplementations of initialize() and :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.render` can query those objects via :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.depthStencilBuffer` and :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.renderTarget`. When autoRenderTarget is set to ``false``, these objects are no longer created and managed automatically. Rather, it will be up the the initialize() implementation to create buffers and set up the render target as it sees fit. When manually managing additional color or depth-stencil attachments for the render target, their size and sample count must always follow the size and sample count of :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.colorTexture` / :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.msaaColorBuffer`, otherwise rendering or 3D API validation errors may occur.
+
+The subclass-created graphics resources are expected to be released in the destructor implementation of the subclass.
+
+*cb* is the :sip:ref:`~PyQt6.QtGui.QRhiCommandBuffer` for the current frame of the widget. The function is called with a frame being recorded, but without an active render pass. The command buffer is provided primarily to allow enqueuing :sip:ref:`~PyQt6.QtGui.QRhiCommandBuffer.resourceUpdate` without deferring to :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.render`.
+
+.. seealso:: :sip:ref:`~PyQt6.QtWidgets.QRhiWidget.render`.

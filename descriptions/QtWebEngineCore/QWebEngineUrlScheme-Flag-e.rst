@@ -1,5 +1,5 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 43408cc77601b3c4bc6529e753b8bd0e
+    :digest: 1a8d285083bb4c46e75b7450e7182fa6
 
 This enum type specifies security options that should apply to a URL scheme.

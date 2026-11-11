@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: The base class of all Qt objects
-    :digest: 1c3d2743b3b5162df17d7addfd4e8ea6
+    :digest: 2e914f7a18b3687d0e981f39f1c34dbc
 
 The :sip:ref:`~PyQt6.QtCore.QObject` class is the base class of all Qt objects.
 
@@ -64,7 +64,7 @@ Auto-Connection
 
 Qt's meta-object system provides a mechanism to automatically connect signals and slots between :sip:ref:`~PyQt6.QtCore.QObject` subclasses and their children. As long as objects are defined with suitable object names, and slots follow a simple naming convention, this connection can be performed at run-time by the :sip:ref:`~PyQt6.QtCore.QMetaObject.connectSlotsByName` function.
 
-uic generates code that invokes this function to enable auto-connection to be performed between widgets on forms created with *Qt Widgets Designer*. More information about using auto-connection with *Qt Widgets Designer* is given in the `Using a Designer UI File in Your Application <https://doc.qt.io/qt-6/designer-using-a-ui-file.html>`_ section of the `Qt Widgets Designer <https://doc.qt.io/qt-6/qtdesigner-manual.html>`_ manual.
+uic generates code that invokes this function to enable auto-connection to be performed between widgets on forms created with *Qt Widgets Designer*. More information about using auto-connection with *Qt Widgets Designer* is given in the `Using a Qt Widgets Designer UI File in Your Application <https://doc.qt.io/qt-6/designer-using-a-ui-file.html>`_ section of the `Qt Widgets Designer <https://doc.qt.io/qt-6/qtdesigner-manual.html>`_ manual.
 
 .. _qobject-dynamic-properties:
 

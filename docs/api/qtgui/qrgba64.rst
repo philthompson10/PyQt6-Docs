@@ -79,6 +79,11 @@
             int
         :description: QtGui/QRgba64-green8-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QRgba64.__hash__
+        :returns:
+            int
+        :description: QtGui/QRgba64-__hash__-f.rst
+
     .. sip:method:: PyQt6.QtGui.QRgba64.__int__
         :returns:
             int

@@ -236,6 +236,22 @@
             :sip:ref:`~PyQt6.QtWidgets.QDialogButtonBox.StandardButton`
         :description: QtWidgets/QDialogButtonBox-standardButtons-f-1.rst
 
+    .. sip:method:: PyQt6.QtWidgets.QDialogButtonBox.standardButtonShortcut
+        :args:
+            :sip:ref:`~PyQt6.QtWidgets.QDialogButtonBox.StandardButton`
+        :returns:
+            :sip:ref:`~PyQt6.QtGui.QKeySequence`
+        :static:
+        :description: QtWidgets/QDialogButtonBox-standardButtonShortcut-f.rst
+
+    .. sip:method:: PyQt6.QtWidgets.QDialogButtonBox.standardButtonText
+        :args:
+            :sip:ref:`~PyQt6.QtWidgets.QDialogButtonBox.StandardButton`
+        :returns:
+            str
+        :static:
+        :description: QtWidgets/QDialogButtonBox-standardButtonText-f.rst
+
     .. sip:signal:: PyQt6.QtWidgets.QDialogButtonBox.accepted
         :description: QtWidgets/QDialogButtonBox-accepted-s.rst
 

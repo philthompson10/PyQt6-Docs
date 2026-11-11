@@ -2,7 +2,7 @@
     :status: todo
     :pysig: 07d36332a0259d5ad8f0e713de5f3e2a
     :realsig: (const QString&, const QString&, int, QCalendar)
-    :digest: ead85f2596a6970383b279e30063a64b
+    :digest: d5be1006bf8bf47c50a9b744e43c6a04
 
 Returns the :sip:ref:`~PyQt6.QtCore.QDateTime` represented by the *string*, using the *format* given, or an invalid datetime if the string cannot be parsed.
 
@@ -31,12 +31,14 @@ For example:
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-code-src_corelib_time_qdatetime.py
     :lines: 156-159
 
-All other input characters will be treated as text. Any non-empty sequence of characters enclosed in single quotes will also be treated (stripped of the quotes) as text and not be interpreted as expressions.
+Any non-empty sequence of characters enclosed in single quotes will also be treated (stripped of the quotes) as text and not be interpreted as expressions. Two consecutive single quotes ("''") are read as a single quote to be matched by the input, rather than starting or ending a verbatim sequence. All other input characters will be treated as verbatim text to be matched in the input string. For example:
 
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-code-src_corelib_time_qdatetime.py
     :lines: 139-146
 
-If the format is not satisfied, an invalid :sip:ref:`~PyQt6.QtCore.QDateTime` is returned. If the format is satisfied but *string* represents an invalid datetime (e.g. in a gap skipped by a time-zone transition), an valid :sip:ref:`~PyQt6.QtCore.QDateTime` is returned, that represents a near-by datetime that is valid.
+If the format is not satisfied, an invalid :sip:ref:`~PyQt6.QtCore.QDateTime` is returned.
+
+Where numeric fields are juxtaposed, with no separators to break up the sequences of digits, there may be ambiguity as to whether some fields allowed to be single-digit use two digits (due to the value to represent being more than 9). Where giving such a field two digits would leave too few for other fields, and the single-digit reading is consistent with other fields, this ambiguity can be resolved. Otherwise (where more than one field is allowed to have only one digit and there would be spare digits if each only got one), a resolution that gives extra digits to earlier fields is preferred over one that gives them to later fields, provided the data remain consistent. For example:
 
 The expressions that don't have leading zeroes (d, M, h, m, s, z) will be greedy. This means that they will use two digits (or three, for z) even if this will put them outside the range and/or leave too few digits for other sections.
 

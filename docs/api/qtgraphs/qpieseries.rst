@@ -209,6 +209,16 @@
             float
         :description: QtGraphs/QPieSeries-setPieSize-f.rst
 
+    .. sip:method:: PyQt6.QtGraphs.QPieSeries.setSliceData
+        :args:
+            Iterable[float]
+        :description: QtGraphs/QPieSeries-setSliceData-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QPieSeries.setSliceLabels
+        :args:
+            Iterable[str|None]
+        :description: QtGraphs/QPieSeries-setSliceLabels-f.rst
+
     .. sip:method:: PyQt6.QtGraphs.QPieSeries.setStartAngle
         :args:
             float
@@ -218,6 +228,16 @@
         :args:
             float
         :description: QtGraphs/QPieSeries-setVerticalPosition-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QPieSeries.sliceData
+        :returns:
+            list[float]
+        :description: QtGraphs/QPieSeries-sliceData-f.rst
+
+    .. sip:method:: PyQt6.QtGraphs.QPieSeries.sliceLabels
+        :returns:
+            list[str]
+        :description: QtGraphs/QPieSeries-sliceLabels-f.rst
 
     .. sip:method:: PyQt6.QtGraphs.QPieSeries.slices
         :returns:
@@ -310,6 +330,16 @@
         :args:
             Iterable[:sip:ref:`~PyQt6.QtGraphs.QPieSlice`]
         :description: QtGraphs/QPieSeries-replaced-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QPieSeries.sliceDataChanged
+        :args:
+            Iterable[float]
+        :description: QtGraphs/QPieSeries-sliceDataChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphs.QPieSeries.sliceLabelsChanged
+        :args:
+            Iterable[str|None]
+        :description: QtGraphs/QPieSeries-sliceLabelsChanged-s.rst
 
     .. sip:signal:: PyQt6.QtGraphs.QPieSeries.startAngleChanged
         :description: QtGraphs/QPieSeries-startAngleChanged-s.rst

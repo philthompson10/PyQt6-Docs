@@ -1,11 +1,11 @@
 .. sip:class-description::
     :status: todo
     :brief: Generic model for storing custom data
-    :digest: 2706a9c8a5ce3b644cba1ea945026f03
+    :digest: 8c1197ef7cf6f32296b82c41844ae775
 
 The :sip:ref:`~PyQt6.QtGui.QStandardItemModel` class provides a generic model for storing custom data.
 
-:sip:ref:`~PyQt6.QtGui.QStandardItemModel` can be used as a repository for standard Qt data types. It is one of the `Model/View Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-view-classes>`_ and is part of Qt's `model/view <https://doc.qt.io/qt-6/model-view-programming.html>`_ framework.
+:sip:ref:`~PyQt6.QtGui.QStandardItemModel` can be used as a repository for standard Qt data types. It is one of the `Model/View Classes <https://doc.qt.io/qt-6/model-view-programming.html#the-model-view-classes>`_ and is part of Qt's `model/view <https://doc.qt.io/qt-6/model-view-programming.html>`_ framework.
 
 :sip:ref:`~PyQt6.QtGui.QStandardItemModel` provides a classic item-based approach to working with the model. The items in a :sip:ref:`~PyQt6.QtGui.QStandardItemModel` are provided by :sip:ref:`~PyQt6.QtGui.QStandardItem`.
 
@@ -46,4 +46,4 @@ Conversely, you must obtain the :sip:ref:`~PyQt6.QtCore.QModelIndex` of an item 
 
 You are, of course, not required to use the item-based approach; you could instead rely entirely on the :sip:ref:`~PyQt6.QtCore.QAbstractItemModel` interface when working with the model, or use a combination of the two as appropriate.
 
-.. seealso:: :sip:ref:`~PyQt6.QtGui.QStandardItem`, `Model/View Programming <https://doc.qt.io/qt-6/model-view-programming.html>`_, :sip:ref:`~PyQt6.QtCore.QAbstractItemModel`, `Simple Tree Model example <https://doc.qt.io/qt-6/qtwidgets-itemviews-simpletreemodel-example.html>`_, `Item View Convenience Classes <https://doc.qt.io/qt-6/model-view-programming.html#item-view-convenience-classes>`_.
+.. seealso:: :sip:ref:`~PyQt6.QtGui.QStandardItem`, `Model/View Programming <https://doc.qt.io/qt-6/model-view-programming.html>`_, :sip:ref:`~PyQt6.QtCore.QAbstractItemModel`, :sip:ref:`~PyQt6.QtCore.QRangeModel`, `Simple Tree Model example <https://doc.qt.io/qt-6/qtwidgets-itemviews-simpletreemodel-example.html>`_, `Item View Convenience Classes <https://doc.qt.io/qt-6/model-view-programming.html#item-view-convenience-classes>`_.

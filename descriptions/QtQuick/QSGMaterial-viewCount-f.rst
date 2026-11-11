@@ -2,7 +2,7 @@
     :status: todo
     :pysig: fa7153f7ed1cb6c0fcf2ffb2fac21748
     :realsig: () const
-    :digest: 6841aab016f6c89c3ab2b2340d5ebc56
+    :digest: 87142451a53dfebbd01509b6f72ceb77
 
 Returns The number of views in case of the material is used in multiview rendering.
 
@@ -118,4 +118,4 @@ The following is therefore mostly equivalent to the example call shown above, ex
             shaders/example.frag
     )
 
-See QRhi::MultiView, QRhiColorAttachment::setMultiViewCount(), and QRhiGraphicsPipeline::setMultiViewCount() for further, lower-level details on multiview support in Qt. The Qt Quick scene graph renderer is prepared to recognize multiview render targets, when specified via QQuickRenderTarget::fromRhiRenderTarget() or the 3D API specific functions, such as fromVulkanImage() with an ``arraySize`` argument greater than 1. The renderer will then propagate the view count to graphics pipelines and the materials.
+See :sip:ref:`~PyQt6.QtGui.QRhi.Feature.MultiView`, QRhiColorAttachment::setMultiViewCount(), and QRhiGraphicsPipeline::setMultiViewCount() for further, lower-level details on multiview support in Qt. The Qt Quick scene graph renderer is prepared to recognize multiview render targets, when specified via QQuickRenderTarget::fromRhiRenderTarget() or the 3D API specific functions, such as fromVulkanImage() with an ``arraySize`` argument greater than 1. The renderer will then propagate the view count to graphics pipelines and the materials.

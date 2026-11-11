@@ -17,11 +17,11 @@
             int
             int
             int
-            sip.array
+            PyQt6.sip.array
             :sip:ref:`~PyQt6.QtGui.QImage.Format`
             Iterable[int]
             parent: :sip:ref:`~PyQt6.QtCore.QObject` = None
-        :description: QtGraphs/QCustom3DVolume-__init__-f-1.rst
+        :description: QtGraphs/QCustom3DVolume-__init__-f-2.rst
 
     .. sip:method:: PyQt6.QtGraphs.QCustom3DVolume.alphaMultiplier
         :returns:
@@ -37,8 +37,8 @@
         :args:
             Iterable[:sip:ref:`~PyQt6.QtGui.QImage`]
         :returns:
-            sip.array
-        :description: QtGraphs/QCustom3DVolume-createTextureData-f.rst
+            PyQt6.sip.array
+        :description: QtGraphs/QCustom3DVolume-createTextureData-f-1.rst
 
     .. sip:method:: PyQt6.QtGraphs.QCustom3DVolume.drawSliceFrames
         :returns:
@@ -146,8 +146,8 @@
 
     .. sip:method:: PyQt6.QtGraphs.QCustom3DVolume.setTextureData
         :args:
-            sip.array
-        :description: QtGraphs/QCustom3DVolume-setTextureData-f.rst
+            PyQt6.sip.array
+        :description: QtGraphs/QCustom3DVolume-setTextureData-f-1.rst
 
     .. sip:method:: PyQt6.QtGraphs.QCustom3DVolume.setTextureDepth
         :args:
@@ -218,8 +218,8 @@
 
     .. sip:method:: PyQt6.QtGraphs.QCustom3DVolume.textureData
         :returns:
-            sip.array
-        :description: QtGraphs/QCustom3DVolume-textureData-f.rst
+            PyQt6.sip.array
+        :description: QtGraphs/QCustom3DVolume-textureData-f-1.rst
 
     .. sip:method:: PyQt6.QtGraphs.QCustom3DVolume.textureDataWidth
         :returns:
@@ -311,8 +311,8 @@
 
     .. sip:signal:: PyQt6.QtGraphs.QCustom3DVolume.textureDataChanged
         :args:
-            sip.array
-        :description: QtGraphs/QCustom3DVolume-textureDataChanged-s.rst
+            PyQt6.sip.array
+        :description: QtGraphs/QCustom3DVolume-textureDataChanged-s-1.rst
 
     .. sip:signal:: PyQt6.QtGraphs.QCustom3DVolume.textureDepthChanged
         :args:

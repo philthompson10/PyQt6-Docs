@@ -2,7 +2,7 @@
     :status: todo
     :pysig: fcddf7248a2f1b7dd6b17ae16c064a9c
     :realsig: (WId,int,int,int,int)
-    :digest: 91059f51e95358de85a74aa3e24ad82f
+    :digest: 715fad7699f8d665262bb08f40722257
 
 Creates and returns a pixmap constructed by grabbing the contents of the given *window* restricted by :sip:ref:`~PyQt6.QtCore.QRect`\ (\ *x*, *y*, *width*, *height*). If *window* is 0, then the entire screen will be grabbed.
 
@@ -11,6 +11,14 @@ The arguments (\ *x*, *y*) specify the offset in the window, whereas (\ *width*,
 The offset and size arguments are specified in device independent pixels. The returned pixmap may be larger than the requested size when grabbing from a high-DPI screen. Call :sip:ref:`~PyQt6.QtGui.QPixmap.devicePixelRatio` to determine if this is the case.
 
 The window system identifier (``WId``) can be retrieved using the :sip:ref:`~PyQt6.QtWidgets.QWidget.winId` function. The rationale for using a window identifier and not a :sip:ref:`~PyQt6.QtWidgets.QWidget`, is to enable grabbing of windows that are not part of the application, window system frames, and so on.
+
+When *window* is *0*, the behavior is platform-dependent.
+
+* On platforms where coordinates are screen-local (Windows, X11), (\ *x*, *y*) are relative to this screen's origin.
+
+* On platforms where coordinates are global (macOS), (\ *x*, *y*) are relative to the virtual desktop. This requires callers to subtract ``screen->geometry().topLeft()`` to achieve the same result as on Windows.
+
+To grab the entire screen portably across platforms, use ``grabWindow(0)`` without specifying coordinates. Code that grabs a sub-area must account for this difference explicitly.
 
 **Warning:** Grabbing windows that are not part of the application is not supported on systems such as iOS, where sandboxing/security prevents reading pixels of windows not owned by the application.
 

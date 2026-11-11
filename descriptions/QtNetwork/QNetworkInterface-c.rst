@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Listing of the host's IP addresses and network interfaces
-    :digest: 3f41d4be0692c79400f51ee6632a5fcc
+    :digest: f8cc8f9609b48f07a88b0ffe2499f152
 
 The :sip:ref:`~PyQt6.QtNetwork.QNetworkInterface` class provides a listing of the host's IP addresses and network interfaces.
 
@@ -9,6 +9,8 @@ The :sip:ref:`~PyQt6.QtNetwork.QNetworkInterface` class provides a listing of th
 
 :sip:ref:`~PyQt6.QtNetwork.QNetworkInterface` also reports the interface's hardware address with :sip:ref:`~PyQt6.QtNetwork.QNetworkInterface.hardwareAddress`.
 
-Not all operating systems support reporting all features. Only the IPv4 addresses are guaranteed to be listed by this class in all platforms. In particular, IPv6 address listing is only supported on Windows, Linux, macOS and the BSDs.
+Not all operating systems support reporting all features. Only the IPv4 addresses are guaranteed to be listed by this class in all platforms. In particular, IPv6 address listing is only supported on Windows, Linux, macOS and the BSDs. Similarly, the interface type reported by :sip:ref:`~PyQt6.QtNetwork.QNetworkInterface.type` may not be available on all platforms.
+
+**Note:** On Android, the interface type is always reported as :sip:ref:`~PyQt6.QtNetwork.QNetworkInterface.InterfaceType.Unknown`, as the platform does not expose hardware type information for physical interfaces.
 
 .. seealso:: :sip:ref:`~PyQt6.QtNetwork.QNetworkAddressEntry`.

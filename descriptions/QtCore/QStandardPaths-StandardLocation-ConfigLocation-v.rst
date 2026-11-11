@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 13
-    :digest: 900dee7983551c327f990b8c288dab58
+    :digest: 161b418bcba0327936e7631b403ecf39
 
-Returns a directory location where user-specific configuration files should be written. This may be either a generic value or application-specific, and the returned path is never empty.
+Directory where configuration files should be written. The returned path is never empty. May be generic or application-specific (see AppConfigLocation and GenericConfigLocation for explicit variants). Varies.

@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Represents a graphics API independent shader program
-    :digest: eb6e3241da02374db7937f4d9d57ff7d
+    :digest: 661e895971eb8de8fc5c1f3eef9a1691
 
 The :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader` class represents a graphics API independent shader program.
 
@@ -23,7 +23,7 @@ There are three virtuals that can be overridden. These provide the data, or the 
 
 :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.updateSampledImage` is relevant when the shader code samples textures. The function will be invoked for each sampler (or combined image sampler, in APIs where relevant), giving it the option to specify which :sip:ref:`~PyQt6.QtQuick.QSGTexture` should be exposed to the shader.
 
-The shader pipeline state changes are less often used. One use case is materials that wish to use a specific blend mode. The relevant function is :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.updateGraphicsPipelineState`. This function is not called unless the :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader` has opted in by setting the flag :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.Flags.UpdatesGraphicsPipelineState`. The task of the function is to update the :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.GraphicsPipelineState` struct instance that is passed to it with the desired changes. Currently only blending and culling-related features are available, other states cannot be controlled by materials.
+The shader pipeline state changes are less often used. One use case is materials that wish to use a specific blend mode. The relevant function is :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.updateGraphicsPipelineState`. This function is not called unless the :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader` has opted in by setting the flag :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.Flag.UpdatesGraphicsPipelineState`. The task of the function is to update the :sip:ref:`~PyQt6.QtQuick.QSGMaterialShader.GraphicsPipelineState` struct instance that is passed to it with the desired changes. Currently only blending and culling-related features are available, other states cannot be controlled by materials.
 
 A minimal example, that also includes texture support, could be the following. Here we assume that Material is the :sip:ref:`~PyQt6.QtQuick.QSGMaterial` that creates an instance of Shader in its :sip:ref:`~PyQt6.QtQuick.QSGMaterial.createShader`, and that it holds a :sip:ref:`~PyQt6.QtQuick.QSGTexture` we want to sample in the fragment shader. The vertex shader relies only on the modelview-projection matrix.
 
@@ -58,7 +58,7 @@ A minimal example, that also includes texture support, could be the following. H
         }
     };
 
-The Vulkan-style GLSL source code for the shaders could look like the following. These are expected to be preprocessed offline using the ``qsb`` tool, which generates the ``.qsb`` files referenced in the Shader() constructor.
+The Vulkan-style GLSL source code for the shaders could look like the following. These are expected to be preprocessed offline using the ``qsb`` tool, which generates the ``.qsb`` files referenced in the `Shader() <https://doc.qt.io/qt-6/qml-qtquick3d-skymaterial.html#shader>`_ constructor.
 
 ::
 

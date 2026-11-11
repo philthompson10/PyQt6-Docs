@@ -87,6 +87,11 @@
             :sip:ref:`~PyQt6.QtCore.QIODevice`
         :description: QtGui/QImageReader-device-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QImageReader.effectiveSize
+        :returns:
+            :sip:ref:`~PyQt6.QtCore.QSize`
+        :description: QtGui/QImageReader-effectiveSize-f.rst
+
     .. sip:method:: PyQt6.QtGui.QImageReader.error
         :returns:
             :sip:ref:`~PyQt6.QtGui.QImageReader.ImageReaderError`

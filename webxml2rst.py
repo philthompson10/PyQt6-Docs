@@ -1,4 +1,4 @@
-# Copyright (c) 2025, Riverbank Computing Limited
+# Copyright (c) 2026, Riverbank Computing Limited
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -121,6 +121,10 @@ class WebXMLMetadata:
                 qdocconf_f.write(
                         ' -I ' + os.path.join(qt_include, module.name))
 
+            # TODO: fix this hack for QRhi.
+            qdocconf_f.write(
+                    ' -I ' + os.path.join(qt_include, 'QtGui', '6.12.0', 'QtGui'))
+
             qdocconf_f.write('\n')
 
         return qdocconf
@@ -172,8 +176,15 @@ WebXMLMetadata('qtactiveqt',
         webxml_subdir='activeqt')
 WebXMLMetadata('qtbluetooth',
         qdocconf='qtconnectivity/src/bluetooth/doc/qtbluetooth.qdocconf')
+WebXMLMetadata('qtcanvaspainter',
+        qdocconf='qtcanvaspainter/src/canvaspainter/doc/qtcanvaspainter.qdocconf',
+        locations={
+            'PYQT_CANVASPAINTER_VERSION': None,
+            'PYQT_CANVASPAINTER_VERSION_STR': None,
+        })
 WebXMLMetadata('qtcharts',
         qdocconf='qtcharts/src/charts/doc/qtcharts.qdocconf',
+        webxml_suffix='-qtcharts',
         locations={
             'PYQT_CHART_VERSION': None,
             'PYQT_CHART_VERSION_STR': None,
@@ -362,7 +373,11 @@ WebXMLMetadata('qtnetworkauth',
         })
 WebXMLMetadata('qtnfc', qdocconf='qtconnectivity/src/nfc/doc/qtnfc.qdocconf')
 WebXMLMetadata('qtopengl', qdocconf='qtbase/src/opengl/doc/qtopengl.qdocconf')
-WebXMLMetadata('qtpdf', qdocconf='qtwebengine/src/pdf/doc/qtpdf.qdocconf')
+WebXMLMetadata('qtpdf', qdocconf='qtwebengine/src/pdf/doc/qtpdf.qdocconf',
+        locations={
+            'PYQT_PDF_VERSION': None,
+            'PYQT_PDF_VERSION_STR': None,
+        })
 WebXMLMetadata('qtpositioning',
         qdocconf='qtpositioning/src/positioning/doc/qtpositioning.qdocconf')
 WebXMLMetadata('qtprintsupport',
@@ -549,6 +564,7 @@ ModuleMetadata('Qt3DInput', webxml='qt3d', qt_docs_prefix='qt3dinput-')
 ModuleMetadata('Qt3DLogic', webxml='qt3d', qt_docs_prefix='qt3dlogic-')
 ModuleMetadata('Qt3DRender', webxml='qt3d', qt_docs_prefix='qt3drender-')
 ModuleMetadata('QtBluetooth', webxml='qtbluetooth')
+ModuleMetadata('QtCanvasPainter', webxml='qtcanvaspainter')
 ModuleMetadata('QtCharts', webxml='qtcharts')
 ModuleMetadata('QtCore', webxml='qtcore')
 ModuleMetadata('QtDataVisualization', webxml='qtdatavis3d')
@@ -1543,7 +1559,7 @@ class Description:
                 shutil.copyfile(src, dst)
                 break
         else:
-            error("unable to find image file '{}'".format(fn))
+            warning("unable to find image file '{}'".format(fn))
 
         return dst
 

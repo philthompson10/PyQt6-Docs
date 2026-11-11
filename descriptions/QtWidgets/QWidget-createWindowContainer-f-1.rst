@@ -2,7 +2,7 @@
     :status: todo
     :pysig: 27c3ecff0b8db6e96a3963b3d763015e
     :realsig: (QWindow*,QWidget*,Qt::WindowFlags)
-    :digest: 5d54328b70d32c866f6bf739bcb656f2
+    :digest: 7720bab58eb973e3eb6f24aa695c7aa2
 
 Creates a :sip:ref:`~PyQt6.QtWidgets.QWidget` that makes it possible to embed *window* into a :sip:ref:`~PyQt6.QtWidgets.QWidget`-based application.
 
@@ -22,8 +22,8 @@ The window container has a number of known limitations:
 
 * Focus Handling; It is possible to let the window container instance have any focus policy and it will delegate focus to the window via a call to :sip:ref:`~PyQt6.QtGui.QWindow.requestActivate`. However, returning to the normal focus chain from the :sip:ref:`~PyQt6.QtGui.QWindow` instance will be up to the :sip:ref:`~PyQt6.QtGui.QWindow` instance implementation itself. Also, whether :sip:ref:`~PyQt6.QtGui.QWindow.requestActivate` actually gives the window focus, is platform dependent.
 
-  Since 6.8, if embedding a Qt Quick based window, tab presses will transition in and out of the embedded QML window, allowing focus to move to the next or previous focusable object in the window container chain.
+  If embedding a Qt Quick based window, Qt will automatically ensure that tab presses will transition in and out of the embedded QML window, allowing focus to move to the next or previous focusable object in the window container chain.
 
 * Using many window container instances in a :sip:ref:`~PyQt6.QtWidgets.QWidget`-based application can greatly hurt the overall performance of the application.
 
-* Since 6.7, if *window* belongs to a widget (that is, *window* was received from calling :sip:ref:`~PyQt6.QtWidgets.QWidget.windowHandle`), no container will be created. Instead, this function will return the widget itself, after being reparented to parent. Since no container will be created, *flags* will be ignored. In other words, if *window* belongs to a widget, consider just reparenting that widget to *parent* instead of using this function.
+**Note:** If *window* belongs to a widget (that is, *window* was received from calling :sip:ref:`~PyQt6.QtWidgets.QWidget.windowHandle`), no container will be created. Instead, this function will return the widget itself, after being reparented to parent. Since no container will be created, *flags* will be ignored. In other words, if *window* belongs to a widget, consider just reparenting that widget to *parent* instead of using this function.

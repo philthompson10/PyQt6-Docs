@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Main application window
-    :digest: 4f391461730070758f152842ff6307a3
+    :digest: f63436b3ee147c851e40a5c3ea92eabc
 
 The :sip:ref:`~PyQt6.QtWidgets.QMainWindow` class provides a main application window.
 
@@ -88,5 +88,14 @@ Storing State
 -------------
 
 :sip:ref:`~PyQt6.QtWidgets.QMainWindow` can store the state of its layout with ``saveState()``; it can later be retrieved with ``restoreState()``. It is the position and size (relative to the size of the main window) of the toolbars and dock widgets that are stored.
+
+.. _qmainwindow-security-considerations:
+
+Security Considerations
+-----------------------
+
+The :sip:ref:`~PyQt6.QtWidgets.QMainWindow.restoreState` function deserializes a versioned binary blob that describes the toolbar and dock widget layout, including a recursively nested tree structure for split and tabbed dock areas. The format's magic marker and version are validated, but individual fields - such as dock area indices and the depth of the nested layout tree - are not bounds-checked against the main window's actual configuration once the outer structure is accepted.
+
+Only pass :sip:ref:`~PyQt6.QtWidgets.QMainWindow.restoreState` a :sip:ref:`~PyQt6.QtCore.QByteArray` that was previously produced by :sip:ref:`~PyQt6.QtWidgets.QMainWindow.saveState` and persisted by the same, or a compatible, version of your application, typically through :sip:ref:`~PyQt6.QtCore.QSettings`. Do not call :sip:ref:`~PyQt6.QtWidgets.QMainWindow.restoreState` with data of unknown or untrusted origin, such as a file downloaded from the network, a synced or shared configuration file, or data supplied by another, potentially compromised, application.
 
 .. seealso:: :sip:ref:`~PyQt6.QtWidgets.QMenuBar`, :sip:ref:`~PyQt6.QtWidgets.QToolBar`, :sip:ref:`~PyQt6.QtWidgets.QStatusBar`, :sip:ref:`~PyQt6.QtWidgets.QDockWidget`, `Menus Example <https://doc.qt.io/qt-6/qtwidgets-mainwindows-menus-example.html>`_.

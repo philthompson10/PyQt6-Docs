@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 17
-    :digest: 6681820838cc164a223a94762ebf428e
+    :digest: 3fd669156aa2f9a5989d6e7b5a898e7a
 
-Move to the next character.
+Move to the next character. If text is selected, the first call to ``movePosition(NextCharacter, MoveAnchor)`` deselects the text without moving the cursor.

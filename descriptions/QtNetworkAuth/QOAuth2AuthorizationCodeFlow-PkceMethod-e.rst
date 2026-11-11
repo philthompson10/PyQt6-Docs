@@ -1,6 +1,6 @@
 .. sip:enum-description::
     :status: todo
-    :digest: fcbbcb45dc7f1a869a2acf3542e76306
+    :digest: d347a8371679cb3a5470648511757dc7
 
 List of available `Proof Key for Code Exchange (PKCE) methods <https://datatracker.ietf.org/doc/html/rfc7636>`_.
 

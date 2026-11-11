@@ -1,0 +1,6 @@
+.. sip:enum-member-description::
+    :status: todo
+    :value: 45
+    :digest: 70004453738d9b687f11baa902345a59
+
+Indicates that image-based specification of the shading rate is possible. The "image" is not necessarily a texture, it may be a native 3D API object, depending on the underlying backend and graphics API at run time. In practice this feature can be expected to be supported with Direct 3D 12, Vulkan, and Metal, assuming the GPU is modern enough to support VRS. To check if D3D12/Vulkan-style image-based VRS is supported, use VariableRateShadingMapWithTexture instead. When this feature is reported as supported, there are two possibilities: when VariableRateShadingMapWithTexture is also true, then :sip:ref:`~PyQt6.QtGui.QRhiShadingRateMap` consumes :sip:ref:`~PyQt6.QtGui.QRhiTexture` objects via the createFrom() overload taking a :sip:ref:`~PyQt6.QtGui.QRhiTexture` argument. When VariableRateShadingMapWithTexture is false, then :sip:ref:`~PyQt6.QtGui.QRhiShadingRateMap` consumes some other type of native objects, for example an MTLRasterizationRateMap in case of Metal. Use the createFrom() overload taking a NativeShadingRateMap in this case. This enum value has been introduced in Qt 6.9.

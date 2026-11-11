@@ -981,10 +981,10 @@
 
     .. sip:method:: PyQt6.QtGui.QPainter.__exit__
         :args:
-            Any
-            Any
-            Any
-        :description: QtGui/QPainter-__exit__-f-1.rst
+            object
+            object
+            object
+        :description: QtGui/QPainter-__exit__-f.rst
 
     .. sip:method:: PyQt6.QtGui.QPainter.fillPath
         :args:

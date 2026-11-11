@@ -2,11 +2,11 @@
     :status: todo
     :pysig: 9f4da284a36c3d58dd7a7bc569462d38
     :realsig: (QDate) const
-    :digest: 067aad06b488ebfd5e7f5c05a5c9d3e5
+    :digest: 29dc614a507c35187ad46df058e90400
 
-Returns the number of days from this date to *d* (which is negative if *d* is earlier than this date).
+Returns the number of days from this date to *d*.
 
-Returns 0 if either date is invalid.
+This is equivalent to ``d.toJulianDay() - toJulianDay()``. The result is negative if *d* is earlier than this date. Returns 0 if either date is invalid.
 
 Example:
 

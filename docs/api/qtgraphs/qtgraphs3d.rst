@@ -81,6 +81,15 @@
         .. sip:enum-member:: PyQt6.QtGraphs.QtGraphs3D.CameraPreset.RightLow
             :description: QtGraphs/QtGraphs3D-CameraPreset-RightLow-v.rst
 
+    .. sip:enum:: PyQt6.QtGraphs.QtGraphs3D.DragMode
+        :description: QtGraphs/QtGraphs3D-DragMode-e.rst
+
+        .. sip:enum-member:: PyQt6.QtGraphs.QtGraphs3D.DragMode.Pan
+            :description: QtGraphs/QtGraphs3D-DragMode-Pan-v.rst
+
+        .. sip:enum-member:: PyQt6.QtGraphs.QtGraphs3D.DragMode.Rotate
+            :description: QtGraphs/QtGraphs3D-DragMode-Rotate-v.rst
+
     .. sip:enum:: PyQt6.QtGraphs.QtGraphs3D.ElementType
         :description: QtGraphs/QtGraphs3D-ElementType-e.rst
 

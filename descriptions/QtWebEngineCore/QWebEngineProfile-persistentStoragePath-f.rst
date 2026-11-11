@@ -2,9 +2,9 @@
     :status: todo
     :pysig: 341be97d9aff90c9978347f66f945b77
     :realsig: () const
-    :digest: 65ad90605bb4b8c3019738db5912d9d2
+    :digest: a26f77948d5ddc0f1fbea4c421759189
 
-Returns the path used to store persistent data for the browser and web content.
+Returns the path used to store persistent data for the profile.
 
 Persistent data includes persistent cookies, HTML5 local storage, and visited links.
 

@@ -80,6 +80,11 @@
             :sip:ref:`~PyQt6.QtGui.QVector3D`
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-doRayPicking-f.rst
 
+    .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.dragMode
+        :returns:
+            :sip:ref:`~PyQt6.QtGraphs.QtGraphs3D.DragMode`
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-dragMode-f.rst
+
     .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.event
         :args:
             :sip:ref:`~PyQt6.QtCore.QEvent`
@@ -116,6 +121,11 @@
         :returns:
             bool
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-isOrthoProjection-f.rst
+
+    .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.isPanEnabled
+        :returns:
+            bool
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-isPanEnabled-f.rst
 
     .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.isPolar
         :returns:
@@ -339,6 +349,11 @@
             float
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-setCutoffMargin-f.rst
 
+    .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.setDragMode
+        :args:
+            :sip:ref:`~PyQt6.QtGraphs.QtGraphs3D.DragMode`
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-setDragMode-f.rst
+
     .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.setGridLineType
         :args:
             :sip:ref:`~PyQt6.QtGraphs.QtGraphs3D.GridLineType`
@@ -423,6 +438,16 @@
         :args:
             bool
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-setOrthoProjection-f.rst
+
+    .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.setPanButton
+        :args:
+            :sip:ref:`~PyQt6.QtCore.Qt.MouseButton`
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-setPanButton-f.rst
+
+    .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.setPanEnabled
+        :args:
+            bool
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-setPanEnabled-f.rst
 
     .. sip:method:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.setPolar
         :args:
@@ -572,6 +597,11 @@
             float
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-cutoffMarginChanged-s.rst
 
+    .. sip:signal:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.dragModeChanged
+        :args:
+            :sip:ref:`~PyQt6.QtGraphs.QtGraphs3D.DragMode`
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-dragModeChanged-s.rst
+
     .. sip:signal:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.gridLineTypeChanged
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-gridLineTypeChanged-s.rst
 
@@ -650,6 +680,11 @@
         :args:
             bool
         :description: QtGraphsWidgets/Q3DGraphsWidgetItem-orthoProjectionChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.panEnabledChanged
+        :args:
+            bool
+        :description: QtGraphsWidgets/Q3DGraphsWidgetItem-panEnabledChanged-s.rst
 
     .. sip:signal:: PyQt6.QtGraphsWidgets.Q3DGraphsWidgetItem.polarChanged
         :args:

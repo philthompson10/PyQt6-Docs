@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 2
-    :digest: c24341462f3db95ef724471b2d47c161
+    :digest: 044cf479506278b9719423355125f495
 
-Nonce is not sent during authorization stage.
+Nonce is not sent during authorization stage. This disables OpenID Connect ``id_token`` replay protection.

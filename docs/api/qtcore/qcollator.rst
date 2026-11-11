@@ -46,6 +46,13 @@
         :static:
         :description: QtCore/QCollator-defaultSortKey-f.rst
 
+    .. sip:method:: PyQt6.QtCore.QCollator.__eq__
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollator`
+        :returns:
+            bool
+        :description: QtCore/QCollator-__eq__-f.rst
+
     .. sip:method:: PyQt6.QtCore.QCollator.ignorePunctuation
         :returns:
             bool
@@ -55,6 +62,13 @@
         :returns:
             :sip:ref:`~PyQt6.QtCore.QLocale`
         :description: QtCore/QCollator-locale-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QCollator.__ne__
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollator`
+        :returns:
+            bool
+        :description: QtCore/QCollator-__ne__-f.rst
 
     .. sip:method:: PyQt6.QtCore.QCollator.numericMode
         :returns:

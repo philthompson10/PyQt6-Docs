@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Widget for displaying a Qt Quick user interface
-    :digest: d3904bc938a074553293bd7ebe968473
+    :digest: 4cf943000a7ef44335bb770c580ce6c4
 
 The :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget` class provides a widget for displaying a Qt Quick user interface.
 
@@ -66,12 +66,5 @@ Putting other widgets underneath and making the :sip:ref:`~PyQt6.QtQuickWidgets.
 When absolutely necessary, this limitation can be overcome by setting the :sip:ref:`~PyQt6.QtCore.Qt.WidgetAttribute.WA_AlwaysStackOnTop` attribute on the :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget`. Be aware, however that this breaks stacking order. For example it will not be possible to have other widgets on top of the :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget`, so it should only be used in situations where a semi-transparent :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget` with other widgets visible underneath is required.
 
 This limitation only applies when there are other widgets underneath the :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget` inside the same window. Making the window semi-transparent, with other applications and the desktop visible in the background, is done in the traditional way: Set :sip:ref:`~PyQt6.QtCore.Qt.WidgetAttribute.WA_TranslucentBackground` on the top-level window, request an alpha channel, and change the Qt Quick Scenegraph's clear color to :sip:ref:`~PyQt6.QtCore.Qt.GlobalColor.transparent` via :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget.setClearColor`.
-
-.. _qquickwidget-tab-key-handling:
-
-Tab Key Handling
-----------------
-
-On press of the ``[TAB]`` key, the item inside the :sip:ref:`~PyQt6.QtQuickWidgets.QQuickWidget` gets focus. If this item can handle ``[TAB]`` key press, focus will change accordingly within the item, otherwise the next widget in the focus chain gets focus.
 
 .. seealso:: `Exposing Attributes of C++ Types to QML <https://doc.qt.io/qt-6/qtqml-cppintegration-exposecppattributes.html>`_, `Qt Quick Widgets Example <https://doc.qt.io/qt-6/qtquick-quickwidgets-quickwidget-example.html>`_, :sip:ref:`~PyQt6.QtQuick.QQuickView`.

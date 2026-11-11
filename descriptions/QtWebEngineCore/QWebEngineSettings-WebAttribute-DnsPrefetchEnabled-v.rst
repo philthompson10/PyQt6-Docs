@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 29
-    :digest: f4a78e988e9addf82620c57a8065b3ad
+    :digest: c1e324a593bfbdce6b0aff648d2442df
 
-Specifies whether `WebEngine <https://doc.qt.io/qt-6/qml-qtwebengine-webengine.html>`_ will try to pre-fetch DNS entries to speed up browsing. Disabled by default. (Added in Qt 5.12)
+Specifies whether WebEngine will try to pre-fetch DNS entries. Disabled by default. Should not be enabled if local content is not meant to access remote content. See LocalContentCanAccessRemoteUrls.

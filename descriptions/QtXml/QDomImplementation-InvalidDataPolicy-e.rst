@@ -1,6 +1,6 @@
 .. sip:enum-description::
     :status: todo
-    :digest: f15f26dac7729367e7b69bcda89bb45f
+    :digest: 676d87de483b0a57ca8fc8861fe57543
 
 This enum specifies what should be done when a factory function in :sip:ref:`~PyQt6.QtXml.QDomDocument` is called with invalid data.
 

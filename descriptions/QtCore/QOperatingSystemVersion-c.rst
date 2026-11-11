@@ -1,13 +1,13 @@
 .. sip:class-description::
     :status: todo
     :brief: Information about the operating system version
-    :digest: 2f407c23d8f443f103f44c0f16932c29
+    :digest: ca35e2426b9fabad75b31448d4398b31
 
 The :sip:ref:`~PyQt6.QtCore.QOperatingSystemVersion` class provides information about the operating system version.
 
 Unlike other version functions in :sip:ref:`~PyQt6.QtCore.QSysInfo`, :sip:ref:`~PyQt6.QtCore.QOperatingSystemVersion` provides access to the full version number that *developers* typically use to vary behavior or determine whether to enable APIs or features based on the operating system version (as opposed to the kernel version number or marketing version).
 
-Presently, Android, Apple Platforms (iOS, macOS, tvOS, watchOS, and visionOS), and Windows are supported.
+Presently, Android, Apple Platforms (iOS, macOS, tvOS, watchOS, and visionOS), OpenHarmony (\ :sip:ref:`~PyQt6.QtCore.QOperatingSystemVersion.OSType.HarmonyOS`), and Windows are supported.
 
 The *majorVersion()*, *minorVersion()*, and *microVersion()* functions return the parts of the operating system version number based on:
 

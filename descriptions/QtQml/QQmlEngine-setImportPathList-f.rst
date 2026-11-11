@@ -2,9 +2,9 @@
     :status: todo
     :pysig: 252f2463b17d7b65060495677c920d4c
     :realsig: (const QStringList&)
-    :digest: 2e9dcab6a43d899815afebd1d931b3d2
+    :digest: f6f7cfe87e01281b9c47cde897806e1c
 
-Sets *paths* as the list of directories where the engine searches for installed modules in a URL-based directory structure.
+Sets *paths* as the list of directories where the engine searches for installed modules in a URL-based directory structure. Qt assumes that all files and folders under *paths* come from a trusted source.
 
 By default, this list contains the paths mentioned in `QML Import Path <https://doc.qt.io/qt-6/qtqml-syntax-imports.html#qml-import-path>`_.
 

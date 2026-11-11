@@ -1,6 +1,6 @@
 .. sip:enum-member-description::
     :status: todo
     :value: 4
-    :digest: a7483623da3572e6220b9035b6b4a239
+    :digest: 80f4488934deb427924e6a5a26a1d360
 
-The resource is a pointer to the QRhi instance used by the scenegraph, when applicable.
+The resource is a pointer to the :sip:ref:`~PyQt6.QtGui.QRhi` instance used by the scenegraph, when applicable.

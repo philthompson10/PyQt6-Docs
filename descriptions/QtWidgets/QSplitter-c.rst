@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Implements a splitter widget
-    :digest: 22fdc2ddcf53684e1937f8d0d4c13d5b
+    :digest: 6b4c523bd9a3060ac5ae2f81e03a0f52
 
 The :sip:ref:`~PyQt6.QtWidgets.QSplitter` class implements a splitter widget.
 
@@ -14,7 +14,7 @@ The following example will show a :sip:ref:`~PyQt6.QtWidgets.QListView`, :sip:re
 
 If a widget is already inside a :sip:ref:`~PyQt6.QtWidgets.QSplitter` when :sip:ref:`~PyQt6.QtWidgets.QSplitter.insertWidget` or :sip:ref:`~PyQt6.QtWidgets.QSplitter.addWidget` is called, it will move to the new position. This can be used to reorder widgets in the splitter later. You can use :sip:ref:`~PyQt6.QtWidgets.QSplitter.indexOf`, :sip:ref:`~PyQt6.QtWidgets.QSplitter.widget`, and :sip:ref:`~PyQt6.QtWidgets.QSplitter.count` to get access to the widgets inside the splitter.
 
-A default :sip:ref:`~PyQt6.QtWidgets.QSplitter` lays out its children horizontally (side by side); you can use :sip:ref:`~PyQt6.QtWidgets.QSplitter.setOrientation`\ (\ :sip:ref:`~PyQt6.QtCore.Qt.Orientations.Vertical`) to lay its children out vertically.
+A default :sip:ref:`~PyQt6.QtWidgets.QSplitter` lays out its children horizontally (side by side); you can use :sip:ref:`~PyQt6.QtWidgets.QSplitter.setOrientation`\ (\ :sip:ref:`~PyQt6.QtCore.Qt.Orientation.Vertical`) to lay its children out vertically.
 
 By default, all widgets can be as large or as small as the user wishes, between the :sip:ref:`~PyQt6.QtWidgets.QSplitter.minimumSizeHint` (or minimumSize()) and maximumSize() of the widgets.
 
@@ -25,5 +25,14 @@ The initial distribution of size between the widgets is determined by multiplyin
 When you hide() a child, its space will be distributed among the other children. It will be reinstated when you show() it again.
 
 **Note:** Adding a :sip:ref:`~PyQt6.QtWidgets.QLayout` to a :sip:ref:`~PyQt6.QtWidgets.QSplitter` is not supported (either through setLayout() or making the :sip:ref:`~PyQt6.QtWidgets.QSplitter` a parent of the :sip:ref:`~PyQt6.QtWidgets.QLayout`); use :sip:ref:`~PyQt6.QtWidgets.QSplitter.addWidget` instead (see example above).
+
+.. _qsplitter-security-considerations:
+
+Security Considerations
+-----------------------
+
+The :sip:ref:`~PyQt6.QtWidgets.QSplitter.restoreState` function deserializes a versioned binary blob that describes the sizes and orientation of the splitter's children. The format's magic number and version are validated, but the individual fields are not otherwise sanity-checked once the outer structure is accepted.
+
+Only pass :sip:ref:`~PyQt6.QtWidgets.QSplitter.restoreState` a :sip:ref:`~PyQt6.QtCore.QByteArray` that was previously produced by :sip:ref:`~PyQt6.QtWidgets.QSplitter.saveState` and persisted by the same, or a compatible, version of your application, typically through :sip:ref:`~PyQt6.QtCore.QSettings`. Do not call :sip:ref:`~PyQt6.QtWidgets.QSplitter.restoreState` with data of unknown or untrusted origin, such as a file downloaded from the network, a synced or shared configuration file, or data supplied by another, potentially compromised, application.
 
 .. seealso:: :sip:ref:`~PyQt6.QtWidgets.QSplitterHandle`, :sip:ref:`~PyQt6.QtWidgets.QHBoxLayout`, :sip:ref:`~PyQt6.QtWidgets.QVBoxLayout`, :sip:ref:`~PyQt6.QtWidgets.QTabWidget`.

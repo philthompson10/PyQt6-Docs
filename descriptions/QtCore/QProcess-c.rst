@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Used to start external programs and to communicate with them
-    :digest: 069e84ebfd274a97d38002f21744fe52
+    :digest: 3dd964242fb667c68ee06167a6193025
 
 The :sip:ref:`~PyQt6.QtCore.QProcess` class is used to start external programs and to communicate with them.
 
@@ -54,7 +54,7 @@ To avoid platform-dependent behavior or any issues with how the current applicat
 
 On Windows, the ".exe" suffix is not required for most uses, except those outlined in the CreateProcess documentation. Additionally, :sip:ref:`~PyQt6.QtCore.QProcess` will convert the Unix-style forward slashes to Windows path backslashes for the program name. This allows code using :sip:ref:`~PyQt6.QtCore.QProcess` to be written in a cross-platform manner, as shown in the examples above.
 
-:sip:ref:`~PyQt6.QtCore.QProcess` does not support directly executing Unix shell or Windows command interpreter built-in functions, such as ``cmd.exe``'s ``dir`` command or the Bourne shell's ``export``. On Unix, even though many shell built-ins are also provided as separate executables, their behavior may differ from those implemented as built-ins. To run those commands, one should explicitly execute the interpreter with suitable options. For Unix systems, launch "/bin/sh" with two arguments: "-c" and a string with the command-line to be run. For Windows, due to the non-standard way ``cmd.exe`` parses its command-line, use setNativeArguments() (for example, "/c dir d:").
+:sip:ref:`~PyQt6.QtCore.QProcess` does not support directly executing Unix shell or Windows command interpreter built-in functions, such as ``cmd.exe``'s ``dir`` command or the Bourne shell's ``export``. On Unix, even though many shell built-ins are also provided as separate executables, their behavior may differ from those implemented as built-ins. To run those commands, one should explicitly execute the interpreter with suitable options. For Unix systems, launch "/bin/sh" with two arguments: "-c" and a string with the command-line to be run. For Windows, due to the non-standard way ``cmd.exe`` parses its command-line, use :sip:ref:`~PyQt6.QtCore.QProcess.setNativeArguments` (for example, "/c dir d:").
 
 .. _qprocess-environment-variables:
 
@@ -107,5 +107,37 @@ The following example runs ``gzip`` to compress the string "Qt rocks!", without 
 
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-process-process.py
     :lines: 58-69
+
+.. _qprocess-security-considerations:
+
+Security Considerations
+-----------------------
+
+Treat the program name, arguments, environment, and working directory as hostile input whenever any of them comes from an untrusted source (the network, an untrusted file, an application controlled by other users). A process that :sip:ref:`~PyQt6.QtCore.QProcess` starts runs with the full privileges of the calling application.
+
+.. _qprocess-resolving-the-program-name:
+
+Resolving the Program Name
+..........................
+
+When possible, pass an absolute path as the program name. A plain file name is resolved through the ``PATH`` environment variable on Unix, or by the operating system's search order on Windows (which historically includes the current directory, as well as ``PATH``), so an attacker who can poison ``PATH`` or drop a file into a searched directory chooses which binary runs. See :ref:`qprocess-finding-the-executable` for more details on the binary lookup process.
+
+.. _qprocess-handling-arguments:
+
+Handling Arguments
+..................
+
+Pass arguments as separate list elements through :sip:ref:`~PyQt6.QtCore.QProcess.start` or :sip:ref:`~PyQt6.QtCore.QProcess.setArguments`; never assemble a single command string from untrusted parts. On Unix the arguments are delivered to the child verbatim as individual ``argv`` entries with no shell involved, so characters such as ``&``, ``|``, ``;`` or ``$`` carry no special meaning. On Windows, :sip:ref:`~PyQt6.QtCore.QProcess` will appropriately quote and escape the arguments according to the rules set forth by the ``CommandLineToArgvW()`` Win32 function. In neither OS will :sip:ref:`~PyQt6.QtCore.QProcess` automatically use the shell.
+
+When using splitCommand() and :sip:ref:`~PyQt6.QtCore.QProcess.startCommand`, pay attention on the fact that their tokenization and escaping rules are different from those for Windows and POSIX shells. Incorrectly escaped input opens a possibility for argument injection.
+
+.. _qprocess-launching-shells-and-batch-files:
+
+Launching Shells and Batch Files
+................................
+
+On Windows, do not pass untrusted arguments to a batch file (``.bat`` or ``.cmd``) or to ``cmd.exe``. Prefer using :sip:ref:`~PyQt6.QtCore.QProcess.setNativeArguments` and quoting and escaping them on your own instead. :sip:ref:`~PyQt6.QtCore.QProcess` quotes arguments for the ``CommandLineToArgvW()`` rules, but ``cmd.exe`` parses its command line differently and receives the shell metacharacters ``%``, ``^``, ``&``, ``|``, ``<``, ``>``, ``(``, and ``)`` unescaped. An argument such as ``args&calc.exe`` passed to a ``.cmd`` script therefore runs ``calc.exe`` as a second command. Note that on Windows all arguments are internally combined into a single commandline string, so even passing the arguments separately as ``process.start("file.cmd", {"args", "&calc.exe"})`` does not solve the problem. Many tools install batch scripts (for example ``npm``, ``yarn``, or ``gradle`` wrappers), so the target being a batch file is easy to overlook.
+
+On Unix, similar problems may exist if you launch the shell explicitly - for example ``process.start("/bin/sh", {"-c", "args&&malicious_binary"})`` - then the shell, not :sip:ref:`~PyQt6.QtCore.QProcess`, parses the ``-c`` string and gives ``&&``, ``;``, ``|``, backticks, and ``$()`` their usual meaning, just as ``cmd.exe`` does on Windows. Here the trailing ``&&malicious_binary`` runs a second program after ``args``, so assembling that ``-c`` string from untrusted input is command injection.
 
 .. seealso:: :sip:ref:`~PyQt6.QtCore.QBuffer`, :sip:ref:`~PyQt6.QtCore.QFile`, :sip:ref:`~PyQt6.QtNetwork.QTcpSocket`.

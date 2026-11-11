@@ -1,16 +1,18 @@
 .. sip:class-description::
     :status: todo
-    :brief: Allows applications to install and load Chrome extensions from the filesystem
-    :digest: 4c781e37ed89cebe777d08bfeab90eab
+    :brief: Allows applications to access Chrome/Firefox extension-compatible interfaces through managed packages
+    :digest: 0e41e92c57394bc377d2ea31ba261458
 
-The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager` class allows applications to install and load Chrome extensions from the filesystem.
+The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager` class allows applications to access Chrome/Firefox extension-compatible interfaces through managed packages.
 
-:sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager` can load or install Chrome extensions. Extensions can be loaded via :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.loadExtension`. Extensions loaded this way are not remembered by the associated profile and has to be manually loaded in every new browsing session. To preserve extensions between browsing sessions, applications can install zipped or unpacked extensions via :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.installExtension`. In this case the manager will unpack the extension to the profile's directory and load it from there. Installed extensions are always loaded at startup, after the profile is initialized.
+:sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager` exposes interfaces compatible with the Chrome/Firefox extension platform, letting applications load or install packages built against that format at runtime.
 
-You can access the loaded extensions with :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.extensions` which provides a list of :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo`, or connect to the manager's signals to get notified about the state of the load or install processes.
+Loading via :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.loadExtension` is temporary and doesn't persist across sessions, while :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.installExtension` stores the package in the profile directory so it loads automatically at startup.
 
-Each :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineProfile` has its own :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager`, so every page that shares the same profile will share the same extensions too. Extensions can't be loaded into off-the-record profiles.
+Loaded packages can be inspected through :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.extensions` property, which returns a list of :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo` objects, and the manager emits signals when packages are loaded, installed, unloaded, or uninstalled. The :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionManager.installPath` property indicates where installed packages are persisted.
 
-**Note:** Only ManifestV3 extensions are supported, other versions won't be loaded nor installed
+Only the ManifestV3 specification is supported — packages using other manifest versions are rejected outright. This capability is not available for off-the-record profiles. Every profile ships with two built-in components, Google Hangouts and the Chromium PDF Viewer, which can be disabled if not needed.
+
+**Note:** If you use this API to develop a system that allows users to install extensions at runtime, you may fall under the CRA EN-304-617 rules on browser extensions.
 
 .. seealso:: :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineProfile.extensionManager`, :sip:ref:`~PyQt6.QtWebEngineCore.QWebEngineExtensionInfo`.

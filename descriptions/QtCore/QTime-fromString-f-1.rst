@@ -2,7 +2,7 @@
     :status: todo
     :pysig: a023570cca9003c5cac228efb61a6ec7
     :realsig: (const QString&, const QString&)
-    :digest: f97bfb4d7596960644b1715b36e441ef
+    :digest: f7fc71beb645f1ee7b0f5d374664d1f4
 
 Returns the :sip:ref:`~PyQt6.QtCore.QTime` represented by the *string*, using the *format* given, or an invalid time if the string cannot be parsed.
 
@@ -34,12 +34,14 @@ These expressions may be used for the format:
 | AP, A, ap, a, aP or Ap | Either 'AM' indicating a time before 12:00 or 'PM' for later times, matched case-insensitively.                                                                                                                                                                                                                                                                                                             |
 +------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-All other input characters will be treated as text. Any non-empty sequence of characters enclosed in single quotes will also be treated (stripped of the quotes) as text and not be interpreted as expressions.
+Any non-empty sequence of characters enclosed in single quotes will also be treated (stripped of the quotes) as text and not be interpreted as expressions. Two consecutive single quotes ("''") are read as a single quote to be matched by the input, rather than starting or ending a verbatim sequence. All other input characters will be treated as verbatim text to be matched in the input string. For example:
 
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-code-src_corelib_time_qdatetime.py
     :lines: 101-102
 
-If the format is not satisfied, an invalid :sip:ref:`~PyQt6.QtCore.QTime` is returned. Expressions that do not expect leading zeroes to be given (h, m, s and z) are greedy. This means that they will use two digits (or three, for z) even if this puts them outside the range of accepted values and leaves too few digits for other sections. For example, the following string could have meant 00:07:10, but the m will grab two digits, resulting in an invalid time:
+If the format is not satisfied, an invalid :sip:ref:`~PyQt6.QtCore.QTime` is returned.
+
+Where numeric fields are juxtaposed, with no separators to break up the sequences of digits, there may be ambiguity as to whether some fields allowed to be single-digit use two digits (due to the value to represent being more than 9). Where giving such a field two digits would leave too few for other fields, and the single-digit reading is consistent with other fields, this ambiguity can be resolved. Otherwise (where more than one field is allowed to have only one digit and there would be spare digits if each only got one), a resolution that gives extra digits to earlier fields is preferred over one that gives them to later fields, provided the data remain consistent. For example:
 
 .. literalinclude:: ../../../snippets/qtbase-src-corelib-doc-snippets-code-src_corelib_time_qdatetime.py
     :lines: 107-107

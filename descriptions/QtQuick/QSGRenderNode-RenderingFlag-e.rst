@@ -1,7 +1,7 @@
 .. sip:enum-description::
     :status: todo
-    :digest: b83d9f1e7fc39a62b61ca9cf4d951fc2
+    :digest: e5806c06bc32bb802212b88c1fb131a1
 
 Possible values for the bitmask returned from :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.flags`.
 
-.. seealso:: :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.render`, :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.prepare`, :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.rect`.
+.. seealso:: :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.render`, :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.prepare`, :sip:ref:`~PyQt6.QtQuick.QSGRenderNode.rect`, :sip:ref:`~PyQt6.QtGui.QRhi`.

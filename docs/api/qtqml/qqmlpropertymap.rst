@@ -30,9 +30,9 @@
         :args:
             parent: :sip:ref:`~PyQt6.QtCore.QObject` = None
         :returns:
-            QQmlPropertyMap|None
+            QQmlPropertyMap | None
         :static:
-        :description: QtQml/QQmlPropertyMap-create-f.rst
+        :description: QtQml/QQmlPropertyMap-create-f-1.rst
 
     .. sip:method:: PyQt6.QtQml.QQmlPropertyMap.freeze
         :description: QtQml/QQmlPropertyMap-freeze-f.rst

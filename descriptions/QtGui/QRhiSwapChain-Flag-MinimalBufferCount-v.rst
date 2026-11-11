@@ -1,0 +1,6 @@
+.. sip:enum-member-description::
+    :status: todo
+    :value: 1 << 5
+    :digest: eae884d9e7bd784464081b26872539c5
+
+Requests creating the swapchain with the minimum number of buffers, which is in practice 2, unless the graphics implementation has a higher minimum number than that. Only applicable with backends where such control is available via the graphics API, for example, Vulkan. By default it is up to the backend to decide what number of buffers it requests (in practice this is almost always either 2 or 3), and it is not the applications' concern. However, on Vulkan for instance the backend will likely prefer the higher number (3), for example to avoid odd performance issues with some Vulkan implementations on mobile devices. It could be that on some platforms it can prove to be beneficial to force the lower buffer count (2), so this flag allows forcing that. Note that all this has no effect on the number of frames kept in flight, so the CPU (\ :sip:ref:`~PyQt6.QtGui.QRhi`) will still prepare frames at most ``N - 1`` frames ahead of the GPU, even when the swapchain image buffer count larger than ``N``. (``N`` = :sip:ref:`~PyQt6.QtGui.QRhi.ResourceLimit.FramesInFlight` and typically 2).

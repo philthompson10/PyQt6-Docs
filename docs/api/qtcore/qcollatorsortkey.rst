@@ -15,6 +15,13 @@
             int
         :description: QtCore/QCollatorSortKey-compare-f.rst
 
+    .. sip:method:: PyQt6.QtCore.QCollatorSortKey.__eq__
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollatorSortKey`
+        :returns:
+            bool
+        :description: QtCore/QCollatorSortKey-__eq__-f.rst
+
     .. sip:method:: PyQt6.QtCore.QCollatorSortKey.__ge__
         :args:
             :sip:ref:`~PyQt6.QtCore.QCollatorSortKey`
@@ -22,12 +29,33 @@
             bool
         :description: QtCore/QCollatorSortKey-__ge__-f.rst
 
+    .. sip:method:: PyQt6.QtCore.QCollatorSortKey.__gt__
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollatorSortKey`
+        :returns:
+            bool
+        :description: QtCore/QCollatorSortKey-__gt__-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QCollatorSortKey.__le__
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollatorSortKey`
+        :returns:
+            bool
+        :description: QtCore/QCollatorSortKey-__le__-f.rst
+
     .. sip:method:: PyQt6.QtCore.QCollatorSortKey.__lt__
         :args:
             :sip:ref:`~PyQt6.QtCore.QCollatorSortKey`
         :returns:
             bool
         :description: QtCore/QCollatorSortKey-__lt__-f.rst
+
+    .. sip:method:: PyQt6.QtCore.QCollatorSortKey.__ne__
+        :args:
+            :sip:ref:`~PyQt6.QtCore.QCollatorSortKey`
+        :returns:
+            bool
+        :description: QtCore/QCollatorSortKey-__ne__-f.rst
 
     .. sip:method:: PyQt6.QtCore.QCollatorSortKey.swap
         :args:

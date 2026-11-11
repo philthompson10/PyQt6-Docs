@@ -1,6 +1,6 @@
 .. sip:enum-description::
     :status: todo
-    :digest: 7b66f7c707083d753fafd36062bb2137
+    :digest: fb6fafde758ed739f05399b9740eb719
 
 This enum describes flags that are used when drawing primitive elements.
 

@@ -82,6 +82,11 @@
             float
         :description: QtGui/QVector2D-__getitem__-f.rst
 
+    .. sip:method:: PyQt6.QtGui.QVector2D.__hash__
+        :returns:
+            int
+        :description: QtGui/QVector2D-__hash__-f.rst
+
     .. sip:method:: PyQt6.QtGui.QVector2D.__iadd__
         :args:
             :sip:ref:`~PyQt6.QtGui.QVector2D`

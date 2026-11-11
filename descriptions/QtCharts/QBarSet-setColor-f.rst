@@ -2,5 +2,8 @@
     :status: todo
     :pysig: 5237000fc3bc4f513a579caca380c129
     :realsig: (QColor)
+    :digest: b4268a5bff6e3fe26ecbc0e2d8a97df2
 
-TODO
+Sets the fill color for the bar set to *color*.
+
+.. seealso:: :sip:ref:`~PyQt6.QtCharts.QBarSet.color`.

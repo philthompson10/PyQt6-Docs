@@ -22,6 +22,18 @@
         .. sip:enum-member:: PyQt6.QtPdf.QPdfSearchModel.Role.Page
             :description: QtPdf/QPdfSearchModel-Role-Page-v.rst
 
+    .. sip:enum:: PyQt6.QtPdf.QPdfSearchModel.Status
+        :description: QtPdf/QPdfSearchModel-Status-e.rst
+
+        .. sip:enum-member:: PyQt6.QtPdf.QPdfSearchModel.Status.Finished
+            :description: QtPdf/QPdfSearchModel-Status-Finished-v.rst
+
+        .. sip:enum-member:: PyQt6.QtPdf.QPdfSearchModel.Status.Null
+            :description: QtPdf/QPdfSearchModel-Status-Null-v.rst
+
+        .. sip:enum-member:: PyQt6.QtPdf.QPdfSearchModel.Status.Searching
+            :description: QtPdf/QPdfSearchModel-Status-Searching-v.rst
+
     .. sip:method:: PyQt6.QtPdf.QPdfSearchModel.__init__
         :args:
             :sip:ref:`~PyQt6.QtCore.QObject`
@@ -91,6 +103,11 @@
             str|None
         :description: QtPdf/QPdfSearchModel-setSearchString-f.rst
 
+    .. sip:method:: PyQt6.QtPdf.QPdfSearchModel.status
+        :returns:
+            :sip:ref:`~PyQt6.QtPdf.QPdfSearchModel.Status`
+        :description: QtPdf/QPdfSearchModel-status-f.rst
+
     .. sip:method:: PyQt6.QtPdf.QPdfSearchModel.timerEvent
         :args:
             :sip:ref:`~PyQt6.QtCore.QTimerEvent`
@@ -104,3 +121,8 @@
 
     .. sip:signal:: PyQt6.QtPdf.QPdfSearchModel.searchStringChanged
         :description: QtPdf/QPdfSearchModel-searchStringChanged-s.rst
+
+    .. sip:signal:: PyQt6.QtPdf.QPdfSearchModel.statusChanged
+        :args:
+            :sip:ref:`~PyQt6.QtPdf.QPdfSearchModel.Status`
+        :description: QtPdf/QPdfSearchModel-statusChanged-s.rst

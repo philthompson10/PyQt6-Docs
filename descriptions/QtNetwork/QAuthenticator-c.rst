@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Authentication object
-    :digest: d94e88ce061dc26d2735b0e03e7b8303
+    :digest: b1c996d1bd7aca5bd13c17f18f7d05a5
 
 The :sip:ref:`~PyQt6.QtNetwork.QAuthenticator` class provides an authentication object.
 
@@ -77,5 +77,18 @@ This authentication mechanism currently supports no incoming options.
 The ``spn`` property is used on Windows clients when an SSPI library is used. If the property is not set, a default SPN will be used. The default SPN on Windows is ``HTTP/<hostname>``.
 
 Other operating systems use GSSAPI libraries. For that it is expected that KDC is set up, and the credentials can be fetched from it. The backend always uses ``HTTPS@<hostname>`` as an SPN.
+
+.. _qauthenticator-security-considerations:
+
+Security Considerations
+-----------------------
+
+:sip:ref:`~PyQt6.QtNetwork.QAuthenticator` stores credentials such as usernames and passwords internally using general-purpose data types (QString, :sip:ref:`~PyQt6.QtCore.QByteArray`) that do not guarantee secure erasure of their contents from memory on destruction. Credential material may persist in freed heap pages, core dumps, swap files, or process memory after a :sip:ref:`~PyQt6.QtNetwork.QAuthenticator` object is destroyed or cleared.
+
+When Basic authentication is negotiated, credentials are transmitted using Base64 encoding, which is trivially reversible. Basic authentication should only be used over TLS-encrypted connections. :sip:ref:`~PyQt6.QtNetwork.QAuthenticator` does not enforce this requirement; applications are responsible for ensuring transport security when Basic authentication is in use.
+
+:sip:ref:`~PyQt6.QtNetwork.QAuthenticator` selects the strongest authentication method offered by the server, using a fixed internal priority order: Negotiate (Kerberos/SPNEGO), NTLM, Digest-MD5, and Basic. The application cannot currently influence this selection or restrict which methods are acceptable. If a server or proxy offers only a weak method, it will be used without notification.
+
+Applications with strict requirements for credential hygiene should take this into account when deciding how and where to use :sip:ref:`~PyQt6.QtNetwork.QAuthenticator`.
 
 .. seealso:: :sip:ref:`~PyQt6.QtNetwork.QSslSocket`.

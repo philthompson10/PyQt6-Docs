@@ -1,5 +1,5 @@
 .. sip:enum-description::
     :status: todo
-    :digest: d26f79651f011bf38f5b31e180c0bfec
+    :digest: 634f080fe4e379a33c678b4a50f589c1
 
 This enum describes the types of window that can be created by the :sip:ref:`~PyQt6.QtWebEngineCore.QWebEnginePage.createWindow` function:

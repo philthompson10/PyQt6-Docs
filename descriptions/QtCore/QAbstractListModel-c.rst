@@ -1,7 +1,7 @@
 .. sip:class-description::
     :status: todo
     :brief: Abstract model that can be subclassed to create one-dimensional list models
-    :digest: 998f3255aa529926096a68fed5b2124c
+    :digest: 19394a9a75c96869072a1681ca4ced51
 
 The :sip:ref:`~PyQt6.QtCore.QAbstractListModel` class provides an abstract model that can be subclassed to create one-dimensional list models.
 
@@ -34,4 +34,4 @@ Models that provide interfaces to resizable list-like data structures can provid
 
 **Note:** Some general guidelines for subclassing models are available in the `Model Subclassing Reference <https://doc.qt.io/qt-6/model-view-programming.html#model-subclassing-reference>`_.
 
-.. seealso:: `Model Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-classes>`_, `Model Subclassing Reference <https://doc.qt.io/qt-6/model-view-programming.html#model-subclassing-reference>`_, :sip:ref:`~PyQt6.QtWidgets.QAbstractItemView`, :sip:ref:`~PyQt6.QtCore.QAbstractTableModel`.
+.. seealso:: `Model Classes <https://doc.qt.io/qt-6/model-view-programming.html#model-classes>`_, `Model Subclassing Reference <https://doc.qt.io/qt-6/model-view-programming.html#model-subclassing-reference>`_, :sip:ref:`~PyQt6.QtWidgets.QAbstractItemView`, :sip:ref:`~PyQt6.QtCore.QAbstractTableModel`, :sip:ref:`~PyQt6.QtCore.QRangeModel`.

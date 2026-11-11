@@ -1,11 +1,11 @@
 .. sip:class-description::
     :status: todo
     :brief: Font metrics information
-    :digest: e99824be3a933026ecf34d1c6b58c551
+    :digest: d1d25d26f58f500dbd221427cf104031
 
 The :sip:ref:`~PyQt6.QtGui.QFontMetricsF` class provides font metrics information.
 
-:sip:ref:`~PyQt6.QtGui.QFontMetricsF` functions calculate the size of characters and strings for a given font. You can construct a :sip:ref:`~PyQt6.QtGui.QFontMetricsF` object with an existing `QFont <https://doc.qt.io/qt-6/gui-changes-qt6.html#qfont>`_ to obtain metrics for that font. If the font is changed later, the font metrics object is *not* updated.
+:sip:ref:`~PyQt6.QtGui.QFontMetricsF` functions calculate the size of characters and strings for a given font. You can construct a :sip:ref:`~PyQt6.QtGui.QFontMetricsF` object with an existing :sip:ref:`~PyQt6.QtGui.QFont` to obtain metrics for that font. If the font is changed later, the font metrics object is *not* updated.
 
 Once created, the object provides functions to access the individual metrics of the font, its characters, and for strings rendered in the font.
 
@@ -17,9 +17,11 @@ For each character, you can get its :sip:ref:`~PyQt6.QtGui.QFontMetricsF.horizon
 
 The string functions include :sip:ref:`~PyQt6.QtGui.QFontMetricsF.horizontalAdvance`, to return the width of a string in pixels (or points, for a printer), :sip:ref:`~PyQt6.QtGui.QFontMetricsF.boundingRect`, to return a rectangle large enough to contain the rendered string, and :sip:ref:`~PyQt6.QtGui.QFontMetricsF.size`, to return the size of that rectangle.
 
+:sip:ref:`~PyQt6.QtGui.QFontMetrics` has two different functions for calculating the bounds of a string, each with multiple overloads: :sip:ref:`~PyQt6.QtGui.QFontMetricsF.boundingRect` and :sip:ref:`~PyQt6.QtGui.QFontMetricsF.tightBoundingRect`. If a precise bounding rect is needed, then :sip:ref:`~PyQt6.QtGui.QFontMetricsF.tightBoundingRect` should be preferred. This will measure each glyph individually to return a bounding rect that fits tightly around the rendered text. Depending on the platform, the :sip:ref:`~PyQt6.QtGui.QFontMetricsF.boundingRect` function may return approximated bounds, but require less computation.
+
 Example:
 
 .. literalinclude:: ../../../snippets/qtbase-src-gui-doc-snippets-code-src_gui_text_qfontmetrics.py
     :lines: 72-75
 
-.. seealso:: `QFont <https://doc.qt.io/qt-6/gui-changes-qt6.html#qfont>`_, :sip:ref:`~PyQt6.QtGui.QFontInfo`, `QFontDatabase <https://doc.qt.io/qt-6/gui-changes-qt6.html#qfontdatabase>`_.
+.. seealso:: :sip:ref:`~PyQt6.QtGui.QFont`, :sip:ref:`~PyQt6.QtGui.QFontInfo`, :sip:ref:`~PyQt6.QtGui.QFontDatabase`.
